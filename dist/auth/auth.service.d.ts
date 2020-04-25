@@ -5,7 +5,7 @@ export declare class AuthService {
     private jwtService;
     private readonly neo4j;
     constructor(jwtService: JwtService, neo4j: Neo4j.Driver);
-    signUp(authCredentialsDto: AuthCredentialsDto): Promise<void>;
+    signUp(authCredentialsDto: AuthCredentialsDto): Promise<boolean>;
     signIn(authCredentialsDto: AuthCredentialsDto): Promise<{
         accessToken: string;
     }>;

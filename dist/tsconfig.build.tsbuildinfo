@@ -1250,8 +1250,8 @@
         "signature": "70aecfd981af29d74ba7ab6667b9cc2a53459d8eb099c139fd2aa54c3059c71d"
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "b5f8056c9d661417d2a49bef3d0d6bdf7256cfda295d2a21c455899429d40c7a",
-        "signature": "89c5c2702aa67d1e0649595ee1158802a670f851bc20f1718f45e1b3d1fb8bad"
+        "version": "9e9d15b8f3bd81e16b6a8d269050573743bafb48cbb946f0df500d080849e747",
+        "signature": "6f56983163d18acc36711ecc7086825de84a1539a7b73945036e5b3cbd025a6c"
       },
       "../node_modules/@types/jsonwebtoken/index.d.ts": {
         "version": "c6afd9a9be5f970240ff60b33f4a0262a5a8ea1cad4b6ea5b482d335639748f7",
@@ -1286,16 +1286,16 @@
         "signature": "77c1b8501a92de931f60f711f96a05e4c972fc42fb2c0c63a228e4e14c82b9a9"
       },
       "../src/users/user.model.ts": {
-        "version": "6746b3022dba655015430f0d67d9b5a8f93e56603dbdb27ae97dcd6e425b4cc6",
-        "signature": "df019455b3c86d368c2481b82bbfa0b08335d8dcc6519cc05ac1a2b8268fa03e"
+        "version": "88506176ed558a76042cb58147c344b48cededcde0ec10898fa565d3fc25cb38",
+        "signature": "45b88ca483d0e038b5ad515fa0a73c738a27a96ab79333462c0855d165d0ec72"
       },
       "../src/auth/auth.service.ts": {
-        "version": "23b373bdf1ec046ff12c46b4f223e9a57359c62c3d16e17d5afd392415b1dca0",
-        "signature": "174367cbf0a98103ef6e94d1b193d2610c30d659aad28dea741f4f145fdf36f3"
+        "version": "3ccf7493ee3208f99802d676fce470731ecd36e6ff2566da5a28fb7a4e49ff3b",
+        "signature": "83b3b8283c2336e5ce14530eb35d025ca918c0049791b2272e041c3793dc8f8e"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "af43aa9b169ed3eea9cf3c4cd6c0c0c851481065ac7a82295c052131766853b3",
-        "signature": "f40ba575ff797efed67d24593a55141dfc489abeaa75643bb00f1813b935404f"
+        "version": "25470b9a3019ae2bb6eb869d4d5bd10cce95f2bbe9dbfd73d21df24910cb966b",
+        "signature": "b2ee8b9063988755e26d2c5f781b9eba9fed7adabad40d74f321fb5daa2a2128"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
         "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
@@ -1361,8 +1361,20 @@
         "version": "b7547a7b8a42bb2fc1c3cfa9eeb13a29587467f97624a7b52614adfec6af436e",
         "signature": "aa1725e38b5a0b4009f6a74f296f173e7926c119a60454dbd2e523861735df69"
       },
+      "../src/genres/genres.service.ts": {
+        "version": "07c1cd87f51f4fe8ef7a53ad85d26313b3d07b5b3b1a9ccc3521461bc0dd72c5",
+        "signature": "c4fa6b12bbdb394e83edf9a9ea4c31ec420588ac9910d6b8536fb6292ef0228f"
+      },
+      "../src/genres/genres.controller.ts": {
+        "version": "1092c13c349d44e069398f8f8b392b45a6ea57ca8a804c68f080df85ae1b6cd5",
+        "signature": "0ea2f7d6899d2d328fdaa477c6f218ed3867315dcc2bf08a3c6baacbdf8116ac"
+      },
+      "../src/genres/genres.module.ts": {
+        "version": "7b033fe369bc3cb9de7d1112d9f2804debf74717c4307ffcb57a2c1ed4c2a4a0",
+        "signature": "aee111b6e0b31c178a9def23c2e33b74bb2b2b21523c53e3b3ef27a512ca9d74"
+      },
       "../src/app.module.ts": {
-        "version": "d1806d3408a9912289ebb77764e0ad8d97045ba73265339beaedd2b3cb6c613a",
+        "version": "e3b381eafac7a9519ae8bcb908f861f3a4d315ab8616dc247d39927319a8590d",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -4416,6 +4428,32 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/genres/genres.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/genres/genres.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/genres/genres.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/genres/genres.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/genres/genres.controller.ts",
+        "../src/genres/genres.service.ts",
+        "../src/config/neo4j.config.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
@@ -4423,6 +4461,7 @@
         "../src/config/neo4j.config.ts",
         "../src/auth/auth.module.ts",
         "../src/users/users.module.ts",
+        "../src/genres/genres.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7694,6 +7733,12 @@
         "../src/users/users.service.ts",
         "../src/users/dto/get-users-filter.dto.ts"
       ],
+      "../src/genres/genres.service.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts"
+      ],
+      "../src/genres/genres.controller.ts": [
+        "../src/genres/genres.service.ts"
+      ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
@@ -8639,7 +8684,6 @@
       "../node_modules/class-validator/metadata/constraintmetadata.d.ts",
       "../node_modules/class-validator/metadata/metadatastorage.d.ts",
       "../node_modules/class-validator/index.d.ts",
-      "../src/auth/dto/auth-credentials.dto.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
@@ -8649,6 +8693,8 @@
       "../node_modules/@nestjs/jwt/index.d.ts",
       "../src/auth/jwt-payload.interface.ts",
       "../src/users/user.model.ts",
+      "../src/auth/auth.service.ts",
+      "../src/auth/auth.controller.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
       "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts",
@@ -8661,9 +8707,13 @@
       "../node_modules/@nestjs/passport/index.d.ts",
       "../src/users/dto/get-users-filter.dto.ts",
       "../src/users/users.service.ts",
+      "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.module.ts",
       "../src/users/users.controller.ts",
       "../src/users/users.module.ts",
+      "../src/genres/genres.service.ts",
+      "../src/genres/genres.controller.ts",
+      "../src/genres/genres.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -8701,6 +8751,7 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
+      "../src/main.ts",
       "../src/users/get-user.decorator.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
@@ -8744,7 +8795,8 @@
       "../node_modules/@types/webpack-sources/index.d.ts",
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
-      "../node_modules/@types/yargs/index.d.ts"
+      "../node_modules/@types/yargs/index.d.ts",
+      "../src/auth/dto/auth-credentials.dto.ts"
     ]
   },
   "version": "3.8.3"

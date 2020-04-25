@@ -3,5 +3,6 @@ export declare class User {
     username: string;
     password: string;
     salt: string;
+    favorite_genres: number[];
     validatePassword(password: string): Promise<boolean>;
 }

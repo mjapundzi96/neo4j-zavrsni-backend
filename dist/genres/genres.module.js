@@ -7,20 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const neo4j_config_1 = require("./config/neo4j.config");
-const auth_module_1 = require("./auth/auth.module");
-const users_module_1 = require("./users/users.module");
-const genres_module_1 = require("./genres/genres.module");
-let AppModule = class AppModule {
+const genres_controller_1 = require("./genres.controller");
+const genres_service_1 = require("./genres.service");
+const neo4j_config_1 = require("../config/neo4j.config");
+let GenresModule = class GenresModule {
 };
-AppModule = __decorate([
+GenresModule = __decorate([
     common_1.Module({
-        imports: [auth_module_1.AuthModule, users_module_1.UsersModule, genres_module_1.GenresModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService, neo4j_config_1.neo4jProvider],
+        controllers: [genres_controller_1.GenresController],
+        providers: [genres_service_1.GenresService, neo4j_config_1.neo4jProvider]
     })
-], AppModule);
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+], GenresModule);
+exports.GenresModule = GenresModule;
+//# sourceMappingURL=genres.module.js.map
