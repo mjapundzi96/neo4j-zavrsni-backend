@@ -51,13 +51,18 @@ let AuthService = class AuthService {
         }
         const payload = { username };
         const accessToken = await this.jwtService.sign(payload);
-        return { accessToken };
+        const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }));
+        return {
+            accessToken: accessToken,
+            user_id: user.records[0]["_fields"][0].identity.low
+        };
     }
     async validateUserPassword(authCredentialsDto) {
         const { username, password } = authCredentialsDto;
         const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }));
         if (user.records.length) {
-            const userProperties = user.records[0]["_fields"][0].properties;
+            const userObj = user.records[0]["_fields"][0];
+            const userProperties = userObj.properties;
             const hash = await bcrypt.hash(password, userProperties.salt);
             if (user && hash === userProperties.password) {
                 return userProperties.username;

@@ -8,6 +8,7 @@ export declare class AuthService {
     signUp(authCredentialsDto: AuthCredentialsDto): Promise<boolean>;
     signIn(authCredentialsDto: AuthCredentialsDto): Promise<{
         accessToken: string;
+        user_id: number;
     }>;
     validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<string>;
     private hashPassword;

@@ -27,6 +27,32 @@ let UsersService = class UsersService {
         const users = (await this.neo4j.session().run(`MATCH (${queryUser}) RETURN n`, { username: username })).records;
         return users;
     }
+    async getUser(user_id) {
+        const userResult = (await this.neo4j.session().run(`MATCH (n:User) where ID(n)=${user_id}
+        RETURN n;`)).records[0];
+        if (userResult) {
+            const fields = userResult["_fields"][0];
+            return {
+                id: fields.identity.low,
+                username: fields.properties.username,
+            };
+        }
+    }
+    async getFavoriteArtists(user_id) {
+        let artists = [];
+        const artistsResults = (await this.neo4j.session().run(`MATCH (n:User)-[r:HAS_FAVORITE_GENRE]->(g:Genre)<-[r2:IS_GENRE]-(a:Artist) where ID(n)=${user_id}
+        RETURN a;`)).records;
+        artistsResults.forEach(result => {
+            const fields = result["_fields"][0];
+            artists.push({
+                id: fields.identity.low,
+                name: fields.properties.name,
+                type: fields.properties.type,
+                country: fields.properties.country
+            });
+        });
+        return artists;
+    }
 };
 UsersService = __decorate([
     common_1.Injectable(),

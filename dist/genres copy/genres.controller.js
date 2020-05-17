@@ -13,48 +13,34 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const users_service_1 = require("./users.service");
-const get_users_filter_dto_1 = require("./dto/get-users-filter.dto");
-const passport_1 = require("@nestjs/passport");
-let UsersController = class UsersController {
-    constructor(usersService) {
-        this.usersService = usersService;
+const genres_service_1 = require("./genres.service");
+let GenresController = class GenresController {
+    constructor(genresService) {
+        this.genresService = genresService;
     }
-    async getUsers(filterDto) {
-        return this.usersService.getUsers(filterDto);
+    async getGenres() {
+        return await this.genresService.getGenres();
     }
-    async getUser(id) {
-        return this.usersService.getUser(id);
-    }
-    async getFavoriteArtists(user_id) {
-        return this.usersService.getFavoriteArtists(user_id);
+    async getGenre(id) {
+        return await this.genresService.getGenre(id);
     }
 };
 __decorate([
-    common_1.UseGuards(passport_1.AuthGuard()),
     common_1.Get(),
-    __param(0, common_1.Query(common_1.ValidationPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [get_users_filter_dto_1.GetUsersFilterDto]),
+    __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], UsersController.prototype, "getUsers", null);
+], GenresController.prototype, "getGenres", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], UsersController.prototype, "getUser", null);
-__decorate([
-    common_1.Get('/:id/favorite_artists'),
-    __param(0, common_1.Param('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], UsersController.prototype, "getFavoriteArtists", null);
-UsersController = __decorate([
-    common_1.Controller('users'),
-    __metadata("design:paramtypes", [users_service_1.UsersService])
-], UsersController);
-exports.UsersController = UsersController;
-//# sourceMappingURL=users.controller.js.map
+], GenresController.prototype, "getGenre", null);
+GenresController = __decorate([
+    common_1.Controller('genres'),
+    __metadata("design:paramtypes", [genres_service_1.GenresService])
+], GenresController);
+exports.GenresController = GenresController;
+//# sourceMappingURL=genres.controller.js.map

@@ -37,7 +37,7 @@ export class AuthService {
         }
     }
 
-    async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{ accessToken: string }> {
+    async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{ accessToken: string,user_id:number }> {
         const username = await this.validateUserPassword(authCredentialsDto)
         if (!username) {
             throw new BadRequestException('invalid credentials')
@@ -45,7 +45,11 @@ export class AuthService {
 
         const payload: JwtPayload = { username };
         const accessToken = await this.jwtService.sign(payload)
-        return { accessToken }
+        const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }))
+        return { 
+            accessToken:accessToken, 
+            user_id: user.records[0]["_fields"][0].identity.low
+        }
     }
 
     async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<string> {
@@ -53,7 +57,8 @@ export class AuthService {
         const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }))
 
         if (user.records.length) {
-            const userProperties = user.records[0]["_fields"][0].properties
+            const userObj = user.records[0]["_fields"][0]
+            const userProperties = userObj.properties;
             const hash = await bcrypt.hash(password, userProperties.salt)
             if (user && hash === userProperties.password) {
                 return userProperties.username

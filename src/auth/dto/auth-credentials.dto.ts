@@ -11,11 +11,13 @@ export class AuthCredentialsDto {
     @MaxLength(20)
     @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
         { message: 'password too weak' })
-    password: string;
+    password: string; 
  
     @IsOptional()
     @IsArray()
     @IsNumber({}, { each: true })
     favorite_genres?: number[]
+
+    id:number
 
 }

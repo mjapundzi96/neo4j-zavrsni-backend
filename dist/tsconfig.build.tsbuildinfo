@@ -1250,8 +1250,8 @@
         "signature": "70aecfd981af29d74ba7ab6667b9cc2a53459d8eb099c139fd2aa54c3059c71d"
       },
       "../src/auth/dto/auth-credentials.dto.ts": {
-        "version": "9e9d15b8f3bd81e16b6a8d269050573743bafb48cbb946f0df500d080849e747",
-        "signature": "6f56983163d18acc36711ecc7086825de84a1539a7b73945036e5b3cbd025a6c"
+        "version": "f21dd649e4a08a998e397eb33d9567e61f0bdb77e586ccc55ba9c4b3d72c1fcb",
+        "signature": "1886bc8b79d58e294a38374669dd25a18919addae86cf3d8966823f55bdca39e"
       },
       "../node_modules/@types/jsonwebtoken/index.d.ts": {
         "version": "c6afd9a9be5f970240ff60b33f4a0262a5a8ea1cad4b6ea5b482d335639748f7",
@@ -1290,12 +1290,12 @@
         "signature": "45b88ca483d0e038b5ad515fa0a73c738a27a96ab79333462c0855d165d0ec72"
       },
       "../src/auth/auth.service.ts": {
-        "version": "3ccf7493ee3208f99802d676fce470731ecd36e6ff2566da5a28fb7a4e49ff3b",
-        "signature": "83b3b8283c2336e5ce14530eb35d025ca918c0049791b2272e041c3793dc8f8e"
+        "version": "1a418318c3c31d46959d773549ff85992c6f3ba8339d852575197ba21550be42",
+        "signature": "e58a9ec33e739941da5529a3d319c7ab2c321e8824ccd0b4479874198fc3aaff"
       },
       "../src/auth/auth.controller.ts": {
         "version": "25470b9a3019ae2bb6eb869d4d5bd10cce95f2bbe9dbfd73d21df24910cb966b",
-        "signature": "b2ee8b9063988755e26d2c5f781b9eba9fed7adabad40d74f321fb5daa2a2128"
+        "signature": "ddea2caeda224b100fdb60547b16d0e251690df4b7523df2086594145a8950a2"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
         "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
@@ -1342,8 +1342,8 @@
         "signature": "93819a0e1b6a85e58a09cbabbb618bbc13ed187eca68db841bab929587a30288"
       },
       "../src/users/users.service.ts": {
-        "version": "377eb0731fd3bcc55aa14d6b46b2c57e34401d594d9feae7f1c70615544412b1",
-        "signature": "4f3241ce2473a17d5777e6a1b39e680105546ff1b22c961aafc874ca3953a4da"
+        "version": "28f5bd929b020b248e2445ee2efdc03d476f6a5cde36bd02ff1bb77079f47fec",
+        "signature": "95eb07ac523b4ae4f4033d82ce00cfc7982b22317a0b4211f465dec45b61653a"
       },
       "../src/auth/jwt.strategy.ts": {
         "version": "0c7256fa6778f2af14d6c3f4e471491e73a753e48730e82396500ea8ac16f86b",
@@ -1354,8 +1354,8 @@
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
       },
       "../src/users/users.controller.ts": {
-        "version": "b04352abc0f7dffbabc78d1da58bffe1b101f395565f10eb5b54583dd69992df",
-        "signature": "77dc59acca4f7b8efb2bd1a1372ebc3c45e5f12c490367067359d365b8d8e2ac"
+        "version": "562397118aa73d14f51860914cc5fdb3de12343dbb10ca638ab2906dd700f498",
+        "signature": "511ce86849d21d2e19b61cdd0674883279f65b5963d9c97dd11f0636ff2b4c5a"
       },
       "../src/users/users.module.ts": {
         "version": "b7547a7b8a42bb2fc1c3cfa9eeb13a29587467f97624a7b52614adfec6af436e",
@@ -1373,8 +1373,20 @@
         "version": "7b033fe369bc3cb9de7d1112d9f2804debf74717c4307ffcb57a2c1ed4c2a4a0",
         "signature": "aee111b6e0b31c178a9def23c2e33b74bb2b2b21523c53e3b3ef27a512ca9d74"
       },
+      "../src/artists/artists.service.ts": {
+        "version": "5bece44945cbfa11c4b208f6f5777b2bcf3fde1a096d87dfc26fbd9be046be0d",
+        "signature": "bf895fa99ca586ecff2543364a315a34a5f2a8f11a06c58c9930a11da2e96da6"
+      },
+      "../src/artists/artists.controller.ts": {
+        "version": "d6c5d6f2da48187ac21f4a67d2b7bb59880d15442c60cf199c60e93bc5b448df",
+        "signature": "59596161c193e0c84749696c526b7226402bf05bc04c5ad33faa937a9343a578"
+      },
+      "../src/artists/artists.module.ts": {
+        "version": "c9965549dac33398edfba14fb0d43ce692e44ab055ba9e4b48520d18d2a01b95",
+        "signature": "30a4f26f9d8aca453eb7164c131bb7d14f88bb9829be8a44b89eb0a70b9b6ab7"
+      },
       "../src/app.module.ts": {
-        "version": "e3b381eafac7a9519ae8bcb908f861f3a4d315ab8616dc247d39927319a8590d",
+        "version": "0867ba6902b87b19431a3cb5aa309dae1df0965430a08b11a5835a1e2c8bbd72",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -4454,6 +4466,32 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/artists/artists.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/artists/artists.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/artists/artists.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/artists/artists.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/artists/artists.controller.ts",
+        "../src/artists/artists.service.ts",
+        "../src/config/neo4j.config.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
@@ -4462,6 +4500,7 @@
         "../src/auth/auth.module.ts",
         "../src/users/users.module.ts",
         "../src/genres/genres.module.ts",
+        "../src/artists/artists.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7739,6 +7778,12 @@
       "../src/genres/genres.controller.ts": [
         "../src/genres/genres.service.ts"
       ],
+      "../src/artists/artists.service.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts"
+      ],
+      "../src/artists/artists.controller.ts": [
+        "../src/artists/artists.service.ts"
+      ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/common/interfaces/index.d.ts",
@@ -8684,6 +8729,7 @@
       "../node_modules/class-validator/metadata/constraintmetadata.d.ts",
       "../node_modules/class-validator/metadata/metadatastorage.d.ts",
       "../node_modules/class-validator/index.d.ts",
+      "../src/auth/dto/auth-credentials.dto.ts",
       "../node_modules/@types/jsonwebtoken/index.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
       "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
@@ -8709,11 +8755,12 @@
       "../src/users/users.service.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.module.ts",
-      "../src/users/users.controller.ts",
-      "../src/users/users.module.ts",
       "../src/genres/genres.service.ts",
       "../src/genres/genres.controller.ts",
       "../src/genres/genres.module.ts",
+      "../src/artists/artists.service.ts",
+      "../src/artists/artists.controller.ts",
+      "../src/artists/artists.module.ts",
       "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
@@ -8796,7 +8843,8 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/auth/dto/auth-credentials.dto.ts"
+      "../src/users/users.controller.ts",
+      "../src/users/users.module.ts"
     ]
   },
   "version": "3.8.3"

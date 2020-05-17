@@ -6,5 +6,6 @@ export declare class AuthController {
     signUp(authCredentialsDto: AuthCredentialsDto): Promise<boolean>;
     signIn(authCredentialsDto: AuthCredentialsDto): Promise<{
         accessToken: string;
+        user_id: number;
     }>;
 }
