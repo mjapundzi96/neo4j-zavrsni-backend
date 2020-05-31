@@ -1294,7 +1294,7 @@
         "signature": "e58a9ec33e739941da5529a3d319c7ab2c321e8824ccd0b4479874198fc3aaff"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "25470b9a3019ae2bb6eb869d4d5bd10cce95f2bbe9dbfd73d21df24910cb966b",
+        "version": "f0e4bbdc17bb1403068d531410ae7857719e6b7424b0e2f0a24c58f9b17910b2",
         "signature": "ddea2caeda224b100fdb60547b16d0e251690df4b7523df2086594145a8950a2"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -1342,7 +1342,7 @@
         "signature": "93819a0e1b6a85e58a09cbabbb618bbc13ed187eca68db841bab929587a30288"
       },
       "../src/users/users.service.ts": {
-        "version": "28f5bd929b020b248e2445ee2efdc03d476f6a5cde36bd02ff1bb77079f47fec",
+        "version": "b7c1bc85b1fbd38792e1a28294adda3e48584eedfe4060b33b61b1d10fc3a7b0",
         "signature": "95eb07ac523b4ae4f4033d82ce00cfc7982b22317a0b4211f465dec45b61653a"
       },
       "../src/auth/jwt.strategy.ts": {
@@ -1373,20 +1373,52 @@
         "version": "7b033fe369bc3cb9de7d1112d9f2804debf74717c4307ffcb57a2c1ed4c2a4a0",
         "signature": "aee111b6e0b31c178a9def23c2e33b74bb2b2b21523c53e3b3ef27a512ca9d74"
       },
+      "../src/artists/dto/get-artists-filter.dto.ts": {
+        "version": "7fffcdac6bab96fd6e353017dcf07d0c959b75a878744bfc4bc3671be17aa913",
+        "signature": "45865dd409c5c8042e4a96cef0f3ed11e9ca827e2dc24a6f3b5c646099d9efa6"
+      },
       "../src/artists/artists.service.ts": {
-        "version": "5bece44945cbfa11c4b208f6f5777b2bcf3fde1a096d87dfc26fbd9be046be0d",
-        "signature": "bf895fa99ca586ecff2543364a315a34a5f2a8f11a06c58c9930a11da2e96da6"
+        "version": "c441e0f459ff6df3c5fa00fa480ff9abfe2442f349201e0ca065ebdc0c076dc5",
+        "signature": "a07620517015b72a062abbf12c765c4207f518d8bee1d88633c771256f567f51"
       },
       "../src/artists/artists.controller.ts": {
-        "version": "d6c5d6f2da48187ac21f4a67d2b7bb59880d15442c60cf199c60e93bc5b448df",
-        "signature": "59596161c193e0c84749696c526b7226402bf05bc04c5ad33faa937a9343a578"
+        "version": "9f6c94011116a518944c37b147fba72388295c32e95be2eb96d8bb332cfd0c8c",
+        "signature": "d001e32eb0f81df590119e58e5f0a70c340e7c97b7709e015a9d664709febf0d"
       },
       "../src/artists/artists.module.ts": {
         "version": "c9965549dac33398edfba14fb0d43ce692e44ab055ba9e4b48520d18d2a01b95",
         "signature": "30a4f26f9d8aca453eb7164c131bb7d14f88bb9829be8a44b89eb0a70b9b6ab7"
       },
+      "../src/songs/songs.service.ts": {
+        "version": "246136d678f42ce72424ebc95518c215e8d9bc17ca4b65f835a2f439c0b6f0b9",
+        "signature": "610aa45cf03b90665e7474de0965da3dc87d284edc2155b7dc090500ea7c8ee9"
+      },
+      "../src/songs/songs.controller.ts": {
+        "version": "fed899440dbffb74132f2d0acd427202c487bb916be2689b12beec0de6ece765",
+        "signature": "856d85fe69353870f6f9a165834174d115fc655d60c28d9f1d1571ceb7f463a8"
+      },
+      "../src/songs/songs.module.ts": {
+        "version": "9b8662284532087baed4cf5def73060e30c7a9928bf365b0ddc0d74b91135525",
+        "signature": "e4f325d7a092478bf088efa14cf9311f1c9b01fa4064beb4255f4a962ed7c93b"
+      },
+      "../src/albums/dto/get-albums-filter.dto.ts": {
+        "version": "dedf5e6fd9fb6795f5584272cb3f615026212da3f6ec19a49178e04d95c7b466",
+        "signature": "65d8ec0839b192d1e358f2b4626804625417ab16cb467ac2e06d2e2c846715a4"
+      },
+      "../src/albums/albums.service.ts": {
+        "version": "6f8ee56d1212b0e98e3c64fd55234347f1a6407a289712020ae58bc6bca9cf7e",
+        "signature": "393804230cdb04564810f0337649bcd5ddee9f05729769c71ff8e3f07a08f961"
+      },
+      "../src/albums/albums.controller.ts": {
+        "version": "427cbcb7adcf7650c573a29052c1693d823ab43929c93b0e206f420457cbec9a",
+        "signature": "ee4c8034ea87fe657d975824f92201eba006d0336b38e93aebd9dfa96f426646"
+      },
+      "../src/albums/albums.module.ts": {
+        "version": "bf86555c6fe79d02aa14ba166ca0a16ba698d1e1b68c13ad438c8bafea6f45a2",
+        "signature": "7a6e90d5ce11e998009b467d14a8141635519776d440d8ff7dc70e18c8856a18"
+      },
       "../src/app.module.ts": {
-        "version": "0867ba6902b87b19431a3cb5aa309dae1df0965430a08b11a5835a1e2c8bbd72",
+        "version": "91c00b567b7dc4d9e98cfe9db538d88029510aca96e89bf8b7fcce602f5a1501",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -4466,9 +4498,17 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/artists/dto/get-artists-filter.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/artists/artists.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/artists/dto/get-artists-filter.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4492,6 +4532,68 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/songs/songs.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/songs/songs.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/songs/songs.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/songs/songs.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/songs/songs.controller.ts",
+        "../src/songs/songs.service.ts",
+        "../src/config/neo4j.config.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/albums/dto/get-albums-filter.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/albums/albums.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/albums/dto/get-albums-filter.dto.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/albums/albums.controller.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/albums/albums.service.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/albums/dto/get-albums-filter.dto.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/albums/albums.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/albums/albums.controller.ts",
+        "../src/albums/albums.service.ts",
+        "../src/config/neo4j.config.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
@@ -4501,6 +4603,8 @@
         "../src/users/users.module.ts",
         "../src/genres/genres.module.ts",
         "../src/artists/artists.module.ts",
+        "../src/songs/songs.module.ts",
+        "../src/albums/albums.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7779,10 +7883,25 @@
         "../src/genres/genres.service.ts"
       ],
       "../src/artists/artists.service.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts"
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/artists/dto/get-artists-filter.dto.ts"
       ],
       "../src/artists/artists.controller.ts": [
         "../src/artists/artists.service.ts"
+      ],
+      "../src/songs/songs.service.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts"
+      ],
+      "../src/songs/songs.controller.ts": [
+        "../src/songs/songs.service.ts"
+      ],
+      "../src/albums/albums.service.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/albums/dto/get-albums-filter.dto.ts"
+      ],
+      "../src/albums/albums.controller.ts": [
+        "../src/albums/albums.service.ts",
+        "../src/albums/dto/get-albums-filter.dto.ts"
       ],
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -8755,13 +8874,19 @@
       "../src/users/users.service.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.module.ts",
+      "../src/users/users.controller.ts",
+      "../src/users/users.module.ts",
       "../src/genres/genres.service.ts",
       "../src/genres/genres.controller.ts",
       "../src/genres/genres.module.ts",
-      "../src/artists/artists.service.ts",
-      "../src/artists/artists.controller.ts",
-      "../src/artists/artists.module.ts",
-      "../src/app.module.ts",
+      "../src/artists/dto/get-artists-filter.dto.ts",
+      "../src/songs/songs.service.ts",
+      "../src/songs/songs.controller.ts",
+      "../src/songs/songs.module.ts",
+      "../src/albums/dto/get-albums-filter.dto.ts",
+      "../src/albums/albums.service.ts",
+      "../src/albums/albums.controller.ts",
+      "../src/albums/albums.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -8843,8 +8968,10 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/users/users.controller.ts",
-      "../src/users/users.module.ts"
+      "../src/artists/artists.service.ts",
+      "../src/artists/artists.module.ts",
+      "../src/artists/artists.controller.ts",
+      "../src/app.module.ts"
     ]
   },
   "version": "3.8.3"

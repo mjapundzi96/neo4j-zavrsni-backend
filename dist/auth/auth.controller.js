@@ -23,7 +23,6 @@ let AuthController = class AuthController {
         return this.authService.signUp(authCredentialsDto);
     }
     signIn(authCredentialsDto) {
-        console.log(authCredentialsDto);
         return this.authService.signIn(authCredentialsDto);
     }
 };

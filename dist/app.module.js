@@ -14,11 +14,13 @@ const auth_module_1 = require("./auth/auth.module");
 const users_module_1 = require("./users/users.module");
 const genres_module_1 = require("./genres/genres.module");
 const artists_module_1 = require("./artists/artists.module");
+const songs_module_1 = require("./songs/songs.module");
+const albums_module_1 = require("./albums/albums.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [auth_module_1.AuthModule, users_module_1.UsersModule, genres_module_1.GenresModule, artists_module_1.ArtistsModule],
+        imports: [auth_module_1.AuthModule, users_module_1.UsersModule, genres_module_1.GenresModule, artists_module_1.ArtistsModule, albums_module_1.AlbumsModule, songs_module_1.SongsModule],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, neo4j_config_1.neo4jProvider],
     })

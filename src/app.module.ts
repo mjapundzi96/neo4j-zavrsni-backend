@@ -6,10 +6,12 @@ import { AuthModule } from './auth/auth.module'
 import { UsersModule } from './users/users.module';
 import { GenresModule } from './genres/genres.module';
 import { ArtistsModule } from './artists/artists.module';
+import { SongsModule } from './songs/songs.module';
+import { AlbumsModule } from './albums/albums.module';
 
 
 @Module({
-  imports: [AuthModule, UsersModule, GenresModule, ArtistsModule],
+  imports: [AuthModule, UsersModule, GenresModule, ArtistsModule, AlbumsModule, SongsModule],
   controllers: [AppController],
   providers: [AppService, neo4jProvider],
 })

@@ -40,7 +40,8 @@ export class UsersService {
                 id: fields.identity.low,
                 name: fields.properties.name,
                 type: fields.properties.type,
-                country: fields.properties.country
+                country: fields.properties.country,
+                imageUrl: fields.properties.imageUrl ? fields.properties.imageUrl : ""
             })
         })
         return artists

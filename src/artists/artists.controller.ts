@@ -9,11 +9,11 @@ export class ArtistsController {
     async getGenres(
     ) {
         return await this.artistsService.getGenres()
-    }
+    } */
 
     @Get('/:id')
-    async getGenre(
+    async getArtist(
         @Param('id') id: number) {
-        return await this.artistsService.getGenre(id)
-    } */
+        return await this.artistsService.getArtist(id)
+    }
 }
