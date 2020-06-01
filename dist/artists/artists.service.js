@@ -19,6 +19,20 @@ let ArtistsService = class ArtistsService {
         this.neo4j = neo4j;
     }
     async getArtists(filterDto) {
+        const { name } = filterDto;
+        const artists_results = (await this.neo4j.session().run(`Match (n:Artist) Where toUpper(n.name) CONTAINS toUpper('${name}') return n;`)).records;
+        let artists = [];
+        artists_results.forEach(result => {
+            const fields = result["_fields"][0];
+            artists.push({
+                id: fields.identity.low,
+                name: fields.properties.name,
+                country: fields.properties.country,
+                type: fields.properties.type,
+                imageUrl: fields.properties.imageUrl,
+            });
+        });
+        return artists;
     }
     async getArtist(id) {
         const artist_result = (await this.neo4j.session().run(`Match (n:Artist) Where ID(n)=${id} return n;`)).records[0];

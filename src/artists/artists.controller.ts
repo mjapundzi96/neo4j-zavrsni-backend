@@ -1,15 +1,17 @@
-import { Controller, Query, Get, Param } from '@nestjs/common';
+import { Controller, Query, Get, Param, ValidationPipe } from '@nestjs/common';
 import { ArtistsService } from './artists.service'
+import { GetArtistsFilterDto } from './dto/get-artists-filter.dto';
 
 @Controller('artists')
 export class ArtistsController {
     constructor(private artistsService: ArtistsService) { }
 
-    /* @Get()
-    async getGenres(
+    @Get()
+    async getArtists(
+        @Query(ValidationPipe) filterDto: GetArtistsFilterDto,
     ) {
-        return await this.artistsService.getGenres()
-    } */
+        return this.artistsService.getArtists(filterDto);
+    }
 
     @Get('/:id')
     async getArtist(

@@ -18,20 +18,49 @@ let SongsService = class SongsService {
     constructor(neo4j) {
         this.neo4j = neo4j;
     }
+    async getSongs(filterDto) {
+        const { title } = filterDto;
+        const songs_results = (await this.neo4j.session().run(`Match (n:Song) Where toUpper(n.title) CONTAINS toUpper('${title}') return n;`)).records;
+        let songs = [];
+        songs_results.forEach(result => {
+            const fields = result["_fields"][0];
+            songs.push({
+                id: fields.identity.low,
+                title: fields.properties.title,
+                views: fields.properties.views.low,
+                songUrl: fields.properties.songUrl,
+            });
+        });
+        return songs;
+    }
     async getSong(id) {
         const song_result = (await this.neo4j.session().run(`Match (n:Song) Where ID(n)=${id} return n;`)).records[0];
         if (song_result) {
             const fields = song_result["_fields"][0];
-            const artist = {
+            const song = {
                 id: fields.identity.low,
-                name: fields.properties.name,
+                title: fields.properties.title,
                 views: fields.properties.views.low,
                 songUrl: fields.properties.songUrl,
             };
-            return artist;
+            return song;
         }
         else
             throw new common_1.NotFoundException('Song not found');
+    }
+    async viewSong(id, viewSongDto) {
+        const { user_id } = viewSongDto;
+        const song = await this.getSong(id);
+        const query = (await this.neo4j.session().run(`MATCH (u:User),(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        CREATE (u)-[r:HAS_VIEWED{ date_time: datetime({timezone:'Europe/Zagreb'}) }]->(s)
+        SET s.views = s.views + 1
+        RETURN true`));
+        if (query.records.length > 0) {
+            return true;
+        }
+        else
+            throw new common_1.NotFoundException('User does not exist');
     }
 };
 SongsService = __decorate([

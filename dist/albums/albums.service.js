@@ -43,7 +43,7 @@ let AlbumsService = class AlbumsService {
                 const fields = result["_fields"][0];
                 songs.push({
                     id: fields.identity.low,
-                    name: fields.properties.name,
+                    title: fields.properties.title,
                     views: fields.properties.views.low,
                 });
             });

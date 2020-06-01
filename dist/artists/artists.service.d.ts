@@ -3,7 +3,7 @@ import { GetArtistsFilterDto } from './dto/get-artists-filter.dto';
 export declare class ArtistsService {
     private readonly neo4j;
     constructor(neo4j: Neo4j.Driver);
-    getArtists(filterDto: GetArtistsFilterDto): Promise<void>;
+    getArtists(filterDto: GetArtistsFilterDto): Promise<any[]>;
     getArtist(id: number): Promise<{
         id: any;
         name: any;
