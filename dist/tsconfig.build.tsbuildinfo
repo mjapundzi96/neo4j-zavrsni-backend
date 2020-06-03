@@ -1341,9 +1341,13 @@
         "version": "f2d30200d5151384c1b875eddf0db7fb1bbf99e26dea1f293279f3388148128a",
         "signature": "93819a0e1b6a85e58a09cbabbb618bbc13ed187eca68db841bab929587a30288"
       },
+      "../src/users/dto/get-recommended-filter.dto.ts": {
+        "version": "8a67509311670fa9fa391b44f383e344506efbd38e874882cbb0dd1540c600f8",
+        "signature": "457be652aa0aa3b15550edb9cd8cec37b009df1dfaaaa4ff06d36ac0c2d918ea"
+      },
       "../src/users/users.service.ts": {
-        "version": "b7c1bc85b1fbd38792e1a28294adda3e48584eedfe4060b33b61b1d10fc3a7b0",
-        "signature": "95eb07ac523b4ae4f4033d82ce00cfc7982b22317a0b4211f465dec45b61653a"
+        "version": "44524ce16bf03aee55bc3aea2d0200a8120c58e3cc05d5f50a34beee6ac1cd2f",
+        "signature": "b8923264b2c0f424b202cb0e1250cdb421dde7332b9368cd03ce01cf35b7766d"
       },
       "../src/auth/jwt.strategy.ts": {
         "version": "0c7256fa6778f2af14d6c3f4e471491e73a753e48730e82396500ea8ac16f86b",
@@ -1354,8 +1358,8 @@
         "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
       },
       "../src/users/users.controller.ts": {
-        "version": "562397118aa73d14f51860914cc5fdb3de12343dbb10ca638ab2906dd700f498",
-        "signature": "511ce86849d21d2e19b61cdd0674883279f65b5963d9c97dd11f0636ff2b4c5a"
+        "version": "3d8406538a94d38807ec17906dc26a00f2cd850d663a6102048ceee088e5ff5e",
+        "signature": "094e6f3af6cb2265bc66f09c3b98e0657b83482087e1ac015b518870c9ef094b"
       },
       "../src/users/users.module.ts": {
         "version": "b7547a7b8a42bb2fc1c3cfa9eeb13a29587467f97624a7b52614adfec6af436e",
@@ -1398,7 +1402,7 @@
         "signature": "7bacb9d6d5305b0f758ce267e15a7e53e142d2d877a905e4b940ebe720a52aba"
       },
       "../src/songs/songs.service.ts": {
-        "version": "4d1764c3dfcd4ca99ea431b4b8fc813b9d6d55517e43ab43195e1122e9157ece",
+        "version": "b90fb0f2e5278855e3fed30c53635edc4095e1a735caf39651dff9446fcaa151",
         "signature": "c9a1812a69e6fd0c50bdbc34f205ec922056fa3a931e91fbafc7f31375a7bb63"
       },
       "../src/songs/songs.controller.ts": {
@@ -4426,10 +4430,18 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/users/dto/get-recommended-filter.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/users/users.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/users/dto/get-users-filter.dto.ts",
         "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/users/dto/get-recommended-filter.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4464,6 +4476,7 @@
         "../src/users/users.service.ts",
         "../src/users/dto/get-users-filter.dto.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/users/dto/get-recommended-filter.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7892,7 +7905,8 @@
       ],
       "../src/users/users.service.ts": [
         "../node_modules/neo4j-driver/types/index.d.ts",
-        "../src/users/dto/get-users-filter.dto.ts"
+        "../src/users/dto/get-users-filter.dto.ts",
+        "../src/users/dto/get-recommended-filter.dto.ts"
       ],
       "../src/auth/jwt.strategy.ts": [
         "../node_modules/neo4j-driver/types/index.d.ts",
@@ -7901,7 +7915,8 @@
       "../src/users/users.controller.ts": [
         "../node_modules/neo4j-driver/types/record.d.ts",
         "../src/users/users.service.ts",
-        "../src/users/dto/get-users-filter.dto.ts"
+        "../src/users/dto/get-users-filter.dto.ts",
+        "../src/users/dto/get-recommended-filter.dto.ts"
       ],
       "../src/genres/genres.service.ts": [
         "../node_modules/neo4j-driver/types/index.d.ts"
@@ -8903,7 +8918,7 @@
       "../node_modules/@nestjs/passport/dist/index.d.ts",
       "../node_modules/@nestjs/passport/index.d.ts",
       "../src/users/dto/get-users-filter.dto.ts",
-      "../src/users/users.service.ts",
+      "../src/users/dto/get-recommended-filter.dto.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.module.ts",
       "../src/users/users.controller.ts",
@@ -8918,6 +8933,7 @@
       "../src/songs/dto/get-songs-filter.dto.ts",
       "../src/songs/dto/view-song.dto.ts",
       "../src/songs/songs.service.ts",
+      "../src/songs/songs.controller.ts",
       "../src/songs/songs.module.ts",
       "../src/albums/dto/get-albums-filter.dto.ts",
       "../src/albums/albums.service.ts",
@@ -9005,7 +9021,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/songs/songs.controller.ts"
+      "../src/users/users.service.ts"
     ]
   },
   "version": "3.8.3"

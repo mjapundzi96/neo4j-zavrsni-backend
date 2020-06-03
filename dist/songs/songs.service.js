@@ -50,7 +50,6 @@ let SongsService = class SongsService {
     }
     async viewSong(id, viewSongDto) {
         const { user_id } = viewSongDto;
-        const song = await this.getSong(id);
         const query = (await this.neo4j.session().run(`MATCH (u:User),(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         CREATE (u)-[r:HAS_VIEWED{ date_time: datetime({timezone:'Europe/Zagreb'}) }]->(s)

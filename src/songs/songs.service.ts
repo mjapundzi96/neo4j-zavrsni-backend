@@ -25,6 +25,7 @@ export class SongsService {
     }
 
     async getSong(id: number) {
+
         const song_result = (await this.neo4j.session().run(`Match (n:Song) Where ID(n)=${id} return n;`)).records[0];
         if (song_result) {
 
@@ -41,9 +42,9 @@ export class SongsService {
         else throw new NotFoundException('Song not found');
     }
 
+
     async viewSong(id: number, viewSongDto: ViewSongDto) {
         const { user_id } = viewSongDto;
-        const song = await this.getSong(id);
         const query = (await this.neo4j.session().run(`MATCH (u:User),(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         CREATE (u)-[r:HAS_VIEWED{ date_time: datetime({timezone:'Europe/Zagreb'}) }]->(s)

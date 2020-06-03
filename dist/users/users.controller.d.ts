@@ -1,5 +1,6 @@
 import { UsersService } from './users.service';
 import { GetUsersFilterDto } from './dto/get-users-filter.dto';
+import { GetRecommendedFilterDto } from './dto/get-recommended-filter.dto';
 export declare class UsersController {
     private usersService;
     constructor(usersService: UsersService);
@@ -8,5 +9,7 @@ export declare class UsersController {
         id: any;
         username: any;
     }>;
-    getFavoriteArtists(user_id: number): Promise<any[]>;
+    getListenHistory(user_id: number): Promise<any[]>;
+    getRecommendedAlbums(user_id: number, getRecommendedFilterDto: GetRecommendedFilterDto): Promise<any[]>;
+    getRecommendedArtists(user_id: number, getRecommendedFilterDto: GetRecommendedFilterDto): Promise<any[]>;
 }
