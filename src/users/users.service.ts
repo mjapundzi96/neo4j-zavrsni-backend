@@ -31,6 +31,7 @@ export class UsersService {
         }
     }
 
+
     async getListenHistory(user_id: number) {
         const history_results = (await this.neo4j.session().run(`match (u:User)-[r:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id} return s,r.date_time ORDER BY r.date_time DESC;`)).records
         let songs = [];

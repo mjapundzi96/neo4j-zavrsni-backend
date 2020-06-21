@@ -1346,7 +1346,7 @@
         "signature": "457be652aa0aa3b15550edb9cd8cec37b009df1dfaaaa4ff06d36ac0c2d918ea"
       },
       "../src/users/users.service.ts": {
-        "version": "d3d76c141561b1d5a97dbd9a8e4d2480358d45c9a797f22fec4b93594b35f112",
+        "version": "5e1f7f885006b307d550ea290d5a96423f3f42751a0e72b3bc5026201d8371a0",
         "signature": "b8923264b2c0f424b202cb0e1250cdb421dde7332b9368cd03ce01cf35b7766d"
       },
       "../src/auth/jwt.strategy.ts": {
@@ -1402,7 +1402,7 @@
         "signature": "7bacb9d6d5305b0f758ce267e15a7e53e142d2d877a905e4b940ebe720a52aba"
       },
       "../src/songs/songs.service.ts": {
-        "version": "c1a59d4f42a23518ca219e4f9bd75e2326434d63f0ce00bdbab88ae147daa270",
+        "version": "706f95ef1bb1467245cc6919c385a8b5423c80e6654b3e1c805dcd7d4c3c9d6b",
         "signature": "e41152a68524ead71aa4d5811c9108ca0b3fdad4a7c30748b6c465b72a4c013a"
       },
       "../src/songs/songs.controller.ts": {
@@ -8919,7 +8919,6 @@
       "../node_modules/@nestjs/passport/index.d.ts",
       "../src/users/dto/get-users-filter.dto.ts",
       "../src/users/dto/get-recommended-filter.dto.ts",
-      "../src/users/users.service.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.module.ts",
       "../src/users/users.controller.ts",
@@ -8933,10 +8932,14 @@
       "../src/artists/artists.module.ts",
       "../src/songs/dto/get-songs-filter.dto.ts",
       "../src/songs/dto/view-song.dto.ts",
+      "../src/songs/songs.service.ts",
+      "../src/songs/songs.controller.ts",
+      "../src/songs/songs.module.ts",
       "../src/albums/dto/get-albums-filter.dto.ts",
       "../src/albums/albums.service.ts",
       "../src/albums/albums.controller.ts",
       "../src/albums/albums.module.ts",
+      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -9018,10 +9021,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/songs/songs.service.ts",
-      "../src/songs/songs.module.ts",
-      "../src/songs/songs.controller.ts",
-      "../src/app.module.ts"
+      "../src/users/users.service.ts"
     ]
   },
   "version": "3.8.3"
