@@ -1346,7 +1346,7 @@
         "signature": "457be652aa0aa3b15550edb9cd8cec37b009df1dfaaaa4ff06d36ac0c2d918ea"
       },
       "../src/users/users.service.ts": {
-        "version": "44524ce16bf03aee55bc3aea2d0200a8120c58e3cc05d5f50a34beee6ac1cd2f",
+        "version": "d3d76c141561b1d5a97dbd9a8e4d2480358d45c9a797f22fec4b93594b35f112",
         "signature": "b8923264b2c0f424b202cb0e1250cdb421dde7332b9368cd03ce01cf35b7766d"
       },
       "../src/auth/jwt.strategy.ts": {
@@ -1382,7 +1382,7 @@
         "signature": "45865dd409c5c8042e4a96cef0f3ed11e9ca827e2dc24a6f3b5c646099d9efa6"
       },
       "../src/artists/artists.service.ts": {
-        "version": "76350863d3a6303f56c99ef26c4da560963ccd8f4a8a929a23cb2b82fa6c9cfa",
+        "version": "59ed157ada4894d8d2ded54566c53e28c8e58b5766fcadbc7a6b3e1cda768cb6",
         "signature": "3c650069445aa6facc35ede891c4e9afa5cc7b4d20b831afde4618a0ac105d5c"
       },
       "../src/artists/artists.controller.ts": {
@@ -1402,12 +1402,12 @@
         "signature": "7bacb9d6d5305b0f758ce267e15a7e53e142d2d877a905e4b940ebe720a52aba"
       },
       "../src/songs/songs.service.ts": {
-        "version": "b90fb0f2e5278855e3fed30c53635edc4095e1a735caf39651dff9446fcaa151",
-        "signature": "c9a1812a69e6fd0c50bdbc34f205ec922056fa3a931e91fbafc7f31375a7bb63"
+        "version": "c1a59d4f42a23518ca219e4f9bd75e2326434d63f0ce00bdbab88ae147daa270",
+        "signature": "e41152a68524ead71aa4d5811c9108ca0b3fdad4a7c30748b6c465b72a4c013a"
       },
       "../src/songs/songs.controller.ts": {
         "version": "58ca810137c071e2353141bde2c88dbc0b20eab26c2e4a99f04bbd4a8a6f8904",
-        "signature": "182387e3aeb37801859850f78079889715f92318edaea017d8947993a50eb3d1"
+        "signature": "dff92ba020ea632315d8c3ef39a7ce31a873eefbb6ab612ce801105e4f114ffd"
       },
       "../src/songs/songs.module.ts": {
         "version": "9b8662284532087baed4cf5def73060e30c7a9928bf365b0ddc0d74b91135525",
@@ -1418,7 +1418,7 @@
         "signature": "65d8ec0839b192d1e358f2b4626804625417ab16cb467ac2e06d2e2c846715a4"
       },
       "../src/albums/albums.service.ts": {
-        "version": "15110255a559d69fc7cd5dd3086979e5cd8b0c3d6d5194896a6f40ad6c326d98",
+        "version": "b420ef9219b51dea1c651b1aab3e6da083703f64da1ecf0bc3785d8024903d83",
         "signature": "393804230cdb04564810f0337649bcd5ddee9f05729769c71ff8e3f07a08f961"
       },
       "../src/albums/albums.controller.ts": {
@@ -8919,6 +8919,7 @@
       "../node_modules/@nestjs/passport/index.d.ts",
       "../src/users/dto/get-users-filter.dto.ts",
       "../src/users/dto/get-recommended-filter.dto.ts",
+      "../src/users/users.service.ts",
       "../src/auth/jwt.strategy.ts",
       "../src/auth/auth.module.ts",
       "../src/users/users.controller.ts",
@@ -8932,14 +8933,10 @@
       "../src/artists/artists.module.ts",
       "../src/songs/dto/get-songs-filter.dto.ts",
       "../src/songs/dto/view-song.dto.ts",
-      "../src/songs/songs.service.ts",
-      "../src/songs/songs.controller.ts",
-      "../src/songs/songs.module.ts",
       "../src/albums/dto/get-albums-filter.dto.ts",
       "../src/albums/albums.service.ts",
       "../src/albums/albums.controller.ts",
       "../src/albums/albums.module.ts",
-      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -9021,7 +9018,10 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/users/users.service.ts"
+      "../src/songs/songs.service.ts",
+      "../src/songs/songs.module.ts",
+      "../src/songs/songs.controller.ts",
+      "../src/app.module.ts"
     ]
   },
   "version": "3.8.3"

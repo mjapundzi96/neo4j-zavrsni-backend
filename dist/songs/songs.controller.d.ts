@@ -10,6 +10,15 @@ export declare class SongsController {
         title: any;
         views: any;
         songUrl: any;
+        album: {
+            id: any;
+            name: any;
+            coverUrl: any;
+            artist: {
+                id: any;
+                name: any;
+            };
+        };
     }>;
     viewSong(id: number, viewSongDto: ViewSongDto): Promise<boolean>;
 }

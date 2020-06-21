@@ -38,7 +38,6 @@ let AlbumsService = class AlbumsService {
         if (album_result) {
             let songs = [];
             const songs_results = (await this.neo4j.session().run(`MATCH (s:Song)-[:FROM_ALBUM]-(a:Album) WHERE ID(a)=${id} return s;`)).records;
-            console.log(songs_results);
             songs_results.forEach(result => {
                 const fields = result["_fields"][0];
                 songs.push({

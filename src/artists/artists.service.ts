@@ -53,4 +53,5 @@ export class ArtistsService {
         }
         else throw new NotFoundException('Artist not found');
     }
+    
 }

@@ -34,14 +34,25 @@ let SongsService = class SongsService {
         return songs;
     }
     async getSong(id) {
-        const song_result = (await this.neo4j.session().run(`Match (n:Song) Where ID(n)=${id} return n;`)).records[0];
+        const song_result = (await this.neo4j.session().run(`Match (s:Song)-[r:FROM_ALBUM]->(al:Album)-[r2:BY_ARTIST]->(ar:Artist) Where ID(s)=${id} return s,al,ar;`)).records[0];
         if (song_result) {
-            const fields = song_result["_fields"][0];
+            const song_fields = song_result["_fields"][0];
+            const album_fields = song_result["_fields"][1];
+            const artist_fields = song_result["_fields"][2];
             const song = {
-                id: fields.identity.low,
-                title: fields.properties.title,
-                views: fields.properties.views.low,
-                songUrl: fields.properties.songUrl,
+                id: song_fields.identity.low,
+                title: song_fields.properties.title,
+                views: song_fields.properties.views.low,
+                songUrl: song_fields.properties.songUrl,
+                album: {
+                    id: album_fields.identity.low,
+                    name: album_fields.properties.name,
+                    coverUrl: album_fields.properties.coverUrl,
+                    artist: {
+                        id: artist_fields.identity.low,
+                        name: artist_fields.properties.name,
+                    }
+                }
             };
             return song;
         }

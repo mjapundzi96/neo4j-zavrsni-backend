@@ -58,7 +58,6 @@ export class UsersService {
             const fields = result["_fields"][0];
             const views = result["_fields"][1].low
             const artist = result["_fields"][2]
-            console.log(artist)
             albums.push({
                 id: fields.identity.low,
                 name: fields.properties.name,
