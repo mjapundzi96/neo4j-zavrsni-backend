@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
-import { neo4jProvider } from 'src/config/neo4j.config';
 import { AuthModule } from 'src/auth/auth.module';
+import { Neo4jModule } from './../neo4j/neo4j.module';
 
 @Module({
-    imports: [AuthModule],
+    imports: [AuthModule, Neo4jModule],
     controllers: [UsersController],
-    providers: [UsersService, neo4jProvider]
+    providers: [UsersService]
 })
 
 export class UsersModule {

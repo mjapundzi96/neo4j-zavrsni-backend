@@ -1,15 +1,12 @@
-import { GetUsersFilterDto } from './dto/get-users-filter.dto';
-import * as Neo4j from 'neo4j-driver';
+import { Neo4jService } from './../neo4j/neo4j.service';
 import { GetRecommendedFilterDto } from './dto/get-recommended-filter.dto';
+import { User } from './../models/user.model';
+import { Song, Album } from 'src/models';
 export declare class UsersService {
     private readonly neo4j;
-    constructor(neo4j: Neo4j.Driver);
-    getUsers(filterDto: GetUsersFilterDto): Promise<Neo4j.Record[]>;
-    getUser(user_id: number): Promise<{
-        id: any;
-        username: any;
-    }>;
-    getListenHistory(user_id: number): Promise<any[]>;
-    getRecommendendedAlbums(user_id: number, getRecommendedFilterDto: GetRecommendedFilterDto): Promise<any[]>;
+    constructor(neo4j: Neo4jService);
+    getUser(id: number): Promise<User>;
+    getListenHistory(user_id: number): Promise<Song[]>;
+    getRecommendendedAlbums(user_id: number, getRecommendedFilterDto: GetRecommendedFilterDto): Promise<Album[]>;
     getRecommendedArtists(user_id: number, getRecommendedFilterDto: GetRecommendedFilterDto): Promise<any[]>;
 }

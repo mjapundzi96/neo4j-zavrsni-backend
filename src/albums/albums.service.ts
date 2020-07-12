@@ -5,11 +5,11 @@ import { GetAlbumsFilterDto } from './dto/get-albums-filter.dto';
 @Injectable()
 export class AlbumsService {
     constructor(
-        @Inject("Neo4j") private readonly neo4j: Neo4j.Driver
+        /* @Inject("Neo4j") private readonly neo4j: Neo4j.Driver */
     ) { }
 
     async getAlbums(filterDto: GetAlbumsFilterDto){
-        const { name } = filterDto;
+       /*  const { name } = filterDto;
         const album_results = (await this.neo4j.session().run(`Match (n:Album) Where toUpper(n.name) CONTAINS toUpper('${name}') return n;`)).records;
         let albums = [];
         album_results.forEach(result=>{
@@ -21,11 +21,11 @@ export class AlbumsService {
                 coverUrl: fields.properties.coverUrl,
             })
         })
-        return albums;
+        return albums; */
     }
 
     async getAlbum(id: number) {
-        const album_result = (await this.neo4j.session().run(`Match (n:Album) Where ID(n)=${id} return n;`)).records[0];
+        /* const album_result = (await this.neo4j.session().run(`Match (n:Album) Where ID(n)=${id} return n;`)).records[0];
         if (album_result) {
             let songs = []
             const songs_results = (await this.neo4j.session().run(`MATCH (s:Song)-[:FROM_ALBUM]-(a:Album) WHERE ID(a)=${id} return s;`)).records;
@@ -48,6 +48,6 @@ export class AlbumsService {
 
             return album;
         }
-        else throw new NotFoundException('Album not found');
+        else throw new NotFoundException('Album not found'); */
     }
 }

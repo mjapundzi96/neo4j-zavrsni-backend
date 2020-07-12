@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AlbumsController } from './albums.controller';
 import { AlbumsService } from './albums.service';
-import { neo4jProvider } from 'src/config/neo4j.config';
+import { Neo4jModule } from './../neo4j/neo4j.module';
 
 @Module({
+  imports: [Neo4jModule],
   controllers: [AlbumsController],
-  providers: [AlbumsService,neo4jProvider]
+  providers: [AlbumsService]
 })
-export class AlbumsModule {}
+export class AlbumsModule { }

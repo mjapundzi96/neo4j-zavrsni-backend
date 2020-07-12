@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const songs_service_1 = require("./songs.service");
 const get_songs_filter_dto_1 = require("./dto/get-songs-filter.dto");
-const view_song_dto_1 = require("./dto/view-song.dto");
+const passport_1 = require("@nestjs/passport");
 let SongsController = class SongsController {
     constructor(SongsService) {
         this.SongsService = SongsService;
@@ -26,8 +26,8 @@ let SongsController = class SongsController {
     async getSong(id) {
         return await this.SongsService.getSong(id);
     }
-    async viewSong(id, viewSongDto) {
-        return await this.SongsService.viewSong(id, viewSongDto);
+    async viewSong(id, request) {
+        return await this.SongsService.viewSong(id, request.user.id);
     }
 };
 __decorate([
@@ -46,13 +46,15 @@ __decorate([
 ], SongsController.prototype, "getSong", null);
 __decorate([
     common_1.Post('/:id/view'),
-    __param(0, common_1.Param('id')), __param(1, common_1.Body(common_1.ValidationPipe)),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Req()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, view_song_dto_1.ViewSongDto]),
+    __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], SongsController.prototype, "viewSong", null);
 SongsController = __decorate([
     common_1.Controller('songs'),
+    common_1.UseGuards(passport_1.AuthGuard()),
     __metadata("design:paramtypes", [songs_service_1.SongsService])
 ], SongsController);
 exports.SongsController = SongsController;

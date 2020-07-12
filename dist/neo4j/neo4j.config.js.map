@@ -1,0 +1,1 @@
+{"version":3,"file":"neo4j.config.js","sourceRoot":"","sources":["../../src/neo4j/neo4j.config.ts"],"names":[],"mappings":";;AAAA,sCAAsC;AAEzB,QAAA,aAAa,GAAG;IACzB,OAAO,EAAE,OAAO;IAChB,UAAU,EAAE,GAAG,EAAE,CAAC,KAAK,CAAC,MAAM,CAAC,kBAAkB,EAAE,KAAK,CAAC,IAAI,CAAC,KAAK,CAAC,OAAO,EAAE,OAAO,CAAC,CAAC;CACzF,CAAC"}

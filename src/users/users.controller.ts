@@ -1,32 +1,27 @@
-import { Controller, Get, ValidationPipe, Query, UseGuards, Param } from '@nestjs/common';
+import { Controller, Get, ValidationPipe, Query, UseGuards, Param, Req } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { GetUsersFilterDto } from './dto/get-users-filter.dto';
 import { AuthGuard } from '@nestjs/passport'
 import { GetRecommendedFilterDto } from './dto/get-recommended-filter.dto';
+import { Song, User } from 'src/models';
 
 @Controller('users')
-
+@UseGuards(AuthGuard())
 export class UsersController {
     constructor(private usersService: UsersService) { }
-    @UseGuards(AuthGuard())
-    @Get()
-    async getUsers(
-        @Query(ValidationPipe) filterDto: GetUsersFilterDto,
-    ) {
-        return this.usersService.getUsers(filterDto);
-    }
 
     @Get('/:id')
     async getUser(
-        @Param('id') id: number
-    ) {
+        @Param('id') id: number,
+        @Req() request
+    ): Promise<User> {
+        //console.log(request.user.id)
         return this.usersService.getUser(id);
     }
 
     @Get('/:id/listen_history')
     async getListenHistory(
         @Param('id') user_id: number
-    ) {
+    ): Promise<Song[]> {
         return this.usersService.getListenHistory(user_id);
     }
 

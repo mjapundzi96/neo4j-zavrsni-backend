@@ -5,10 +5,10 @@ import { GetArtistsFilterDto } from './dto/get-artists-filter.dto';
 @Injectable()
 export class ArtistsService {
     constructor(
-        @Inject("Neo4j") private readonly neo4j: Neo4j.Driver
+        /* @Inject("Neo4j") private readonly neo4j: Neo4j.Driver */
     ) { }
     async getArtists(filterDto:GetArtistsFilterDto) {
-        const { name } = filterDto;
+       /*  const { name } = filterDto;
         const artists_results = (await this.neo4j.session().run(`Match (n:Artist) Where toUpper(n.name) CONTAINS toUpper('${name}') return n;`)).records;
         let artists = [];
         artists_results.forEach(result=>{
@@ -21,11 +21,11 @@ export class ArtistsService {
                 imageUrl: fields.properties.imageUrl,
             })
         })
-        return artists;
+        return artists; */
     }
 
     async getArtist(id: number) {
-        const artist_result = (await this.neo4j.session().run(`Match (n:Artist) Where ID(n)=${id} return n;`)).records[0];
+       /*  const artist_result = (await this.neo4j.session().run(`Match (n:Artist) Where ID(n)=${id} return n;`)).records[0];
         if (artist_result) {
             let albums = [];
             const albums_results = (await this.neo4j.session().run(`MATCH (al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE ID(ar)=${id}
@@ -51,7 +51,7 @@ export class ArtistsService {
 
             return artist;
         }
-        else throw new NotFoundException('Artist not found');
+        else throw new NotFoundException('Artist not found'); */
     }
     
 }

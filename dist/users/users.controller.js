@@ -14,17 +14,14 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
-const get_users_filter_dto_1 = require("./dto/get-users-filter.dto");
 const passport_1 = require("@nestjs/passport");
 const get_recommended_filter_dto_1 = require("./dto/get-recommended-filter.dto");
+const models_1 = require("../models");
 let UsersController = class UsersController {
     constructor(usersService) {
         this.usersService = usersService;
     }
-    async getUsers(filterDto) {
-        return this.usersService.getUsers(filterDto);
-    }
-    async getUser(id) {
+    async getUser(id, request) {
         return this.usersService.getUser(id);
     }
     async getListenHistory(user_id) {
@@ -38,18 +35,11 @@ let UsersController = class UsersController {
     }
 };
 __decorate([
-    common_1.UseGuards(passport_1.AuthGuard()),
-    common_1.Get(),
-    __param(0, common_1.Query(common_1.ValidationPipe)),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [get_users_filter_dto_1.GetUsersFilterDto]),
-    __metadata("design:returntype", Promise)
-], UsersController.prototype, "getUsers", null);
-__decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),
+    __param(1, common_1.Req()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getUser", null);
 __decorate([
@@ -77,6 +67,7 @@ __decorate([
 ], UsersController.prototype, "getRecommendedArtists", null);
 UsersController = __decorate([
     common_1.Controller('users'),
+    common_1.UseGuards(passport_1.AuthGuard()),
     __metadata("design:paramtypes", [users_service_1.UsersService])
 ], UsersController);
 exports.UsersController = UsersController;

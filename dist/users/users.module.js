@@ -9,15 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const users_controller_1 = require("./users.controller");
 const users_service_1 = require("./users.service");
-const neo4j_config_1 = require("../config/neo4j.config");
 const auth_module_1 = require("../auth/auth.module");
+const neo4j_module_1 = require("./../neo4j/neo4j.module");
 let UsersModule = class UsersModule {
 };
 UsersModule = __decorate([
     common_1.Module({
-        imports: [auth_module_1.AuthModule],
+        imports: [auth_module_1.AuthModule, neo4j_module_1.Neo4jModule],
         controllers: [users_controller_1.UsersController],
-        providers: [users_service_1.UsersService, neo4j_config_1.neo4jProvider]
+        providers: [users_service_1.UsersService]
     })
 ], UsersModule);
 exports.UsersModule = UsersModule;

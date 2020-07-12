@@ -1,9 +1,10 @@
-import { Controller, Query, Get, Param, ValidationPipe, Post, Body } from '@nestjs/common';
+import { Controller, Query, Get, Param, ValidationPipe, Post, Body, Request, Req, UseGuards } from '@nestjs/common';
 import { SongsService } from './songs.service'
 import { GetSongsFilterDto } from './dto/get-songs-filter.dto';
-import { ViewSongDto } from './dto/view-song.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('songs')
+@UseGuards(AuthGuard())
 export class SongsController {
     constructor(private SongsService: SongsService) { }
 
@@ -22,7 +23,9 @@ export class SongsController {
 
     @Post('/:id/view')
     async viewSong(
-        @Param('id') id: number, @Body(ValidationPipe) viewSongDto: ViewSongDto) {
-        return await this.SongsService.viewSong(id,viewSongDto);
+        @Param('id') id: number,
+        @Req() request: any
+    ) {
+        return await this.SongsService.viewSong(id,request.user.id);
     }
 }

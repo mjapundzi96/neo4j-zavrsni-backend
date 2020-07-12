@@ -9,13 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const artists_controller_1 = require("./artists.controller");
 const artists_service_1 = require("./artists.service");
-const neo4j_config_1 = require("../config/neo4j.config");
+const neo4j_module_1 = require("./../neo4j/neo4j.module");
 let ArtistsModule = class ArtistsModule {
 };
 ArtistsModule = __decorate([
     common_1.Module({
+        imports: [neo4j_module_1.Neo4jModule],
         controllers: [artists_controller_1.ArtistsController],
-        providers: [artists_service_1.ArtistsService, neo4j_config_1.neo4jProvider]
+        providers: [artists_service_1.ArtistsService]
     })
 ], ArtistsModule);
 exports.ArtistsModule = ArtistsModule;

@@ -12,7 +12,7 @@ const auth_service_1 = require("./auth.service");
 const jwt_1 = require("@nestjs/jwt");
 const passport_1 = require("@nestjs/passport");
 const jwt_strategy_1 = require("./jwt.strategy");
-const neo4j_config_1 = require("./../config/neo4j.config");
+const neo4j_module_1 = require("./../neo4j/neo4j.module");
 let AuthModule = class AuthModule {
 };
 AuthModule = __decorate([
@@ -22,15 +22,15 @@ AuthModule = __decorate([
             jwt_1.JwtModule.register({
                 secret: 'topSecret51',
                 signOptions: {
-                    expiresIn: 3600,
+                    expiresIn: 100000,
                 }
-            })
+            }),
+            neo4j_module_1.Neo4jModule
         ],
         controllers: [auth_controller_1.AuthController],
         providers: [
             auth_service_1.AuthService,
             jwt_strategy_1.JwtStrategy,
-            neo4j_config_1.neo4jProvider
         ],
         exports: [
             jwt_strategy_1.JwtStrategy,

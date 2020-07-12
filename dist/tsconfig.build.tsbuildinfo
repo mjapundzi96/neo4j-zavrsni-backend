@@ -1109,74 +1109,6 @@
         "version": "889217ad477746373279790aba0da66aff7d45996448980078674c666c10d4e7",
         "signature": "3f37551a8641ba5e1f91983c6042d9c56236f456d578fd4d3bd29385d872c4a6"
       },
-      "../node_modules/neo4j-driver/types/integer.d.ts": {
-        "version": "f3fd58a0a7da9c63f9eb183d0c56c41a184c21c778cb57417bff6afb0b685793",
-        "signature": "f3fd58a0a7da9c63f9eb183d0c56c41a184c21c778cb57417bff6afb0b685793"
-      },
-      "../node_modules/neo4j-driver/types/graph-types.d.ts": {
-        "version": "03588c73a184c7b9d35b1a03cf69c42402bf8a395e33fadc99498ef795bb19d5",
-        "signature": "03588c73a184c7b9d35b1a03cf69c42402bf8a395e33fadc99498ef795bb19d5"
-      },
-      "../node_modules/neo4j-driver/types/spatial-types.d.ts": {
-        "version": "8c5241f58ca1ba03c4f175bc71606a16e6e959aaa4975c584363b5cf8ab17e27",
-        "signature": "8c5241f58ca1ba03c4f175bc71606a16e6e959aaa4975c584363b5cf8ab17e27"
-      },
-      "../node_modules/neo4j-driver/types/temporal-types.d.ts": {
-        "version": "1645286aa00c1a6b19d67be75a2f41e288e4c28e18e56218c14d8bc9b865283e",
-        "signature": "1645286aa00c1a6b19d67be75a2f41e288e4c28e18e56218c14d8bc9b865283e"
-      },
-      "../node_modules/neo4j-driver/types/error.d.ts": {
-        "version": "f96b1b73c7b4453d8e8da4f2d5d626eceaa6690b52789b2c5c8a8d230be20da9",
-        "signature": "f96b1b73c7b4453d8e8da4f2d5d626eceaa6690b52789b2c5c8a8d230be20da9"
-      },
-      "../node_modules/neo4j-driver/types/result-summary.d.ts": {
-        "version": "c36792abfd19fe1b858c471334800a724996e2c3cd1b9c1881557758aa20cd12",
-        "signature": "c36792abfd19fe1b858c471334800a724996e2c3cd1b9c1881557758aa20cd12"
-      },
-      "../node_modules/neo4j-driver/types/record.d.ts": {
-        "version": "a9ffb1e8309dedb463f94dbabe9b0c666cffb2b0f79d6b2118bebef5eba8f6dd",
-        "signature": "a9ffb1e8309dedb463f94dbabe9b0c666cffb2b0f79d6b2118bebef5eba8f6dd"
-      },
-      "../node_modules/neo4j-driver/types/result.d.ts": {
-        "version": "ba449b342d8c0ea414aefa34792e27b7331b42a67f195b338e17b9cede2159cb",
-        "signature": "ba449b342d8c0ea414aefa34792e27b7331b42a67f195b338e17b9cede2159cb"
-      },
-      "../node_modules/neo4j-driver/types/query-runner.d.ts": {
-        "version": "2b3f6602a201eb8f476b3533a739b737dcdcbe9dd62544e1152c180005bacb3f",
-        "signature": "2b3f6602a201eb8f476b3533a739b737dcdcbe9dd62544e1152c180005bacb3f"
-      },
-      "../node_modules/neo4j-driver/types/transaction.d.ts": {
-        "version": "bdfceee8117d5b094d641aab3bd76b39f77d77af3fcc4a913863929e4ad9dde9",
-        "signature": "bdfceee8117d5b094d641aab3bd76b39f77d77af3fcc4a913863929e4ad9dde9"
-      },
-      "../node_modules/neo4j-driver/types/session.d.ts": {
-        "version": "81b78f20682f6960b2004caa03246b5ba71f00faf8ee5c12f17c7431b57329e1",
-        "signature": "81b78f20682f6960b2004caa03246b5ba71f00faf8ee5c12f17c7431b57329e1"
-      },
-      "../node_modules/neo4j-driver/types/result-rx.d.ts": {
-        "version": "4b5c659929e59c3cbaa102d20ec56a6d4d9b47cf3b215ee65d9b24732b7a7297",
-        "signature": "4b5c659929e59c3cbaa102d20ec56a6d4d9b47cf3b215ee65d9b24732b7a7297"
-      },
-      "../node_modules/neo4j-driver/types/transaction-rx.d.ts": {
-        "version": "412aa11d7fc6a2d122d75bd30b90dca88ebcfa673e092fb6adb7eadd2f7a78c2",
-        "signature": "412aa11d7fc6a2d122d75bd30b90dca88ebcfa673e092fb6adb7eadd2f7a78c2"
-      },
-      "../node_modules/neo4j-driver/types/session-rx.d.ts": {
-        "version": "7ea095275669e9aeb00bd6b0ebf4215278ad7e867ffdd8a77948b044179e9194",
-        "signature": "7ea095275669e9aeb00bd6b0ebf4215278ad7e867ffdd8a77948b044179e9194"
-      },
-      "../node_modules/neo4j-driver/types/driver.d.ts": {
-        "version": "658f7001d1a27a184a4b91c6b0d3bf49d4a8290fb4eb04e0c75edabaaa6719e1",
-        "signature": "658f7001d1a27a184a4b91c6b0d3bf49d4a8290fb4eb04e0c75edabaaa6719e1"
-      },
-      "../node_modules/neo4j-driver/types/index.d.ts": {
-        "version": "f22425ca297df84be85bfaf2cad561e2a2ca1b0bddf52a63d370cff609e2ec4f",
-        "signature": "f22425ca297df84be85bfaf2cad561e2a2ca1b0bddf52a63d370cff609e2ec4f"
-      },
-      "../src/config/neo4j.config.ts": {
-        "version": "ba00d82a79ed025229991e4d227edb867cbd795388d21b7685b1efb1f46a0ef8",
-        "signature": "25581b61d3d12ca9dacc751feee6a44d30242948c440e3a8874b0948c52f0a3c"
-      },
       "../node_modules/class-validator/validation/validationerror.d.ts": {
         "version": "8b5ad058f8dab857050fdbb092b9f1267d22641f0f746cd8a7abee85b48bb83a",
         "signature": "8b5ad058f8dab857050fdbb092b9f1267d22641f0f746cd8a7abee85b48bb83a"
@@ -1282,19 +1214,95 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
       "../src/auth/jwt-payload.interface.ts": {
-        "version": "7b0b64606db0ec2ebc8f8b362cfd199220e75d11cf8c2a4842bc66c7e1c7b411",
-        "signature": "77c1b8501a92de931f60f711f96a05e4c972fc42fb2c0c63a228e4e14c82b9a9"
+        "version": "eebe7a66f023a6ce7964d57afec6472d0199dc07c02c099f97a29f8a5652a0bb",
+        "signature": "147fa77eebd304e5a36eae86f7e709d33fee6d518cf5e6aa25d985a8c80e4e8f"
       },
-      "../src/users/user.model.ts": {
-        "version": "88506176ed558a76042cb58147c344b48cededcde0ec10898fa565d3fc25cb38",
-        "signature": "45b88ca483d0e038b5ad515fa0a73c738a27a96ab79333462c0855d165d0ec72"
+      "../src/models/user.model.ts": {
+        "version": "aec9dd3cbacfa5c63cebf1e334814dae59ea0bd8c771e93ddc1b6361964a5e26",
+        "signature": "c7472f5df2cfd1d07d85e7fa96cfcbbf6332b7cb1ade3e7b835c192f620ccc04"
+      },
+      "../node_modules/neo4j-driver/types/integer.d.ts": {
+        "version": "f3fd58a0a7da9c63f9eb183d0c56c41a184c21c778cb57417bff6afb0b685793",
+        "signature": "f3fd58a0a7da9c63f9eb183d0c56c41a184c21c778cb57417bff6afb0b685793"
+      },
+      "../node_modules/neo4j-driver/types/graph-types.d.ts": {
+        "version": "03588c73a184c7b9d35b1a03cf69c42402bf8a395e33fadc99498ef795bb19d5",
+        "signature": "03588c73a184c7b9d35b1a03cf69c42402bf8a395e33fadc99498ef795bb19d5"
+      },
+      "../node_modules/neo4j-driver/types/spatial-types.d.ts": {
+        "version": "8c5241f58ca1ba03c4f175bc71606a16e6e959aaa4975c584363b5cf8ab17e27",
+        "signature": "8c5241f58ca1ba03c4f175bc71606a16e6e959aaa4975c584363b5cf8ab17e27"
+      },
+      "../node_modules/neo4j-driver/types/temporal-types.d.ts": {
+        "version": "1645286aa00c1a6b19d67be75a2f41e288e4c28e18e56218c14d8bc9b865283e",
+        "signature": "1645286aa00c1a6b19d67be75a2f41e288e4c28e18e56218c14d8bc9b865283e"
+      },
+      "../node_modules/neo4j-driver/types/error.d.ts": {
+        "version": "f96b1b73c7b4453d8e8da4f2d5d626eceaa6690b52789b2c5c8a8d230be20da9",
+        "signature": "f96b1b73c7b4453d8e8da4f2d5d626eceaa6690b52789b2c5c8a8d230be20da9"
+      },
+      "../node_modules/neo4j-driver/types/result-summary.d.ts": {
+        "version": "c36792abfd19fe1b858c471334800a724996e2c3cd1b9c1881557758aa20cd12",
+        "signature": "c36792abfd19fe1b858c471334800a724996e2c3cd1b9c1881557758aa20cd12"
+      },
+      "../node_modules/neo4j-driver/types/record.d.ts": {
+        "version": "a9ffb1e8309dedb463f94dbabe9b0c666cffb2b0f79d6b2118bebef5eba8f6dd",
+        "signature": "a9ffb1e8309dedb463f94dbabe9b0c666cffb2b0f79d6b2118bebef5eba8f6dd"
+      },
+      "../node_modules/neo4j-driver/types/result.d.ts": {
+        "version": "ba449b342d8c0ea414aefa34792e27b7331b42a67f195b338e17b9cede2159cb",
+        "signature": "ba449b342d8c0ea414aefa34792e27b7331b42a67f195b338e17b9cede2159cb"
+      },
+      "../node_modules/neo4j-driver/types/query-runner.d.ts": {
+        "version": "2b3f6602a201eb8f476b3533a739b737dcdcbe9dd62544e1152c180005bacb3f",
+        "signature": "2b3f6602a201eb8f476b3533a739b737dcdcbe9dd62544e1152c180005bacb3f"
+      },
+      "../node_modules/neo4j-driver/types/transaction.d.ts": {
+        "version": "bdfceee8117d5b094d641aab3bd76b39f77d77af3fcc4a913863929e4ad9dde9",
+        "signature": "bdfceee8117d5b094d641aab3bd76b39f77d77af3fcc4a913863929e4ad9dde9"
+      },
+      "../node_modules/neo4j-driver/types/session.d.ts": {
+        "version": "81b78f20682f6960b2004caa03246b5ba71f00faf8ee5c12f17c7431b57329e1",
+        "signature": "81b78f20682f6960b2004caa03246b5ba71f00faf8ee5c12f17c7431b57329e1"
+      },
+      "../node_modules/neo4j-driver/types/result-rx.d.ts": {
+        "version": "4b5c659929e59c3cbaa102d20ec56a6d4d9b47cf3b215ee65d9b24732b7a7297",
+        "signature": "4b5c659929e59c3cbaa102d20ec56a6d4d9b47cf3b215ee65d9b24732b7a7297"
+      },
+      "../node_modules/neo4j-driver/types/transaction-rx.d.ts": {
+        "version": "412aa11d7fc6a2d122d75bd30b90dca88ebcfa673e092fb6adb7eadd2f7a78c2",
+        "signature": "412aa11d7fc6a2d122d75bd30b90dca88ebcfa673e092fb6adb7eadd2f7a78c2"
+      },
+      "../node_modules/neo4j-driver/types/session-rx.d.ts": {
+        "version": "7ea095275669e9aeb00bd6b0ebf4215278ad7e867ffdd8a77948b044179e9194",
+        "signature": "7ea095275669e9aeb00bd6b0ebf4215278ad7e867ffdd8a77948b044179e9194"
+      },
+      "../node_modules/neo4j-driver/types/driver.d.ts": {
+        "version": "658f7001d1a27a184a4b91c6b0d3bf49d4a8290fb4eb04e0c75edabaaa6719e1",
+        "signature": "658f7001d1a27a184a4b91c6b0d3bf49d4a8290fb4eb04e0c75edabaaa6719e1"
+      },
+      "../node_modules/neo4j-driver/types/index.d.ts": {
+        "version": "f22425ca297df84be85bfaf2cad561e2a2ca1b0bddf52a63d370cff609e2ec4f",
+        "signature": "f22425ca297df84be85bfaf2cad561e2a2ca1b0bddf52a63d370cff609e2ec4f"
+      },
+      "../src/neo4j/neo4j-config.interface.ts": {
+        "version": "24c864177dbfc62b0b29cd9d9bb11e5689c1a27696a5f779a33f3fac12ccc4de",
+        "signature": "c1a9dba06724b6e844808e1e6658af655924d78891a85c947f3b6e8aed96d2fd"
+      },
+      "../src/neo4j/neo4j.constants.ts": {
+        "version": "c423faeb2cde04cc99637efe6904152e987519399d8b422f5e5869e0f3544db7",
+        "signature": "edccbd660643922ea341d2bd9b0eb6fbb999dce7d28055de6ca74c159edebc9c"
+      },
+      "../src/neo4j/neo4j.service.ts": {
+        "version": "e6f826244b58cc190a2f418db1c6eebba64f8ae2d85897548d7b90d7109bae3d",
+        "signature": "327aebf74bd8ec3f0f3b7052e0b002baa8345dbc5e67c77959ddb60c648e866b"
       },
       "../src/auth/auth.service.ts": {
-        "version": "1a418318c3c31d46959d773549ff85992c6f3ba8339d852575197ba21550be42",
-        "signature": "e58a9ec33e739941da5529a3d319c7ab2c321e8824ccd0b4479874198fc3aaff"
+        "version": "47b050d12cb2e1f0ceafa5725cff790ca95252c9b27ac23d60e5e44050efa977",
+        "signature": "e3f9311f39254fb7c33611f4db4e817fa31ba8d4245bc5b55e579a218c865136"
       },
       "../src/auth/auth.controller.ts": {
-        "version": "f0e4bbdc17bb1403068d531410ae7857719e6b7424b0e2f0a24c58f9b17910b2",
+        "version": "0760520055be00689f50ba25e37298365566205d3497989ed05bab9a65ec1818",
         "signature": "ddea2caeda224b100fdb60547b16d0e251690df4b7523df2086594145a8950a2"
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -1337,6 +1345,70 @@
         "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
       },
+      "../src/auth/jwt.strategy.ts": {
+        "version": "048c34e477b36f236a27edda73ace88c999a38720509858a06ec0aacb01c5e49",
+        "signature": "80facae0fba1df0a5b212696d77a6ed113a02be2abe21f799ed7f71c4e5ab84c"
+      },
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": {
+        "version": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a",
+        "signature": "839d15098cc51d756b67acda281788779645cbf8e95571897951afb52ea6535a"
+      },
+      "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts": {
+        "version": "443e3123c41da4e34ba5bd439b892f01c8af842692bb943a1c5f5dccd4d3c764",
+        "signature": "443e3123c41da4e34ba5bd439b892f01c8af842692bb943a1c5f5dccd4d3c764"
+      },
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": {
+        "version": "d83ad6de2cfa93597d4dcf9877b77864d8dfefe141b0a733b1549051b8ca4455",
+        "signature": "d83ad6de2cfa93597d4dcf9877b77864d8dfefe141b0a733b1549051b8ca4455"
+      },
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": {
+        "version": "06efa4e009c1053d39207cdbcc3c1a284871336e4801752e18fe3fce1ca2b025",
+        "signature": "06efa4e009c1053d39207cdbcc3c1a284871336e4801752e18fe3fce1ca2b025"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": {
+        "version": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744",
+        "signature": "c216ce81e0306d4d666bf06375f5c2693e7c6b2bc920d1939d956ab01656f744"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": {
+        "version": "a7184b8922290d1917d520ecc9418f65b06673cacbbddd96192f4e9bca3c3fcb",
+        "signature": "a7184b8922290d1917d520ecc9418f65b06673cacbbddd96192f4e9bca3c3fcb"
+      },
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": {
+        "version": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a",
+        "signature": "ced3404358800496232fbeb884d609b9ba7e2a4d7aca3dfe33beea0e59f1785a"
+      },
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": {
+        "version": "a2b4d9eaa8904e1b094a53b940b8973aefecab92b9cd3d494caad2c13e79339d",
+        "signature": "a2b4d9eaa8904e1b094a53b940b8973aefecab92b9cd3d494caad2c13e79339d"
+      },
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": {
+        "version": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7",
+        "signature": "1d2254ab5fdfd1f346a6e8d03ec698954dd330fdafc2942b77366a052571eab7"
+      },
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": {
+        "version": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6",
+        "signature": "3ced8d48c62c5f6ecdba0e8e745156fc991a81d042a7639b713d615e5b2fe4a6"
+      },
+      "../node_modules/@nestjs/config/dist/index.d.ts": {
+        "version": "e3e43b2ee33a384c872f243e52aa8faa1ccd69a7c0bb44eb878d4ff662cd1991",
+        "signature": "e3e43b2ee33a384c872f243e52aa8faa1ccd69a7c0bb44eb878d4ff662cd1991"
+      },
+      "../node_modules/@nestjs/config/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f"
+      },
+      "../src/neo4j/neo4j.util.ts": {
+        "version": "655ec921b7881be8808dce44367b4b556aa832770c5231da179840e224568eec",
+        "signature": "fb81d62779ecb0d7f9399e02bd64d0d4e8d78d36908e10f265ebacf4269b19f4"
+      },
+      "../src/neo4j/neo4j.module.ts": {
+        "version": "624ffca82f2db7827a840674083d546a306cdf484dd93b263d47c5f4b6fe72e7",
+        "signature": "3f3989951c0169b9475dc348d86d0ffd050cb737a4ee96320511dc0542070e8b"
+      },
+      "../src/auth/auth.module.ts": {
+        "version": "8a6690abf1345829f8b4efa96d26194e0185a05f4442fa449f7b4cce06da8c0b",
+        "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
+      },
       "../src/users/dto/get-users-filter.dto.ts": {
         "version": "f2d30200d5151384c1b875eddf0db7fb1bbf99e26dea1f293279f3388148128a",
         "signature": "93819a0e1b6a85e58a09cbabbb618bbc13ed187eca68db841bab929587a30288"
@@ -1345,36 +1417,48 @@
         "version": "8a67509311670fa9fa391b44f383e344506efbd38e874882cbb0dd1540c600f8",
         "signature": "457be652aa0aa3b15550edb9cd8cec37b009df1dfaaaa4ff06d36ac0c2d918ea"
       },
+      "../src/models/genre.model.ts": {
+        "version": "d9ec18bf00c8c7d6ea7e38d3554b4170275166b3725aa59e7931a1244fa63242",
+        "signature": "73b7a8963a548ea4bbf5e290caad4af76f0c28b53de853f3371e3e6af909859d"
+      },
+      "../src/models/song.model.ts": {
+        "version": "b724807278c732d4cd840e42e11b07f9f7a7b54a42e4dddd7188933e49c508b7",
+        "signature": "68e2992f8dc1111418b24d7f5462a54930b24abd8f538977b21805540a1ce703"
+      },
+      "../src/models/album.model.ts": {
+        "version": "f741fc584d8e6badfc9b32c2748906b3c0fb7b81244448ccb55824863cfcc0e7",
+        "signature": "a9fa0e0cf13a8f1633e4278b6258578bc04019d17218631c18eb7f8d96769e45"
+      },
+      "../src/models/index.ts": {
+        "version": "963d4532727b7c3ab9d4e42cb53ac3f8ba2fd08223031b74f2d7cd34fa769ebd",
+        "signature": "05e472f255d9e735265402b1ac053fdba058e5f6308fdb54f734f5f8ff1ecfee"
+      },
       "../src/users/users.service.ts": {
-        "version": "5e1f7f885006b307d550ea290d5a96423f3f42751a0e72b3bc5026201d8371a0",
-        "signature": "b8923264b2c0f424b202cb0e1250cdb421dde7332b9368cd03ce01cf35b7766d"
-      },
-      "../src/auth/jwt.strategy.ts": {
-        "version": "0c7256fa6778f2af14d6c3f4e471491e73a753e48730e82396500ea8ac16f86b",
-        "signature": "8f488f815c070046ff5411ff5f169b0fa614a7fb998adde7ac80463f62f3baf3"
-      },
-      "../src/auth/auth.module.ts": {
-        "version": "f878b58b7169fe14d007191f274eeff5af51b9abb1fbe3e4f7c1a1b58f41a55d",
-        "signature": "a28b5c0c372fb375910b3fe3c3ce4331509bc18ccef7cc39c9ee9d8daf8225d1"
+        "version": "2626c7cfb735f3b4dea6fd214178a7b5e396f86defb641ef4ccb9766d4990949",
+        "signature": "ab95cbb68139d6bc2f7039ec7628b70291832f051d8dac609aed485b1d2e7758"
       },
       "../src/users/users.controller.ts": {
-        "version": "3d8406538a94d38807ec17906dc26a00f2cd850d663a6102048ceee088e5ff5e",
-        "signature": "094e6f3af6cb2265bc66f09c3b98e0657b83482087e1ac015b518870c9ef094b"
+        "version": "03afbe068e74496087b01a81e205e95cc213c93b37d71bd77b18908db932449e",
+        "signature": "1ba5da2c275f9fba3f4ef5fb1b135564d2b00202d1407080628f2d99fe4ca746"
       },
       "../src/users/users.module.ts": {
-        "version": "b7547a7b8a42bb2fc1c3cfa9eeb13a29587467f97624a7b52614adfec6af436e",
+        "version": "fa60378750352d36292c742d31c8beed8f6a405255842f82450a7973db100a97",
         "signature": "aa1725e38b5a0b4009f6a74f296f173e7926c119a60454dbd2e523861735df69"
       },
+      "../src/genres/get-popular-filter.dto.ts": {
+        "version": "8d17bed20548e356e0b4a0aa039342d9713249e7c4bd4a7ff28d8089d93541b5",
+        "signature": "792481aa6934bef86d10b9996a1f9cccb479194c7b1f984a7176b3dbf2544237"
+      },
       "../src/genres/genres.service.ts": {
-        "version": "07c1cd87f51f4fe8ef7a53ad85d26313b3d07b5b3b1a9ccc3521461bc0dd72c5",
-        "signature": "c4fa6b12bbdb394e83edf9a9ea4c31ec420588ac9910d6b8536fb6292ef0228f"
+        "version": "fc947e6fb2400a689ca8b92b434105d41a9a425d0a13b4f8a1037c3f802ceacc",
+        "signature": "2470798d452a4876cc131ec61a58f15b58142ebd87afb61959d6266676fd9b53"
       },
       "../src/genres/genres.controller.ts": {
-        "version": "1092c13c349d44e069398f8f8b392b45a6ea57ca8a804c68f080df85ae1b6cd5",
-        "signature": "0ea2f7d6899d2d328fdaa477c6f218ed3867315dcc2bf08a3c6baacbdf8116ac"
+        "version": "2a3ca03c472cc359ea5e82387ba70b3269ff90b8289e5f4a8ca2688add0273a5",
+        "signature": "52b719816a07758f0126bf4f61c426326b1858970f15dfc1e94c0a51ba8c5bf7"
       },
       "../src/genres/genres.module.ts": {
-        "version": "7b033fe369bc3cb9de7d1112d9f2804debf74717c4307ffcb57a2c1ed4c2a4a0",
+        "version": "c5483e6cdd3d094745fefa91383deb7715b8e0f1a44647566396f84bdbd82a6c",
         "signature": "aee111b6e0b31c178a9def23c2e33b74bb2b2b21523c53e3b3ef27a512ca9d74"
       },
       "../src/artists/dto/get-artists-filter.dto.ts": {
@@ -1382,35 +1466,31 @@
         "signature": "45865dd409c5c8042e4a96cef0f3ed11e9ca827e2dc24a6f3b5c646099d9efa6"
       },
       "../src/artists/artists.service.ts": {
-        "version": "59ed157ada4894d8d2ded54566c53e28c8e58b5766fcadbc7a6b3e1cda768cb6",
-        "signature": "3c650069445aa6facc35ede891c4e9afa5cc7b4d20b831afde4618a0ac105d5c"
+        "version": "b2181432f79b862871745a1b79db2dccec635d7f425481b5a24bfcff485b1b1f",
+        "signature": "e2014b2292b006169d2c501f2918e1c9edd41240b03d75799cadea78e01c9c28"
       },
       "../src/artists/artists.controller.ts": {
         "version": "7cbd16b53b2eda1aa0226d760e79d2ba657b403498e52331af2281aab983bfbe",
-        "signature": "8198405e73ef9bfb9165690f502e1b8ff929541a33fc31dc548ac7a1b404e2d1"
+        "signature": "51305f8205a7a04f79db5d2201ee27987486b049ba8731b60f60bca7fdd046da"
       },
       "../src/artists/artists.module.ts": {
-        "version": "c9965549dac33398edfba14fb0d43ce692e44ab055ba9e4b48520d18d2a01b95",
+        "version": "64a3912a80e8191aae695bd329f136933358b4a0b37796b481e10f360adf73ae",
         "signature": "30a4f26f9d8aca453eb7164c131bb7d14f88bb9829be8a44b89eb0a70b9b6ab7"
       },
       "../src/songs/dto/get-songs-filter.dto.ts": {
         "version": "ab9e987d3a5590168956f348171bb9bf49fe00f91e148c2d7457217416d297f4",
         "signature": "21a47e3923898f37a6601d8effd70b932368a818fc7c6d8c093977555ceb60d6"
       },
-      "../src/songs/dto/view-song.dto.ts": {
-        "version": "3598aa7870e77f7d91cb6ff5ed38fa9c066c9a9e39fb5dc92f1d7d8ae521daf0",
-        "signature": "7bacb9d6d5305b0f758ce267e15a7e53e142d2d877a905e4b940ebe720a52aba"
-      },
       "../src/songs/songs.service.ts": {
-        "version": "706f95ef1bb1467245cc6919c385a8b5423c80e6654b3e1c805dcd7d4c3c9d6b",
-        "signature": "e41152a68524ead71aa4d5811c9108ca0b3fdad4a7c30748b6c465b72a4c013a"
+        "version": "26be56a35187922a0d9f249bff41322c270bdbac489054614a5c51816627691b",
+        "signature": "3230c7872fd5050f1434bc5edc1954c21b3eefd5ab18de75ff247011254dd216"
       },
       "../src/songs/songs.controller.ts": {
-        "version": "58ca810137c071e2353141bde2c88dbc0b20eab26c2e4a99f04bbd4a8a6f8904",
-        "signature": "dff92ba020ea632315d8c3ef39a7ce31a873eefbb6ab612ce801105e4f114ffd"
+        "version": "b2ab48da5d8c79ec19c333864a905a24d602ed3f9c23716801606185bb9505cd",
+        "signature": "ba12582fd3d3441a35b9074a7e9d948925f0fd945e8f48aa59134560387f4ac3"
       },
       "../src/songs/songs.module.ts": {
-        "version": "9b8662284532087baed4cf5def73060e30c7a9928bf365b0ddc0d74b91135525",
+        "version": "df1b3401134c8860333624c970536709103431b2814e57fade4b143cf81456d1",
         "signature": "e4f325d7a092478bf088efa14cf9311f1c9b01fa4064beb4255f4a962ed7c93b"
       },
       "../src/albums/dto/get-albums-filter.dto.ts": {
@@ -1418,19 +1498,19 @@
         "signature": "65d8ec0839b192d1e358f2b4626804625417ab16cb467ac2e06d2e2c846715a4"
       },
       "../src/albums/albums.service.ts": {
-        "version": "b420ef9219b51dea1c651b1aab3e6da083703f64da1ecf0bc3785d8024903d83",
-        "signature": "393804230cdb04564810f0337649bcd5ddee9f05729769c71ff8e3f07a08f961"
+        "version": "4965e4e586207ccb7aef718cdfd4ab16dded6cd5316ceb3d0a1e788f05ef8fd8",
+        "signature": "34cd94f393e2e41b47680077cb9b35b421d64a995b58d46ad3d687497ec14beb"
       },
       "../src/albums/albums.controller.ts": {
         "version": "427cbcb7adcf7650c573a29052c1693d823ab43929c93b0e206f420457cbec9a",
-        "signature": "ee4c8034ea87fe657d975824f92201eba006d0336b38e93aebd9dfa96f426646"
+        "signature": "2f904314103137d174f9996bda9603b7550b70d86c921263041dd4ca53e1f867"
       },
       "../src/albums/albums.module.ts": {
-        "version": "bf86555c6fe79d02aa14ba166ca0a16ba698d1e1b68c13ad438c8bafea6f45a2",
+        "version": "531b1efe648336c40ac47c2d2321e83b57ba60f967facb64eadbf2e79a56219c",
         "signature": "7a6e90d5ce11e998009b467d14a8141635519776d440d8ff7dc70e18c8856a18"
       },
       "../src/app.module.ts": {
-        "version": "91c00b567b7dc4d9e98cfe9db538d88029510aca96e89bf8b7fcce602f5a1501",
+        "version": "da54dd38a2239635d19800bcf7e6a4ae1011bef881006b572e608bd469eca46d",
         "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644"
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -1581,8 +1661,16 @@
         "version": "6a5bd854e9bdf1dad4871749ff039035ba4e355e43950cbbbb3f7852dea3cc2a",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
       },
+      "../src/models/artist.model.ts": {
+        "version": "2d2cee978f3538da0de2e41b842cefe0bb7bd48c78619b0628fa411a01dca494",
+        "signature": "3e8d5bdedc7f8e7e26a2e81cef160a8e79605f083cc2c773ac464ceaf0c754b7"
+      },
+      "../src/songs/dto/view-song.dto.ts": {
+        "version": "afc79ddc52a47b4f87176acb552ae986dbebe85d3b7f289ccae1febf3cb1d9cb",
+        "signature": "b9c83d45efc858132c68d19709696b9f730efb0c26f2a0e2e783ca1b7a7d18bf"
+      },
       "../src/users/get-user.decorator.ts": {
-        "version": "98135e2dbf6159693523145a130fb96df5d27f8a7108c094954d1f3e87662cd1",
+        "version": "48f92f14c2079847d818f9d51ebccb23ba7dcb97f195722854c289cee313b795",
         "signature": "2edbd67ef5c8b5f94d7abaea90ab48657ff66e5277a1409c425ff253daa65751"
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -3964,153 +4052,6 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../node_modules/neo4j-driver/types/integer.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/graph-types.d.ts": [
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/spatial-types.d.ts": [
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/temporal-types.d.ts": [
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/error.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/result-summary.d.ts": [
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/record.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/result.d.ts": [
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/neo4j-driver/types/record.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/query-runner.d.ts": [
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/transaction.d.ts": [
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/session.d.ts": [
-        "../node_modules/neo4j-driver/types/transaction.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/result-rx.d.ts": [
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/neo4j-driver/types/record.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/transaction-rx.d.ts": [
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/neo4j-driver/types/result-rx.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/session-rx.d.ts": [
-        "../node_modules/neo4j-driver/types/result-rx.d.ts",
-        "../node_modules/neo4j-driver/types/transaction-rx.d.ts",
-        "../node_modules/neo4j-driver/types/session.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/driver.d.ts": [
-        "../node_modules/neo4j-driver/types/session.d.ts",
-        "../node_modules/neo4j-driver/types/session-rx.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/neo4j-driver/types/error.d.ts",
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/index.d.ts": [
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/neo4j-driver/types/spatial-types.d.ts",
-        "../node_modules/neo4j-driver/types/temporal-types.d.ts",
-        "../node_modules/neo4j-driver/types/error.d.ts",
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/neo4j-driver/types/record.d.ts",
-        "../node_modules/neo4j-driver/types/session.d.ts",
-        "../node_modules/neo4j-driver/types/driver.d.ts",
-        "../node_modules/neo4j-driver/types/transaction.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/config/neo4j.config.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../node_modules/class-validator/validation/validationerror.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -4321,7 +4262,170 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/users/user.model.ts": [
+      "../src/models/user.model.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/integer.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/graph-types.d.ts": [
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/spatial-types.d.ts": [
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/temporal-types.d.ts": [
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/error.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/result-summary.d.ts": [
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/record.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/result.d.ts": [
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/query-runner.d.ts": [
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/transaction.d.ts": [
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/session.d.ts": [
+        "../node_modules/neo4j-driver/types/transaction.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/result-rx.d.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/transaction-rx.d.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/neo4j-driver/types/result-rx.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/session-rx.d.ts": [
+        "../node_modules/neo4j-driver/types/result-rx.d.ts",
+        "../node_modules/neo4j-driver/types/transaction-rx.d.ts",
+        "../node_modules/neo4j-driver/types/session.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/driver.d.ts": [
+        "../node_modules/neo4j-driver/types/session.d.ts",
+        "../node_modules/neo4j-driver/types/session-rx.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/neo4j-driver/types/error.d.ts",
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/index.d.ts": [
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/neo4j-driver/types/spatial-types.d.ts",
+        "../node_modules/neo4j-driver/types/temporal-types.d.ts",
+        "../node_modules/neo4j-driver/types/error.d.ts",
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../node_modules/neo4j-driver/types/session.d.ts",
+        "../node_modules/neo4j-driver/types/driver.d.ts",
+        "../node_modules/neo4j-driver/types/transaction.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j-config.interface.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j.constants.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j.service.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/neo4j/neo4j-config.interface.ts",
+        "../src/neo4j/neo4j.constants.ts",
+        "../node_modules/rxjs/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4332,8 +4436,8 @@
         "../src/auth/dto/auth-credentials.dto.ts",
         "../node_modules/@nestjs/jwt/index.d.ts",
         "../src/auth/jwt-payload.interface.ts",
-        "../node_modules/neo4j-driver/types/index.d.ts",
-        "../src/users/user.model.ts",
+        "../src/models/user.model.ts",
+        "../src/neo4j/neo4j.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4423,6 +4527,138 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/auth/jwt.strategy.ts": [
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/jwt-payload.interface.ts",
+        "../src/neo4j/neo4j.service.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+        "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j.util.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/neo4j/neo4j-config.interface.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
+        "../src/neo4j/neo4j.service.ts",
+        "../src/neo4j/neo4j-config.interface.ts",
+        "../src/neo4j/neo4j.constants.ts",
+        "../src/neo4j/neo4j.util.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/auth/auth.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/auth/auth.controller.ts",
+        "../src/auth/auth.service.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
+        "../src/auth/jwt.strategy.ts",
+        "../src/neo4j/neo4j.module.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/users/dto/get-users-filter.dto.ts": [
         "../node_modules/class-validator/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
@@ -4437,35 +4673,42 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/models/genre.model.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/song.model.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/album.model.ts": [
+        "../src/models/song.model.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/index.ts": [
+        "../src/models/genre.model.ts",
+        "../src/models/user.model.ts",
+        "../src/models/song.model.ts",
+        "../src/models/album.model.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/users/users.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/users/dto/get-users-filter.dto.ts",
-        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/neo4j/neo4j.service.ts",
         "../src/users/dto/get-recommended-filter.dto.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/auth/jwt.strategy.ts": [
-        "../node_modules/@nestjs/passport/index.d.ts",
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/auth/jwt-payload.interface.ts",
-        "../src/users/users.service.ts",
-        "../node_modules/neo4j-driver/types/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/auth/auth.module.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../src/auth/auth.controller.ts",
-        "../src/auth/auth.service.ts",
-        "../node_modules/@nestjs/jwt/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts",
-        "../src/auth/jwt.strategy.ts",
-        "../src/config/neo4j.config.ts",
+        "../src/models/user.model.ts",
+        "../src/models/index.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4474,9 +4717,9 @@
       "../src/users/users.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/users/users.service.ts",
-        "../src/users/dto/get-users-filter.dto.ts",
         "../node_modules/@nestjs/passport/index.d.ts",
         "../src/users/dto/get-recommended-filter.dto.ts",
+        "../src/models/index.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4486,8 +4729,15 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/users/users.controller.ts",
         "../src/users/users.service.ts",
-        "../src/config/neo4j.config.ts",
         "../src/auth/auth.module.ts",
+        "../src/neo4j/neo4j.module.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/genres/get-popular-filter.dto.ts": [
+        "../node_modules/class-validator/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4495,7 +4745,9 @@
       ],
       "../src/genres/genres.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/models/index.ts",
+        "../src/neo4j/neo4j.service.ts",
+        "../src/genres/get-popular-filter.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4504,6 +4756,8 @@
       "../src/genres/genres.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/genres/genres.service.ts",
+        "../src/models/index.ts",
+        "../src/genres/get-popular-filter.dto.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4513,7 +4767,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/genres/genres.controller.ts",
         "../src/genres/genres.service.ts",
-        "../src/config/neo4j.config.ts",
+        "../src/neo4j/neo4j.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4548,7 +4802,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/artists/artists.controller.ts",
         "../src/artists/artists.service.ts",
-        "../src/config/neo4j.config.ts",
+        "../src/neo4j/neo4j.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4561,18 +4815,10 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/songs/dto/view-song.dto.ts": [
-        "../node_modules/class-validator/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "../src/songs/songs.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/neo4j-driver/types/index.d.ts",
         "../src/songs/dto/get-songs-filter.dto.ts",
-        "../src/songs/dto/view-song.dto.ts",
+        "../src/neo4j/neo4j.service.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4582,7 +4828,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/songs/songs.service.ts",
         "../src/songs/dto/get-songs-filter.dto.ts",
-        "../src/songs/dto/view-song.dto.ts",
+        "../node_modules/@nestjs/passport/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4592,7 +4838,8 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/songs/songs.controller.ts",
         "../src/songs/songs.service.ts",
-        "../src/config/neo4j.config.ts",
+        "../src/neo4j/neo4j.module.ts",
+        "../src/auth/auth.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4628,7 +4875,7 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/albums/albums.controller.ts",
         "../src/albums/albums.service.ts",
-        "../src/config/neo4j.config.ts",
+        "../src/neo4j/neo4j.module.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4638,13 +4885,14 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
-        "../src/config/neo4j.config.ts",
         "../src/auth/auth.module.ts",
         "../src/users/users.module.ts",
         "../src/genres/genres.module.ts",
         "../src/artists/artists.module.ts",
         "../src/songs/songs.module.ts",
         "../src/albums/albums.module.ts",
+        "../src/neo4j/neo4j.module.ts",
+        "../node_modules/@nestjs/config/index.d.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -4976,9 +5224,22 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../src/models/artist.model.ts": [
+        "../src/models/album.model.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/songs/dto/view-song.dto.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
       "../src/users/get-user.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/users/user.model.ts",
+        "../src/models/user.model.ts",
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
@@ -7479,149 +7740,6 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
-      "../node_modules/neo4j-driver/types/integer.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/graph-types.d.ts": [
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/spatial-types.d.ts": [
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/temporal-types.d.ts": [
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/error.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/result-summary.d.ts": [
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/record.d.ts": [
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/result.d.ts": [
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/neo4j-driver/types/record.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/query-runner.d.ts": [
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/transaction.d.ts": [
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/session.d.ts": [
-        "../node_modules/neo4j-driver/types/transaction.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/result-rx.d.ts": [
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/neo4j-driver/types/record.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/transaction-rx.d.ts": [
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/neo4j-driver/types/result-rx.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/session-rx.d.ts": [
-        "../node_modules/neo4j-driver/types/result-rx.d.ts",
-        "../node_modules/neo4j-driver/types/transaction-rx.d.ts",
-        "../node_modules/neo4j-driver/types/session.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/rxjs/index.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/driver.d.ts": [
-        "../node_modules/neo4j-driver/types/session.d.ts",
-        "../node_modules/neo4j-driver/types/session-rx.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/neo4j-driver/types/error.d.ts",
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../node_modules/neo4j-driver/types/index.d.ts": [
-        "../node_modules/neo4j-driver/types/integer.d.ts",
-        "../node_modules/neo4j-driver/types/graph-types.d.ts",
-        "../node_modules/neo4j-driver/types/spatial-types.d.ts",
-        "../node_modules/neo4j-driver/types/temporal-types.d.ts",
-        "../node_modules/neo4j-driver/types/error.d.ts",
-        "../node_modules/neo4j-driver/types/result.d.ts",
-        "../node_modules/neo4j-driver/types/result-summary.d.ts",
-        "../node_modules/neo4j-driver/types/record.d.ts",
-        "../node_modules/neo4j-driver/types/session.d.ts",
-        "../node_modules/neo4j-driver/types/driver.d.ts",
-        "../node_modules/neo4j-driver/types/transaction.d.ts",
-        "../node_modules/neo4j-driver/types/query-runner.d.ts",
-        "../node_modules/@types/node/fs.d.ts",
-        "../node_modules/@types/node/ts3.2/fs.d.ts",
-        "../node_modules/@types/node/util.d.ts",
-        "../node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "../src/config/neo4j.config.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts"
-      ],
       "../node_modules/class-validator/validation/validationerror.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
         "../node_modules/@types/node/ts3.2/fs.d.ts",
@@ -7819,9 +7937,152 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
+      "../node_modules/neo4j-driver/types/integer.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/graph-types.d.ts": [
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/spatial-types.d.ts": [
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/temporal-types.d.ts": [
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/error.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/result-summary.d.ts": [
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/record.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/result.d.ts": [
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/query-runner.d.ts": [
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/transaction.d.ts": [
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/session.d.ts": [
+        "../node_modules/neo4j-driver/types/transaction.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/result-rx.d.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/transaction-rx.d.ts": [
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/neo4j-driver/types/result-rx.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/session-rx.d.ts": [
+        "../node_modules/neo4j-driver/types/result-rx.d.ts",
+        "../node_modules/neo4j-driver/types/transaction-rx.d.ts",
+        "../node_modules/neo4j-driver/types/session.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/rxjs/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/driver.d.ts": [
+        "../node_modules/neo4j-driver/types/session.d.ts",
+        "../node_modules/neo4j-driver/types/session-rx.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/neo4j-driver/types/error.d.ts",
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/neo4j-driver/types/index.d.ts": [
+        "../node_modules/neo4j-driver/types/integer.d.ts",
+        "../node_modules/neo4j-driver/types/graph-types.d.ts",
+        "../node_modules/neo4j-driver/types/spatial-types.d.ts",
+        "../node_modules/neo4j-driver/types/temporal-types.d.ts",
+        "../node_modules/neo4j-driver/types/error.d.ts",
+        "../node_modules/neo4j-driver/types/result.d.ts",
+        "../node_modules/neo4j-driver/types/result-summary.d.ts",
+        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../node_modules/neo4j-driver/types/session.d.ts",
+        "../node_modules/neo4j-driver/types/driver.d.ts",
+        "../node_modules/neo4j-driver/types/transaction.d.ts",
+        "../node_modules/neo4j-driver/types/query-runner.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j.service.ts": [
+        "../node_modules/neo4j-driver/types/index.d.ts"
+      ],
       "../src/auth/auth.service.ts": [
         "../node_modules/@nestjs/jwt/index.d.ts",
-        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/neo4j/neo4j.service.ts",
         "../src/auth/dto/auth-credentials.dto.ts"
       ],
       "../src/auth/auth.controller.ts": [
@@ -7903,29 +8164,138 @@
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "../src/users/users.service.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts",
-        "../src/users/dto/get-users-filter.dto.ts",
-        "../src/users/dto/get-recommended-filter.dto.ts"
-      ],
       "../src/auth/jwt.strategy.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts",
+        "../src/neo4j/neo4j.service.ts",
         "../src/auth/jwt-payload.interface.ts"
       ],
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/types/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+        "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.service.d.ts": [
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts": [
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/config.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts": [
+        "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/dist/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/config.module.d.ts",
+        "../node_modules/@nestjs/config/dist/config.service.d.ts",
+        "../node_modules/@nestjs/config/dist/types/index.d.ts",
+        "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../node_modules/@nestjs/config/index.d.ts": [
+        "../node_modules/@nestjs/config/dist/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/@types/node/ts3.2/fs.d.ts",
+        "../node_modules/@types/node/util.d.ts",
+        "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/neo4j/neo4j.util.ts": [
+        "../src/neo4j/neo4j-config.interface.ts",
+        "../node_modules/neo4j-driver/types/index.d.ts"
+      ],
+      "../src/neo4j/neo4j.module.ts": [
+        "../src/neo4j/neo4j-config.interface.ts",
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/models/album.model.ts": [
+        "../src/models/song.model.ts"
+      ],
+      "../src/models/index.ts": [
+        "../src/models/genre.model.ts",
+        "../src/models/user.model.ts",
+        "../src/models/song.model.ts",
+        "../src/models/album.model.ts"
+      ],
+      "../src/users/users.service.ts": [
+        "../src/neo4j/neo4j.service.ts",
+        "../src/models/user.model.ts",
+        "../src/models/index.ts",
+        "../src/users/dto/get-recommended-filter.dto.ts"
+      ],
       "../src/users/users.controller.ts": [
-        "../node_modules/neo4j-driver/types/record.d.ts",
+        "../src/models/index.ts",
         "../src/users/users.service.ts",
-        "../src/users/dto/get-users-filter.dto.ts",
         "../src/users/dto/get-recommended-filter.dto.ts"
       ],
       "../src/genres/genres.service.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts"
+        "../src/neo4j/neo4j.service.ts",
+        "../src/models/index.ts",
+        "../src/genres/get-popular-filter.dto.ts"
       ],
       "../src/genres/genres.controller.ts": [
-        "../src/genres/genres.service.ts"
+        "../src/genres/genres.service.ts",
+        "../src/models/index.ts",
+        "../src/genres/get-popular-filter.dto.ts"
       ],
       "../src/artists/artists.service.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts",
         "../src/artists/dto/get-artists-filter.dto.ts"
       ],
       "../src/artists/artists.controller.ts": [
@@ -7933,17 +8303,14 @@
         "../src/artists/dto/get-artists-filter.dto.ts"
       ],
       "../src/songs/songs.service.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts",
-        "../src/songs/dto/get-songs-filter.dto.ts",
-        "../src/songs/dto/view-song.dto.ts"
+        "../src/neo4j/neo4j.service.ts",
+        "../src/songs/dto/get-songs-filter.dto.ts"
       ],
       "../src/songs/songs.controller.ts": [
         "../src/songs/songs.service.ts",
-        "../src/songs/dto/get-songs-filter.dto.ts",
-        "../src/songs/dto/view-song.dto.ts"
+        "../src/songs/dto/get-songs-filter.dto.ts"
       ],
       "../src/albums/albums.service.ts": [
-        "../node_modules/neo4j-driver/types/index.d.ts",
         "../src/albums/dto/get-albums-filter.dto.ts"
       ],
       "../src/albums/albums.controller.ts": [
@@ -8267,6 +8634,9 @@
         "../node_modules/@types/node/ts3.2/fs.d.ts",
         "../node_modules/@types/node/util.d.ts",
         "../node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "../src/models/artist.model.ts": [
+        "../src/models/album.model.ts"
       ],
       "../node_modules/@types/anymatch/index.d.ts": [
         "../node_modules/@types/node/fs.d.ts",
@@ -8860,23 +9230,6 @@
       "../node_modules/@nestjs/common/index.d.ts",
       "../src/app.service.ts",
       "../src/app.controller.ts",
-      "../node_modules/neo4j-driver/types/integer.d.ts",
-      "../node_modules/neo4j-driver/types/graph-types.d.ts",
-      "../node_modules/neo4j-driver/types/spatial-types.d.ts",
-      "../node_modules/neo4j-driver/types/temporal-types.d.ts",
-      "../node_modules/neo4j-driver/types/error.d.ts",
-      "../node_modules/neo4j-driver/types/result-summary.d.ts",
-      "../node_modules/neo4j-driver/types/record.d.ts",
-      "../node_modules/neo4j-driver/types/result.d.ts",
-      "../node_modules/neo4j-driver/types/query-runner.d.ts",
-      "../node_modules/neo4j-driver/types/transaction.d.ts",
-      "../node_modules/neo4j-driver/types/session.d.ts",
-      "../node_modules/neo4j-driver/types/result-rx.d.ts",
-      "../node_modules/neo4j-driver/types/transaction-rx.d.ts",
-      "../node_modules/neo4j-driver/types/session-rx.d.ts",
-      "../node_modules/neo4j-driver/types/driver.d.ts",
-      "../node_modules/neo4j-driver/types/index.d.ts",
-      "../src/config/neo4j.config.ts",
       "../node_modules/class-validator/validation/validationerror.d.ts",
       "../node_modules/class-validator/validation/validatoroptions.d.ts",
       "../node_modules/class-validator/validation-schema/validationschema.d.ts",
@@ -8904,7 +9257,26 @@
       "../node_modules/@nestjs/jwt/dist/index.d.ts",
       "../node_modules/@nestjs/jwt/index.d.ts",
       "../src/auth/jwt-payload.interface.ts",
-      "../src/users/user.model.ts",
+      "../src/models/user.model.ts",
+      "../node_modules/neo4j-driver/types/integer.d.ts",
+      "../node_modules/neo4j-driver/types/graph-types.d.ts",
+      "../node_modules/neo4j-driver/types/spatial-types.d.ts",
+      "../node_modules/neo4j-driver/types/temporal-types.d.ts",
+      "../node_modules/neo4j-driver/types/error.d.ts",
+      "../node_modules/neo4j-driver/types/result-summary.d.ts",
+      "../node_modules/neo4j-driver/types/record.d.ts",
+      "../node_modules/neo4j-driver/types/result.d.ts",
+      "../node_modules/neo4j-driver/types/query-runner.d.ts",
+      "../node_modules/neo4j-driver/types/transaction.d.ts",
+      "../node_modules/neo4j-driver/types/session.d.ts",
+      "../node_modules/neo4j-driver/types/result-rx.d.ts",
+      "../node_modules/neo4j-driver/types/transaction-rx.d.ts",
+      "../node_modules/neo4j-driver/types/session-rx.d.ts",
+      "../node_modules/neo4j-driver/types/driver.d.ts",
+      "../node_modules/neo4j-driver/types/index.d.ts",
+      "../src/neo4j/neo4j-config.interface.ts",
+      "../src/neo4j/neo4j.constants.ts",
+      "../src/neo4j/neo4j.service.ts",
       "../src/auth/auth.service.ts",
       "../src/auth/auth.controller.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
@@ -8917,12 +9289,31 @@
       "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts",
       "../node_modules/@nestjs/passport/dist/index.d.ts",
       "../node_modules/@nestjs/passport/index.d.ts",
+      "../src/auth/jwt.strategy.ts",
+      "../node_modules/@nestjs/config/dist/types/config.type.d.ts",
+      "../node_modules/@nestjs/config/dist/types/no-infer.type.d.ts",
+      "../node_modules/@nestjs/config/dist/types/index.d.ts",
+      "../node_modules/@nestjs/config/dist/config.service.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-factory.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/config-module-options.interface.d.ts",
+      "../node_modules/@nestjs/config/dist/interfaces/index.d.ts",
+      "../node_modules/@nestjs/config/dist/config.module.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/register-as.util.d.ts",
+      "../node_modules/@nestjs/config/dist/utils/index.d.ts",
+      "../node_modules/@nestjs/config/dist/index.d.ts",
+      "../node_modules/@nestjs/config/index.d.ts",
+      "../src/neo4j/neo4j.util.ts",
+      "../src/neo4j/neo4j.module.ts",
       "../src/users/dto/get-users-filter.dto.ts",
       "../src/users/dto/get-recommended-filter.dto.ts",
-      "../src/auth/jwt.strategy.ts",
-      "../src/auth/auth.module.ts",
+      "../src/models/genre.model.ts",
+      "../src/models/song.model.ts",
+      "../src/models/album.model.ts",
+      "../src/models/index.ts",
+      "../src/users/users.service.ts",
       "../src/users/users.controller.ts",
       "../src/users/users.module.ts",
+      "../src/genres/get-popular-filter.dto.ts",
       "../src/genres/genres.service.ts",
       "../src/genres/genres.controller.ts",
       "../src/genres/genres.module.ts",
@@ -8931,7 +9322,6 @@
       "../src/artists/artists.controller.ts",
       "../src/artists/artists.module.ts",
       "../src/songs/dto/get-songs-filter.dto.ts",
-      "../src/songs/dto/view-song.dto.ts",
       "../src/songs/songs.service.ts",
       "../src/songs/songs.controller.ts",
       "../src/songs/songs.module.ts",
@@ -8977,6 +9367,8 @@
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
       "../src/main.ts",
+      "../src/models/artist.model.ts",
+      "../src/songs/dto/view-song.dto.ts",
       "../src/users/get-user.decorator.ts",
       "../node_modules/@types/anymatch/index.d.ts",
       "../node_modules/@babel/types/lib/index.d.ts",
@@ -9021,7 +9413,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/users/users.service.ts"
+      "../src/auth/auth.module.ts"
     ]
   },
   "version": "3.8.3"

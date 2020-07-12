@@ -8,15 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const jwt_1 = require("@nestjs/jwt");
 const bcrypt = require("bcrypt");
-const Neo4j = require("neo4j-driver");
-const user_model_1 = require("./../users/user.model");
+const user_model_1 = require("../models/user.model");
+const neo4j_service_1 = require("./../neo4j/neo4j.service");
 let AuthService = class AuthService {
     constructor(jwtService, neo4j) {
         this.jwtService = jwtService;
@@ -29,43 +26,47 @@ let AuthService = class AuthService {
         user.salt = await bcrypt.genSalt();
         user.password = await this.hashPassword(password, user.salt);
         try {
-            const user_id = (await this.neo4j.session().run('CREATE (n: User {username: $username, password: $password, salt: $salt }) return n', {
-                username: user.username,
-                password: user.password,
-                salt: user.salt
-            })).records[0]["_fields"][0].identity.low;
+            const user_result = await this.neo4j.query(`CREATE (n: User {username: '${user.username}', password: '${user.password}', salt: '${user.salt}' }) RETURN { id: ID(n) } as user`);
+            const user_id = user_result[0].get('user').id.low;
             authCredentialsDto.favorite_genres.forEach(async (genre_id) => {
-                await this.neo4j.session().run(`MATCH (u:User),(g:Genre) WHERE ID(u) = ${user_id} AND ID(g) = ${genre_id}
+                await this.neo4j.query(`MATCH (u:User),(g:Genre) WHERE ID(u) = ${user_id} AND ID(g) = ${genre_id}
                     CREATE (u)-[r:HAS_FAVORITE_GENRE]->(g)`);
             });
             return true;
         }
         catch (err) {
-            throw new common_1.BadRequestException('operation failed');
+            throw new common_1.BadRequestException(err);
         }
     }
     async signIn(authCredentialsDto) {
-        const username = await this.validateUserPassword(authCredentialsDto);
-        if (!username) {
-            throw new common_1.BadRequestException('invalid credentials');
+        const user = await this.validateUserPassword(authCredentialsDto);
+        if (!user) {
+            throw new common_1.BadRequestException('Invalid credentials');
         }
-        const payload = { username };
+        const username = user.username;
+        const id = user.id;
+        const payload = { username, id };
         const accessToken = await this.jwtService.sign(payload);
-        const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }));
+        const user_result = await this.neo4j.query(`MATCH (n:User {username: '${username}'}) RETURN { id: ID(n) } AS user`);
+        const user_id = user_result[0].get('user').id.low;
         return {
             accessToken: accessToken,
-            user_id: user.records[0]["_fields"][0].identity.low
+            user_id: user_id
         };
     }
     async validateUserPassword(authCredentialsDto) {
         const { username, password } = authCredentialsDto;
-        const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }));
-        if (user.records.length) {
-            const userObj = user.records[0]["_fields"][0];
-            const userProperties = userObj.properties;
-            const hash = await bcrypt.hash(password, userProperties.salt);
-            if (user && hash === userProperties.password) {
-                return userProperties.username;
+        const user_result = await this.neo4j.query(`MATCH (n:User {username: '${username}'}) RETURN {
+            id: ID(n),
+            username:n.username,
+            password: n.password,
+            salt: n.salt
+        } as user;`);
+        if (user_result.length) {
+            const user = Object.assign(Object.assign({}, user_result[0].get("user")), { id: user_result[0].get("user").id.low });
+            const hash = await bcrypt.hash(password, user.salt);
+            if (user && hash === user.password) {
+                return user;
             }
             else {
                 return null;
@@ -78,8 +79,8 @@ let AuthService = class AuthService {
 };
 AuthService = __decorate([
     common_1.Injectable(),
-    __param(1, common_1.Inject("Neo4j")),
-    __metadata("design:paramtypes", [jwt_1.JwtService, Object])
+    __metadata("design:paramtypes", [jwt_1.JwtService,
+        neo4j_service_1.Neo4jService])
 ], AuthService);
 exports.AuthService = AuthService;
 //# sourceMappingURL=auth.service.js.map

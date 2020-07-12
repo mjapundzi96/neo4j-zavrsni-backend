@@ -1,10 +1,10 @@
 import { GenresService } from './genres.service';
+import { Genre, Album } from './../models';
+import { GetPopularFilterDto } from './get-popular-filter.dto';
 export declare class GenresController {
     private genresService;
     constructor(genresService: GenresService);
-    getGenres(): Promise<any[]>;
-    getGenre(id: number): Promise<{
-        id: any;
-        name: any;
-    }>;
+    getGenres(): Promise<Genre[]>;
+    getGenre(id: number): Promise<Genre>;
+    getPopularAlbumsFromGenre(id: number, getPopularFilterDto: GetPopularFilterDto): Promise<Album[]>;
 }

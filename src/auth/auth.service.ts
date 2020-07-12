@@ -3,14 +3,14 @@ import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { JwtService } from '@nestjs/jwt';
 import { JwtPayload } from './jwt-payload.interface';
 import * as bcrypt from 'bcrypt';
-import * as Neo4j from 'neo4j-driver';
-import { User } from './../users/user.model'
+import { User } from '../models/user.model'
+import { Neo4jService } from './../neo4j/neo4j.service'
 
 @Injectable()
 export class AuthService {
     constructor(
         private jwtService: JwtService,
-        @Inject("Neo4j") private readonly neo4j: Neo4j.Driver
+        private readonly neo4j: Neo4jService
     ) { }
 
     async signUp(authCredentialsDto: AuthCredentialsDto) {
@@ -20,48 +20,55 @@ export class AuthService {
         user.salt = await bcrypt.genSalt()
         user.password = await this.hashPassword(password, user.salt)
         try {
-            const user_id = (await this.neo4j.session().run('CREATE (n: User {username: $username, password: $password, salt: $salt }) return n', {
-                username: user.username,
-                password: user.password,
-                salt: user.salt
-            })).records[0]["_fields"][0].identity.low
+            const user_result = await this.neo4j.query(`CREATE (n: User {username: '${user.username}', password: '${user.password}', salt: '${user.salt}' }) RETURN { id: ID(n) } as user`);
+            const user_id = user_result[0].get('user').id.low;
             authCredentialsDto.favorite_genres.forEach(async (genre_id) => {
-                await this.neo4j.session().run(
+                await this.neo4j.query(
                     `MATCH (u:User),(g:Genre) WHERE ID(u) = ${user_id} AND ID(g) = ${genre_id}
                     CREATE (u)-[r:HAS_FAVORITE_GENRE]->(g)`)
             })
             return true;
         }
         catch (err) {
-            throw new BadRequestException('operation failed')
+            throw new BadRequestException(err)
         }
     }
 
-    async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{ accessToken: string,user_id:number }> {
-        const username = await this.validateUserPassword(authCredentialsDto)
-        if (!username) {
-            throw new BadRequestException('invalid credentials')
+    async signIn(authCredentialsDto: AuthCredentialsDto): Promise<{ accessToken: string, user_id: number }> {
+        const user = await this.validateUserPassword(authCredentialsDto)
+        if (!user) {
+            throw new BadRequestException('Invalid credentials')
         }
-
-        const payload: JwtPayload = { username };
+        const username = user.username;
+        const id = user.id;
+       
+        const payload: JwtPayload = { username,id };
         const accessToken = await this.jwtService.sign(payload)
-        const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }))
-        return { 
-            accessToken:accessToken, 
-            user_id: user.records[0]["_fields"][0].identity.low
+        const user_result = await this.neo4j.query(`MATCH (n:User {username: '${username}'}) RETURN { id: ID(n) } AS user`)
+        const user_id = user_result[0].get('user').id.low
+        return {
+            accessToken: accessToken,
+            user_id: user_id
         }
     }
 
-    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<string> {
+    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<any> {
         const { username, password } = authCredentialsDto;
-        const user = (await this.neo4j.session().run('MATCH (n:User {username: $username}) RETURN n', { username: username }))
+        const user_result = await this.neo4j.query(`MATCH (n:User {username: '${username}'}) RETURN {
+            id: ID(n),
+            username:n.username,
+            password: n.password,
+            salt: n.salt
+        } as user;`)
+        if (user_result.length) {
+            const user = {
+                ...user_result[0].get("user"),
+                id: user_result[0].get("user").id.low
+            }
 
-        if (user.records.length) {
-            const userObj = user.records[0]["_fields"][0]
-            const userProperties = userObj.properties;
-            const hash = await bcrypt.hash(password, userProperties.salt)
-            if (user && hash === userProperties.password) {
-                return userProperties.username
+            const hash = await bcrypt.hash(password, user.salt)
+            if (user && hash === user.password) {
+                return user
             } else {
                 return null;
             }
@@ -72,6 +79,4 @@ export class AuthService {
     private async hashPassword(password: string, salt: string) {
         return bcrypt.hash(password, salt)
     }
-
-    // private async
 }

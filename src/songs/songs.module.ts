@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { SongsController } from './songs.controller';
 import { SongsService } from './songs.service';
-import { neo4jProvider } from 'src/config/neo4j.config';
+import { Neo4jModule } from './../neo4j/neo4j.module';
+import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
+  imports: [Neo4jModule,AuthModule],
   controllers: [SongsController],
-  providers: [SongsService,neo4jProvider]
+  providers: [SongsService]
 })
 export class SongsModule {}

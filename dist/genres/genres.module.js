@@ -9,13 +9,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const genres_controller_1 = require("./genres.controller");
 const genres_service_1 = require("./genres.service");
-const neo4j_config_1 = require("../config/neo4j.config");
+const neo4j_module_1 = require("./../neo4j/neo4j.module");
 let GenresModule = class GenresModule {
 };
 GenresModule = __decorate([
     common_1.Module({
+        imports: [neo4j_module_1.Neo4jModule],
         controllers: [genres_controller_1.GenresController],
-        providers: [genres_service_1.GenresService, neo4j_config_1.neo4jProvider]
+        providers: [genres_service_1.GenresService],
     })
 ], GenresModule);
 exports.GenresModule = GenresModule;

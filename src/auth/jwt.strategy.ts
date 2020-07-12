@@ -2,16 +2,13 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Strategy, ExtractJwt } from 'passport-jwt';
 import { Injectable, UnauthorizedException, Inject } from '@nestjs/common';
 import { JwtPayload } from './jwt-payload.interface';
-import { UsersService } from './../users/users.service'
-import * as Neo4j from 'neo4j-driver'
-//import { UserRepository } from './user.repository';
+import { Neo4jService } from './../neo4j/neo4j.service'
 
-import * as config from 'config'
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
     constructor(
-        @Inject("Neo4j") private readonly neo4j: Neo4j.Driver
+        private readonly neo4j: Neo4jService
     ) {
         super({
             jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -21,7 +18,11 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
     async validate(payload: JwtPayload) {
         const { username } = payload
-        const user = (await this.neo4j.session().run("MATCH (n: User) WHERE n.username = $username RETURN n", { username: username }));
+        const user_result = await this.neo4j.query(`MATCH (n: User) WHERE n.username = '${username}' RETURN { id: ID(n), username: n.username } as user`);
+        const user = {
+            ...user_result[0].get("user"),
+            id:user_result[0].get("user").id.low
+        };
         if (!user) {
             throw new UnauthorizedException();
         }

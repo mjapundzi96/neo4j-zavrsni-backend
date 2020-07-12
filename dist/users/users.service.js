@@ -8,46 +8,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const Neo4j = require("neo4j-driver");
+const neo4j_service_1 = require("./../neo4j/neo4j.service");
+const models_1 = require("../models");
 let UsersService = class UsersService {
     constructor(neo4j) {
         this.neo4j = neo4j;
     }
-    async getUsers(filterDto) {
-        const { username } = filterDto;
-        let queryUser = "n:User";
-        if (username) {
-            queryUser += " {username:$username}";
+    async getUser(id) {
+        const user_result = await this.neo4j.query(`MATCH (n:User) where ID(n)=${id} RETURN {
+            id: ID(n),
+            username: n.username
+         } AS user;`);
+        if (!user_result) {
+            throw new common_1.NotFoundException('User not found');
         }
-        const users = (await this.neo4j.session().run(`MATCH (${queryUser}) RETURN n`, { username: username })).records;
-        return users;
-    }
-    async getUser(user_id) {
-        const userResult = (await this.neo4j.session().run(`MATCH (n:User) where ID(n)=${user_id}
-        RETURN n;`)).records[0];
-        if (userResult) {
-            const fields = userResult["_fields"][0];
-            return {
-                id: fields.identity.low,
-                username: fields.properties.username,
-            };
-        }
+        return Object.assign(Object.assign({}, user_result[0].get('user')), { id: user_result[0].get('user').id.low });
     }
     async getListenHistory(user_id) {
-        const history_results = (await this.neo4j.session().run(`match (u:User)-[r:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id} return s,r.date_time ORDER BY r.date_time DESC;`)).records;
+        const history_results = await this.neo4j.query(`MATCH (u:User)-[r:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id} RETURN {
+            id:ID(s),
+            title:s.title,
+            views:s.views,
+            songUrl:s.songUrl,
+            date_listened:r.date_time
+        } AS song ORDER BY r.date_time DESC;`);
         let songs = [];
         history_results.forEach((result) => {
-            const fields = result["_fields"][0];
-            const date = result["_fields"][1];
+            const songObj = result.get('song');
+            const date = songObj.date_listened;
             songs.push({
-                id: fields.identity.low,
-                title: fields.properties.title,
-                views: fields.properties.views.low,
+                id: songObj.id.low,
+                title: songObj.title,
+                views: songObj.views.low,
+                songUrl: songObj.songUrl,
                 date_listened: new Date(date.year.low, date.month.low, date.day.low, date.hour.low, date.minute.low, date.second.low)
             });
         });
@@ -55,29 +50,32 @@ let UsersService = class UsersService {
     }
     async getRecommendendedAlbums(user_id, getRecommendedFilterDto) {
         const { offset, limit } = getRecommendedFilterDto;
+        const albumsResults = await this.neo4j.query(`MATCH (u:User)-[:HAS_FAVORITE_GENRE]->(:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song) where ID(u)=${user_id}
+         WITH al,ar,s,sum(s.views) as views
+         RETURN {
+             id:ID(al),
+             name:al.name,
+             coverUrl:al.coverUrl,
+             year:al.year,
+             artist:{
+                 id:ID(ar),
+                 name:ar.name,
+                 imageUrl:ar.imageUrl,
+                 country:ar.country
+             }
+         } AS album ORDER BY views DESC SKIP ${offset} LIMIT ${limit};`);
         let albums = [];
-        const albumsResults = (await this.neo4j.session().run(`MATCH (u:User)-[r:HAS_FAVORITE_GENRE]->(g:Genre)<-[r2:IS_GENRE]-(a:Artist)<-[r3:BY_ARTIST]-(al:Album)<-[r4:FROM_ALBUM]-(s:Song)
-        where ID(u)=${user_id} RETURN al,sum(s.views),a ORDER BY sum(s.views) DESC SKIP ${offset} LIMIT ${limit};`)).records;
         albumsResults.forEach((result) => {
-            const fields = result["_fields"][0];
-            const views = result["_fields"][1].low;
-            const artist = result["_fields"][2];
-            albums.push({
-                id: fields.identity.low,
-                name: fields.properties.name,
-                coverUrl: fields.properties.coverUrl,
-                year: fields.properties.year.low,
-                views: views,
-                artist: Object.assign(artist.properties, { id: artist.identity.low })
-            });
+            const albumObj = result.get('album');
+            albums.push(Object.assign(Object.assign({}, albumObj), { id: albumObj.id.low, year: albumObj.year.low, artist: Object.assign(Object.assign({}, albumObj.artist), { id: albumObj.artist.id.low }) }));
         });
         return albums;
     }
     async getRecommendedArtists(user_id, getRecommendedFilterDto) {
         const { offset, limit } = getRecommendedFilterDto;
+        const artistsResults = await this.neo4j.query(`MATCH (u:User)-[r:HAS_FAVORITE_GENRE]->(g:Genre)<-[r2:IS_GENRE]-(a:Artist)<-[r3:BY_ARTIST]-(al:Album)<-[r4:FROM_ALBUM]-(s:Song)
+        where ID(u)=${user_id} RETURN a,sum(s.views),g ORDER BY sum(s.views) DESC SKIP ${offset} LIMIT ${limit};`);
         let artists = [];
-        const artistsResults = (await this.neo4j.session().run(`MATCH (u:User)-[r:HAS_FAVORITE_GENRE]->(g:Genre)<-[r2:IS_GENRE]-(a:Artist)<-[r3:BY_ARTIST]-(al:Album)<-[r4:FROM_ALBUM]-(s:Song)
-        where ID(u)=${user_id} RETURN a,sum(s.views),g ORDER BY sum(s.views) DESC SKIP ${offset} LIMIT ${limit};`)).records;
         artistsResults.forEach((result) => {
             const fields = result["_fields"][0];
             const views = result["_fields"][1].low;
@@ -97,8 +95,7 @@ let UsersService = class UsersService {
 };
 UsersService = __decorate([
     common_1.Injectable(),
-    __param(0, common_1.Inject("Neo4j")),
-    __metadata("design:paramtypes", [Object])
+    __metadata("design:paramtypes", [neo4j_service_1.Neo4jService])
 ], UsersService);
 exports.UsersService = UsersService;
 //# sourceMappingURL=users.service.js.map

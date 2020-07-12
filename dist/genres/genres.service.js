@@ -8,44 +8,64 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
-const Neo4j = require("neo4j-driver");
+const neo4j_service_1 = require("./../neo4j/neo4j.service");
 let GenresService = class GenresService {
     constructor(neo4j) {
         this.neo4j = neo4j;
     }
     async getGenres() {
-        const genre_results = (await this.neo4j.session().run(`Match (n:Genre) return n;`)).records;
+        const genre_results = await this.neo4j.query(`MATCH (n:Genre) RETURN n {
+            id:ID(n),
+            name:n.name
+        } as genre;`);
         let genres = [];
         genre_results.forEach((res) => {
-            genres.push({
-                id: res["_fields"][0].identity.low,
-                name: res["_fields"][0].properties.name
-            });
+            genres.push(Object.assign(Object.assign({}, res.get('genre')), { id: res.get('genre').id.low }));
         });
         return genres;
     }
     async getGenre(id) {
-        const genre_result = (await this.neo4j.session().run(`match (n:Genre) where ID(n)=${id} return n;`)).records[0];
+        const genre_result = await this.neo4j.query(`MATCH (n:Genre) WHERE ID(n)=${id} RETURN {
+            id:ID(n),
+            name:n.name
+        } AS genre`);
         if (genre_result) {
-            const genre = {
-                id: genre_result["_fields"][0].identity.low,
-                name: genre_result["_fields"][0].properties.name
-            };
-            return genre;
+            return Object.assign(Object.assign({}, genre_result[0].get('genre')), { id: genre_result[0].get('genre').id.low });
         }
         else
             throw new common_1.NotFoundException('Genre does not exist');
     }
+    async getPopularAlbumsFromGenre(id, getPopularFilterDto) {
+        const { offset, limit } = getPopularFilterDto;
+        const albums_results = await this.neo4j.query(`MATCH (g:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song)
+        WHERE ID(g)=${id}
+        WITH al,ar,s,sum(s.views) AS views
+        RETURN {
+            id:ID(al),
+            name:al.name,
+            coverUrl:al.coverUrl,
+            year:al.year,
+            views:views,
+            artist:{
+                id:ID(ar),
+                name:ar.name,
+                imageUrl:ar.imageUrl,
+                country:ar.country
+            }
+        } AS album ORDER BY views DESC SKIP ${offset} LIMIT ${limit};`);
+        let albums = [];
+        albums_results.forEach((result) => {
+            const albumObj = result.get('album');
+            albums.push(Object.assign(Object.assign({}, albumObj), { id: albumObj.id.low, year: albumObj.year.low, artist: Object.assign(Object.assign({}, albumObj.artist), { id: albumObj.artist.id.low }) }));
+        });
+        return albums;
+    }
 };
 GenresService = __decorate([
     common_1.Injectable(),
-    __param(0, common_1.Inject("Neo4j")),
-    __metadata("design:paramtypes", [Object])
+    __metadata("design:paramtypes", [neo4j_service_1.Neo4jService])
 ], GenresService);
 exports.GenresService = GenresService;
 //# sourceMappingURL=genres.service.js.map

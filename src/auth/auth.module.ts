@@ -4,7 +4,8 @@ import { AuthService } from './auth.service';
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 import { JwtStrategy } from './jwt.strategy';
-import { neo4jProvider } from './../config/neo4j.config'
+import { Neo4jModule } from './../neo4j/neo4j.module';
+
 
 @Module({
     imports: [
@@ -12,15 +13,15 @@ import { neo4jProvider } from './../config/neo4j.config'
         JwtModule.register({
             secret: 'topSecret51',
             signOptions: {
-                expiresIn: 3600,
+                expiresIn: 100000,
             }
-        })
+        }),
+        Neo4jModule
     ],
     controllers: [AuthController],
     providers: [
         AuthService,
-        JwtStrategy,
-        neo4jProvider
+        JwtStrategy,  
     ],
     exports:[
         JwtStrategy,

@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { GenresController } from './genres.controller';
 import { GenresService } from './genres.service';
-import { neo4jProvider } from 'src/config/neo4j.config';
+import { Neo4jModule } from './../neo4j/neo4j.module';
+
 
 @Module({
+  imports: [Neo4jModule],
   controllers: [GenresController],
-  providers: [GenresService,neo4jProvider]
+  providers: [GenresService],
 })
-export class GenresModule {}
+export class GenresModule { }
