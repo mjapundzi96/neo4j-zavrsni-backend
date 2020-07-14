@@ -16,6 +16,7 @@ const common_1 = require("@nestjs/common");
 const songs_service_1 = require("./songs.service");
 const get_songs_filter_dto_1 = require("./dto/get-songs-filter.dto");
 const passport_1 = require("@nestjs/passport");
+const models_1 = require("../models");
 let SongsController = class SongsController {
     constructor(SongsService) {
         this.SongsService = SongsService;

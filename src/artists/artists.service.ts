@@ -1,57 +1,51 @@
 import { Injectable, Inject, NotFoundException } from '@nestjs/common';
-import * as Neo4j from 'neo4j-driver';
+import { Neo4jService } from 'src/neo4j/neo4j.service';
 import { GetArtistsFilterDto } from './dto/get-artists-filter.dto';
 
 @Injectable()
 export class ArtistsService {
     constructor(
-        /* @Inject("Neo4j") private readonly neo4j: Neo4j.Driver */
+        private readonly neo4j: Neo4jService
     ) { }
     async getArtists(filterDto:GetArtistsFilterDto) {
-       /*  const { name } = filterDto;
-        const artists_results = (await this.neo4j.session().run(`Match (n:Artist) Where toUpper(n.name) CONTAINS toUpper('${name}') return n;`)).records;
-        let artists = [];
-        artists_results.forEach(result=>{
-            const fields = result["_fields"][0];
-            artists.push({
-                id: fields.identity.low,
-                name: fields.properties.name,
-                country: fields.properties.country,
-                type: fields.properties.type,
-                imageUrl: fields.properties.imageUrl,
-            })
+        const { name } = filterDto;
+        const artist_results = await this.neo4j.query(`Match (n:Artist) Where toUpper(n.name) CONTAINS toUpper('${name}') return {
+            id:ID(n),
+            name:n.name,
+            country:n.country,
+            type:n.type,
+            imageUrl: n.imageUrl
+        } as artist;`)
+        const artists = artist_results.map(result => {
+            const artistObj = result.get('artist');
+            return {
+                ...artistObj,
+                id: artistObj.id.low,
+            }
         })
-        return artists; */
+        return artists;
     }
 
     async getArtist(id: number) {
-       /*  const artist_result = (await this.neo4j.session().run(`Match (n:Artist) Where ID(n)=${id} return n;`)).records[0];
-        if (artist_result) {
-            let albums = [];
-            const albums_results = (await this.neo4j.session().run(`MATCH (al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE ID(ar)=${id}
-            RETURN al;`)).records;
-            albums_results.forEach(result => {
-                const fields = result["_fields"][0];
-                albums.push({
-                    id: fields.identity.low,
-                    name: fields.properties.name,
-                    coverUrl: fields.properties.coverUrl,
-                    year: fields.properties.year.low
+        const artist_result = await this.neo4j.query(`MATCH (ar:Artist)<-[:BY_ARTIST]-(al:Album)
+        WITH ar, collect({ id: id(al), name: al.name,coverUrl:al.covercoverUrl }) AS album
+        WITH { id: id(ar), name: ar.name,imageUrl:ar.imageUrl,albums: album } AS artist
+        WHERE ID(ar)=${id}
+        RETURN {artists: collect(artist) } AS artist_return;`);
+        const artistObj = artist_result[0].get('artist_return').artists[0];
+        if (artistObj) {
+            return {
+                ...artistObj,
+                id: artistObj.id.low,
+                albums: artistObj.albums.map(album => {
+                    return {
+                        ...album,
+                        id: album.id.low,
+                    }
                 })
-            })
-            const fields = artist_result["_fields"][0];
-            const artist = {
-                id: fields.identity.low,
-                name: fields.properties.name,
-                country: fields.properties.country,
-                type: fields.properties.type,
-                imageUrl: fields.properties.imageUrl,
-                albums: albums,
             }
-
-            return artist;
         }
-        else throw new NotFoundException('Artist not found'); */
+        else throw new NotFoundException('Artist not found');
     }
     
 }

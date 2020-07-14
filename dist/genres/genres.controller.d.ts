@@ -1,6 +1,6 @@
 import { GenresService } from './genres.service';
 import { Genre, Album } from './../models';
-import { GetPopularFilterDto } from './get-popular-filter.dto';
+import { GetPopularFilterDto } from './dto/get-popular-filter.dto';
 export declare class GenresController {
     private genresService;
     constructor(genresService: GenresService);

@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { GetSongsFilterDto } from './dto/get-songs-filter.dto';
 import { Neo4jService } from './../neo4j/neo4j.service'
+import { Song } from 'src/models';
 
 
 @Injectable()
@@ -8,64 +9,75 @@ export class SongsService {
     constructor(
         private readonly neo4j: Neo4jService
     ) { }
-    async getSongs(filterDto: GetSongsFilterDto) {
-        /* const { title } = filterDto;
-        const songs_results = (await this.neo4j.session().run(`Match (n:Song) Where toUpper(n.title) CONTAINS toUpper('${title}') return n;`)).records;
-        let songs = [];
-        songs_results.forEach(result => {
-            const fields = result["_fields"][0];
-            songs.push({
-                id: fields.identity.low,
-                title: fields.properties.title,
-                views: fields.properties.views.low,
-                songUrl: fields.properties.songUrl,
-            })
+    async getSongs(filterDto: GetSongsFilterDto): Promise<Song[]> {
+        const { title } = filterDto;
+        const songs_results = await this.neo4j.query(`MATCH (n:Song) WHERE toUpper(n.title) CONTAINS toUpper('${title}') RETURN {
+            id: ID(n),
+            title:n.title,
+            songUrl:n.songUrl,
+            views:n.views
+        } AS song;`)
+        const songs = songs_results.map(result => {
+            const songObj = result.get('song');
+            return {
+                ...songObj,
+                id: songObj.id.low,
+                views: songObj.views.low
+            }
         })
-        return songs; */
+        return songs;
     }
 
-    async getSong(id: number) {
+    async getSong(id: number): Promise<Song> {
 
-        /* const song_result = (await this.neo4j.session().run(`Match (s:Song)-[r:FROM_ALBUM]->(al:Album)-[r2:BY_ARTIST]->(ar:Artist) Where ID(s)=${id} return s,al,ar;`)).records[0];
-        if (song_result) {
-
-            const song_fields = song_result["_fields"][0];
-            const album_fields = song_result["_fields"][1];
-            const artist_fields = song_result["_fields"][2];
-            const song = {
-                id: song_fields.identity.low,
-                title: song_fields.properties.title,
-                views: song_fields.properties.views.low,
-                songUrl: song_fields.properties.songUrl,
-                album: {
-                    id: album_fields.identity.low,
-                    name: album_fields.properties.name,
-                    coverUrl: album_fields.properties.coverUrl,
+        const song_result = (await this.neo4j.query(`Match (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist) Where ID(s)=${id} return {
+            id: ID(s),
+            title: s.title,
+            views: s.views,
+            songUrl: s.songUrl,
+            album: {
+                id: ID(al),
+                name: al.name,
+                coverUrl: al.coverUrl,
+                artist: {
+                    id: ID(ar),
+                    name: ar.name,
+                    imageUrl: ar.imageUrl
+                }
+            }
+        } as song;`))
+        const songObj = song_result[0].get('song');
+        if (songObj){
+            const album = songObj.album;
+            const artist = album.artist;
+            return {
+                ...songObj,
+                id: songObj.id.low,
+                views: songObj.views.low,
+                album:{
+                    ...album,
+                    id:album.id.low,
                     artist:{
-                        id:artist_fields.identity.low,
-                        name:artist_fields.properties.name,
-                        
+                        ...artist,
+                        id:artist.id.low,
                     }
                 }
             }
-
-            return song;
         }
-        else throw new NotFoundException('Song not found'); */
+        else throw new NotFoundException('Song not found');
     }
 
 
-    async viewSong(id: number, user_id: number) {
-        //remove previous listen history for song if exists
-        await this.neo4j.query(`MATCH (u:User)-[r:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id} AND ID(s)=${id} DELETE r;`)
-        const create_query = await this.neo4j.query(`MATCH (u:User),(s:Song)
+    async viewSong(id: number, user_id: number): Promise<boolean> {
+        const result = await this.neo4j.query(`MATCH (u:User),(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
-        CREATE (u)-[r:HAS_VIEWED{ date_time: datetime({timezone:'Europe/Zagreb'}) }]->(s)
-        SET s.views = s.views + 1
+        MERGE (u)-[r:HAS_VIEWED]->(s)
+        ON CREATE SET s.views = s.views + 1
+        SET r.date_time = datetime({timezone:'Europe/Zagreb'})
         RETURN true AS result`)
-        if (create_query[0].get('result')) {
+        if (result[0].get('result')) {
             return true;
         }
-        else throw new NotFoundException('User does not exist');
+        else throw new NotFoundException('User or song does not exist');
     }
 }

@@ -1,5 +1,6 @@
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 import { JwtService } from '@nestjs/jwt';
+import { User } from '../models/user.model';
 import { Neo4jService } from './../neo4j/neo4j.service';
 export declare class AuthService {
     private jwtService;
@@ -10,6 +11,6 @@ export declare class AuthService {
         accessToken: string;
         user_id: number;
     }>;
-    validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<any>;
+    validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User>;
     private hashPassword;
 }

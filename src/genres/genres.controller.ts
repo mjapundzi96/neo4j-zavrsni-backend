@@ -1,7 +1,7 @@
 import { Controller, Get, Param, Query, ValidationPipe } from '@nestjs/common';
 import { GenresService } from './genres.service'
 import { Genre, Album } from './../models';
-import { GetPopularFilterDto } from './get-popular-filter.dto';
+import { GetPopularFilterDto } from './dto/get-popular-filter.dto';
 
 @Controller('genres')
 export class GenresController {

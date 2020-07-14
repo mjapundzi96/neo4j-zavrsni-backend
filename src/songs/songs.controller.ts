@@ -1,7 +1,8 @@
-import { Controller, Query, Get, Param, ValidationPipe, Post, Body, Request, Req, UseGuards } from '@nestjs/common';
+import { Controller, Query, Get, Param, ValidationPipe, Post, Req, UseGuards } from '@nestjs/common';
 import { SongsService } from './songs.service'
 import { GetSongsFilterDto } from './dto/get-songs-filter.dto';
 import { AuthGuard } from '@nestjs/passport';
+import { Song } from 'src/models';
 
 @Controller('songs')
 @UseGuards(AuthGuard())
@@ -11,13 +12,13 @@ export class SongsController {
     @Get()
     async getSongs(
         @Query(ValidationPipe) filterDto: GetSongsFilterDto,
-    ) {
+    ): Promise<Song[]> {
         return this.SongsService.getSongs(filterDto);
     }
 
     @Get('/:id')
     async getSong(
-        @Param('id') id: number) {
+        @Param('id') id: number): Promise<Song> {
         return await this.SongsService.getSong(id)
     }
 
@@ -25,7 +26,7 @@ export class SongsController {
     async viewSong(
         @Param('id') id: number,
         @Req() request: any
-    ) {
-        return await this.SongsService.viewSong(id,request.user.id);
+    ): Promise<boolean> {
+        return await this.SongsService.viewSong(id, request.user.id);
     }
 }

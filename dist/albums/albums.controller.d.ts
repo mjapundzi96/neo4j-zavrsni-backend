@@ -1,8 +1,9 @@
 import { AlbumsService } from './albums.service';
 import { GetAlbumsFilterDto } from './dto/get-albums-filter.dto';
+import { Album } from 'src/models';
 export declare class AlbumsController {
     private AlbumsService;
     constructor(AlbumsService: AlbumsService);
-    getUsers(filterDto: GetAlbumsFilterDto): Promise<void>;
-    getAlbum(id: number): Promise<void>;
+    getAlbums(filterDto: GetAlbumsFilterDto): Promise<Album[]>;
+    getAlbum(id: number): Promise<Album>;
 }

@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const artists_service_1 = require("./artists.service");
 const get_artists_filter_dto_1 = require("./dto/get-artists-filter.dto");
+const artist_model_1 = require("../models/artist.model");
 let ArtistsController = class ArtistsController {
     constructor(artistsService) {
         this.artistsService = artistsService;

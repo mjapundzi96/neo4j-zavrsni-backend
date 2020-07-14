@@ -13,7 +13,7 @@ export class AuthService {
         private readonly neo4j: Neo4jService
     ) { }
 
-    async signUp(authCredentialsDto: AuthCredentialsDto) {
+    async signUp(authCredentialsDto: AuthCredentialsDto):Promise<boolean> {
         const { username, password } = authCredentialsDto
         const user = new User();
         user.username = username;
@@ -52,7 +52,7 @@ export class AuthService {
         }
     }
 
-    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<any> {
+    async validateUserPassword(authCredentialsDto: AuthCredentialsDto): Promise<User> {
         const { username, password } = authCredentialsDto;
         const user_result = await this.neo4j.query(`MATCH (n:User {username: '${username}'}) RETURN {
             id: ID(n),

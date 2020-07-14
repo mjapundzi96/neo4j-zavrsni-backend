@@ -10,16 +10,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
+const neo4j_service_1 = require("../neo4j/neo4j.service");
+const models_1 = require("../models");
 let AlbumsService = class AlbumsService {
-    constructor() { }
+    constructor(neo4j) {
+        this.neo4j = neo4j;
+    }
     async getAlbums(filterDto) {
+        const { name } = filterDto;
+        const album_results = await this.neo4j.query(`MATCH (n:Album) WHERE toUpper(n.name) CONTAINS toUpper('${name}') return {
+            id: ID(n),
+            name: n.name,
+            year: n.year,
+            coverUrl: n.coverUrl
+        } as album;`);
+        const albums = album_results.map(result => {
+            const albumObj = result.get('album');
+            return Object.assign(Object.assign({}, albumObj), { id: albumObj.id.low, year: albumObj.year.low });
+        });
+        return albums;
     }
     async getAlbum(id) {
+        const albums_result = await this.neo4j.query(`MATCH (a:Album)<-[:FROM_ALBUM]-(s:Song)
+        WITH a, collect({ id: id(s), title: s.title,views:s.views,songUrl:s.songUrl }) AS song
+        WITH { id: id(a), name: a.name,coverUrl:a.coverUrl,songs: song } AS album
+        WHERE ID(a)=${id}
+        RETURN {albums: collect(album) } AS album_return;`);
+        const albumObj = albums_result[0].get('album_return').albums[0];
+        if (albumObj) {
+            return Object.assign(Object.assign({}, albumObj), { id: albumObj.id.low, songs: albumObj.songs.map(song => {
+                    return Object.assign(Object.assign({}, song), { id: song.id.low, views: song.views.low });
+                }) });
+        }
+        else
+            throw new common_1.NotFoundException('Album not found');
     }
 };
 AlbumsService = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [neo4j_service_1.Neo4jService])
 ], AlbumsService);
 exports.AlbumsService = AlbumsService;
 //# sourceMappingURL=albums.service.js.map

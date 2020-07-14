@@ -15,11 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const albums_service_1 = require("./albums.service");
 const get_albums_filter_dto_1 = require("./dto/get-albums-filter.dto");
+const models_1 = require("../models");
 let AlbumsController = class AlbumsController {
     constructor(AlbumsService) {
         this.AlbumsService = AlbumsService;
     }
-    async getUsers(filterDto) {
+    async getAlbums(filterDto) {
         return this.AlbumsService.getAlbums(filterDto);
     }
     async getAlbum(id) {
@@ -32,7 +33,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [get_albums_filter_dto_1.GetAlbumsFilterDto]),
     __metadata("design:returntype", Promise)
-], AlbumsController.prototype, "getUsers", null);
+], AlbumsController.prototype, "getAlbums", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),

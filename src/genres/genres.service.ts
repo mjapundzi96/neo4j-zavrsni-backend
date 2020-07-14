@@ -1,7 +1,7 @@
 import { Injectable, Inject, NotFoundException, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { Genre, Album } from './../models';
 import { Neo4jService } from './../neo4j/neo4j.service'
-import { GetPopularFilterDto } from './get-popular-filter.dto';
+import { GetPopularFilterDto } from './dto/get-popular-filter.dto';
 
 @Injectable()
 export class GenresService {
