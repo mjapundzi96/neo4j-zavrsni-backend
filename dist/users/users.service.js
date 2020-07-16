@@ -50,24 +50,13 @@ let UsersService = class UsersService {
     }
     async getRecommendendedAlbums(user_id, getRecommendedFilterDto) {
         const { offset, limit } = getRecommendedFilterDto;
-        const albumsResults = await this.neo4j.query(`MATCH (u:User)-[:HAS_FAVORITE_GENRE]->(:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song) where ID(u)=${user_id}
-         WITH al,ar,s,sum(s.views) as views
-         RETURN {
-             id:ID(al),
-             name:al.name,
-             coverUrl:al.coverUrl,
-             year:al.year,
-             artist:{
-                 id:ID(ar),
-                 name:ar.name,
-                 imageUrl:ar.imageUrl,
-                 country:ar.country
-             }
-         } AS album ORDER BY views DESC SKIP ${offset} LIMIT ${limit};`);
+        const albumsResults = await this.neo4j.query(`MATCH (u:User)-[:HAS_FAVORITE_GENRE]->(g:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song) where ID(u)=${user_id}
+        return al as album,ar as artist,SUM(s.views) ORDER BY SUM(s.views) DESC SKIP ${offset} LIMIT ${limit};`);
         let albums = [];
         albumsResults.forEach((result) => {
             const albumObj = result.get('album');
-            albums.push(Object.assign(Object.assign({}, albumObj), { id: albumObj.id.low, year: albumObj.year.low, artist: Object.assign(Object.assign({}, albumObj.artist), { id: albumObj.artist.id.low }) }));
+            const artistObj = result.get('artist');
+            albums.push(Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }));
         });
         return albums;
     }

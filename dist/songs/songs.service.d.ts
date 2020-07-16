@@ -6,5 +6,6 @@ export declare class SongsService {
     constructor(neo4j: Neo4jService);
     getSongs(filterDto: GetSongsFilterDto): Promise<Song[]>;
     getSong(id: number): Promise<Song>;
+    getUsersAlsoViewed(id: number, user_id: number): Promise<Song[]>;
     viewSong(id: number, user_id: number): Promise<boolean>;
 }

@@ -22,6 +22,14 @@ export class SongsController {
         return await this.SongsService.getSong(id)
     }
 
+    @Get('/:id/users_also_viewed')
+    async getUsersAlsoViewed(
+        @Param('id') id: number,
+        @Req() request: any
+    ): Promise<Song[]> {
+        return this.SongsService.getUsersAlsoViewed(id, request.user.id)
+    }
+
     @Post('/:id/view')
     async viewSong(
         @Param('id') id: number,

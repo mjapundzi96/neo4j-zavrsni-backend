@@ -31,30 +31,29 @@ let SongsService = class SongsService {
         return songs;
     }
     async getSong(id) {
-        const song_result = (await this.neo4j.query(`Match (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist) Where ID(s)=${id} return {
-            id: ID(s),
-            title: s.title,
-            views: s.views,
-            songUrl: s.songUrl,
-            album: {
-                id: ID(al),
-                name: al.name,
-                coverUrl: al.coverUrl,
-                artist: {
-                    id: ID(ar),
-                    name: ar.name,
-                    imageUrl: ar.imageUrl
-                }
-            }
-        } as song;`));
+        const song_result = await this.neo4j.query(`MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist) WHERE ID(s)=${id} 
+        RETURN s AS song, al AS album, ar AS artist;`);
         const songObj = song_result[0].get('song');
+        const artistObj = song_result[0].get('artist');
+        const albumObj = song_result[0].get('album');
         if (songObj) {
-            const album = songObj.album;
-            const artist = album.artist;
-            return Object.assign(Object.assign({}, songObj), { id: songObj.id.low, views: songObj.views.low, album: Object.assign(Object.assign({}, album), { id: album.id.low, artist: Object.assign(Object.assign({}, artist), { id: artist.id.low }) }) });
+            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
         }
         else
             throw new common_1.NotFoundException('Song not found');
+    }
+    async getUsersAlsoViewed(id, user_id) {
+        const song_results = await this.neo4j.query(`MATCH (s:Song)<-[:HAS_VIEWED]-(u:User)-[:HAS_VIEWED]->(rec:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist)
+        WHERE ID(u)<>${user_id} AND ID(s)=${id} AND NOT EXISTS((u)-[:HAS_VIEWED]-(rec))
+        RETURN rec AS song,ar AS artist,al AS album,COUNT(*) AS usersWhoAlsoViewed
+        ORDER BY usersWhoAlsoViewed DESC LIMIT 25`);
+        const songs = song_results.map(result => {
+            const songObj = result.get('song');
+            const albumObj = result.get('album');
+            const artistObj = result.get('artist');
+            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
+        });
+        return songs;
     }
     async viewSong(id, user_id) {
         const result = await this.neo4j.query(`MATCH (u:User),(s:Song)

@@ -32,14 +32,14 @@ let ArtistsService = class ArtistsService {
     }
     async getArtist(id) {
         const artist_result = await this.neo4j.query(`MATCH (ar:Artist)<-[:BY_ARTIST]-(al:Album)
-        WITH ar, collect({ id: id(al), name: al.name,coverUrl:al.covercoverUrl }) AS album
+        WITH ar, collect({ id: id(al), name: al.name,coverUrl:al.coverUrl,year:al.year }) AS album
         WITH { id: id(ar), name: ar.name,imageUrl:ar.imageUrl,albums: album } AS artist
         WHERE ID(ar)=${id}
         RETURN {artists: collect(artist) } AS artist_return;`);
         const artistObj = artist_result[0].get('artist_return').artists[0];
         if (artistObj) {
             return Object.assign(Object.assign({}, artistObj), { id: artistObj.id.low, albums: artistObj.albums.map(album => {
-                    return Object.assign(Object.assign({}, album), { id: album.id.low });
+                    return Object.assign(Object.assign({}, album), { id: album.id.low, year: album.year.low });
                 }) });
         }
         else

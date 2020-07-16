@@ -1286,8 +1286,8 @@
         "signature": "f22425ca297df84be85bfaf2cad561e2a2ca1b0bddf52a63d370cff609e2ec4f"
       },
       "../src/neo4j/neo4j-config.interface.ts": {
-        "version": "24c864177dbfc62b0b29cd9d9bb11e5689c1a27696a5f779a33f3fac12ccc4de",
-        "signature": "c1a9dba06724b6e844808e1e6658af655924d78891a85c947f3b6e8aed96d2fd"
+        "version": "dd4885010fbc5d1ba11b7590befb8d0c018cb687d94d632513611a1a6d1394a6",
+        "signature": "dd4885010fbc5d1ba11b7590befb8d0c018cb687d94d632513611a1a6d1394a6"
       },
       "../src/neo4j/neo4j.constants.ts": {
         "version": "c423faeb2cde04cc99637efe6904152e987519399d8b422f5e5869e0f3544db7",
@@ -1434,7 +1434,7 @@
         "signature": "05e472f255d9e735265402b1ac053fdba058e5f6308fdb54f734f5f8ff1ecfee"
       },
       "../src/users/users.service.ts": {
-        "version": "2626c7cfb735f3b4dea6fd214178a7b5e396f86defb641ef4ccb9766d4990949",
+        "version": "8223b4bcb7c8c3786df39e3aaa5c66854e17179a2c0fb12e1a1e4769cb8128b5",
         "signature": "ab95cbb68139d6bc2f7039ec7628b70291832f051d8dac609aed485b1d2e7758"
       },
       "../src/users/users.controller.ts": {
@@ -1466,7 +1466,7 @@
         "signature": "45865dd409c5c8042e4a96cef0f3ed11e9ca827e2dc24a6f3b5c646099d9efa6"
       },
       "../src/artists/artists.service.ts": {
-        "version": "8f8815ce81814cbbe248161adcdfd17527e2edb31d292b060c4565a8627656b5",
+        "version": "83cffa703196d743e1ff3adbabebd1cb6f6f50633addb43545f678bd22f674b1",
         "signature": "18159e1e88d89e1d01c9ac10978d919c68a5f879f1b025b5608267c7a6855de4"
       },
       "../src/models/artist.model.ts": {
@@ -1486,12 +1486,12 @@
         "signature": "21a47e3923898f37a6601d8effd70b932368a818fc7c6d8c093977555ceb60d6"
       },
       "../src/songs/songs.service.ts": {
-        "version": "e204472a53e9d076d11b3590a9ede6d1028de8b4c293e726a84fd73ac8f312f2",
-        "signature": "e89b0a18f80e1aa8d82a4a62ca3f40dfc000d8cb5379848eae7a6388fbabf2a6"
+        "version": "9a2ac5296a902b7443a4bde1bb5e4701bfeb3d8670ef37bbc3b086ff28acfc55",
+        "signature": "a24e91af9ba6b250a176b1160b994257d3e94203dacb8c3c5bc06261ea3e9e56"
       },
       "../src/songs/songs.controller.ts": {
-        "version": "e0a6d07e3f791b010668317430ed162f6651097410ebe868e192d08f4e15d8af",
-        "signature": "2d15aa9d4a531140a0e95f9cdd68d9539a6e23c50b2cdaab03a506eec86d9f27"
+        "version": "3f06b826ff80e726839b5302ea4c77e3f0643a4f2264d82b5d5283d8b647ad56",
+        "signature": "a8e9719541f7d1ed58740c018d143ae5d36c6975b34e212723151e32ec984cb7"
       },
       "../src/songs/songs.module.ts": {
         "version": "df1b3401134c8860333624c970536709103431b2814e57fade4b143cf81456d1",
@@ -9287,9 +9287,7 @@
       "../node_modules/neo4j-driver/types/session-rx.d.ts",
       "../node_modules/neo4j-driver/types/driver.d.ts",
       "../node_modules/neo4j-driver/types/index.d.ts",
-      "../src/neo4j/neo4j-config.interface.ts",
       "../src/neo4j/neo4j.constants.ts",
-      "../src/neo4j/neo4j.service.ts",
       "../src/auth/auth.service.ts",
       "../src/auth/auth.controller.ts",
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
@@ -9315,9 +9313,6 @@
       "../node_modules/@nestjs/config/dist/utils/index.d.ts",
       "../node_modules/@nestjs/config/dist/index.d.ts",
       "../node_modules/@nestjs/config/index.d.ts",
-      "../src/neo4j/neo4j.util.ts",
-      "../src/neo4j/neo4j.module.ts",
-      "../src/auth/auth.module.ts",
       "../src/users/dto/get-users-filter.dto.ts",
       "../src/users/dto/get-recommended-filter.dto.ts",
       "../src/models/genre.model.ts",
@@ -9326,24 +9321,19 @@
       "../src/models/index.ts",
       "../src/users/users.service.ts",
       "../src/users/users.controller.ts",
-      "../src/users/users.module.ts",
       "../src/genres/dto/get-popular-filter.dto.ts",
       "../src/genres/genres.service.ts",
       "../src/genres/genres.controller.ts",
-      "../src/genres/genres.module.ts",
       "../src/artists/dto/get-artists-filter.dto.ts",
       "../src/artists/artists.service.ts",
       "../src/models/artist.model.ts",
       "../src/artists/artists.controller.ts",
-      "../src/artists/artists.module.ts",
       "../src/songs/dto/get-songs-filter.dto.ts",
       "../src/songs/songs.service.ts",
-      "../src/songs/songs.module.ts",
+      "../src/songs/songs.controller.ts",
       "../src/albums/dto/get-albums-filter.dto.ts",
       "../src/albums/albums.service.ts",
       "../src/albums/albums.controller.ts",
-      "../src/albums/albums.module.ts",
-      "../src/app.module.ts",
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts",
       "../node_modules/@nestjs/core/adapters/index.d.ts",
       "../node_modules/@nestjs/core/injector/module-token-factory.d.ts",
@@ -9380,7 +9370,6 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts",
       "../node_modules/@nestjs/core/services/index.d.ts",
       "../node_modules/@nestjs/core/index.d.ts",
-      "../src/main.ts",
       "../src/songs/dto/view-song.dto.ts",
       "../src/users/get-user.decorator.ts",
       "../node_modules/@types/anymatch/index.d.ts",
@@ -9426,7 +9415,18 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/songs/songs.controller.ts"
+      "../src/neo4j/neo4j-config.interface.ts",
+      "../src/neo4j/neo4j.module.ts",
+      "../src/neo4j/neo4j.util.ts",
+      "../src/neo4j/neo4j.service.ts",
+      "../src/auth/auth.module.ts",
+      "../src/users/users.module.ts",
+      "../src/genres/genres.module.ts",
+      "../src/artists/artists.module.ts",
+      "../src/songs/songs.module.ts",
+      "../src/albums/albums.module.ts",
+      "../src/app.module.ts",
+      "../src/main.ts"
     ]
   },
   "version": "3.8.3"

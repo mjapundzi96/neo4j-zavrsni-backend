@@ -27,6 +27,9 @@ let SongsController = class SongsController {
     async getSong(id) {
         return await this.SongsService.getSong(id);
     }
+    async getUsersAlsoViewed(id, request) {
+        return this.SongsService.getUsersAlsoViewed(id, request.user.id);
+    }
     async viewSong(id, request) {
         return await this.SongsService.viewSong(id, request.user.id);
     }
@@ -45,6 +48,14 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], SongsController.prototype, "getSong", null);
+__decorate([
+    common_1.Get('/:id/users_also_viewed'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], SongsController.prototype, "getUsersAlsoViewed", null);
 __decorate([
     common_1.Post('/:id/view'),
     __param(0, common_1.Param('id')),

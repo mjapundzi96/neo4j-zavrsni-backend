@@ -28,7 +28,7 @@ export class ArtistsService {
 
     async getArtist(id: number) {
         const artist_result = await this.neo4j.query(`MATCH (ar:Artist)<-[:BY_ARTIST]-(al:Album)
-        WITH ar, collect({ id: id(al), name: al.name,coverUrl:al.covercoverUrl }) AS album
+        WITH ar, collect({ id: id(al), name: al.name,coverUrl:al.coverUrl,year:al.year }) AS album
         WITH { id: id(ar), name: ar.name,imageUrl:ar.imageUrl,albums: album } AS artist
         WHERE ID(ar)=${id}
         RETURN {artists: collect(artist) } AS artist_return;`);
@@ -41,6 +41,7 @@ export class ArtistsService {
                     return {
                         ...album,
                         id: album.id.low,
+                        year: album.year.low
                     }
                 })
             }
