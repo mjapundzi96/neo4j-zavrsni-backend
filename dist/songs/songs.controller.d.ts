@@ -7,5 +7,6 @@ export declare class SongsController {
     getSongs(filterDto: GetSongsFilterDto): Promise<Song[]>;
     getSong(id: number): Promise<Song>;
     getUsersAlsoViewed(id: number, request: any): Promise<Song[]>;
+    getRelatedSongs(id: number): Promise<Song[]>;
     viewSong(id: number, request: any): Promise<boolean>;
 }

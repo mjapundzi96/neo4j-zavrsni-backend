@@ -40,32 +40,26 @@ export class GenresService {
 
     async getPopularAlbumsFromGenre(id: number, getPopularFilterDto: GetPopularFilterDto): Promise<Album[]> {
         const { offset, limit } = getPopularFilterDto;
-        const albums_results = await this.neo4j.query(`MATCH (g:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song)
+        const albums_results = await this.neo4j.query(`
+        MATCH (g:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song)
+
         WHERE ID(g)=${id}
-        WITH al,ar,s,sum(s.views) AS views
-        RETURN {
-            id:ID(al),
-            name:al.name,
-            coverUrl:al.coverUrl,
-            year:al.year,
-            views:views,
-            artist:{
-                id:ID(ar),
-                name:ar.name,
-                imageUrl:ar.imageUrl,
-                country:ar.country
-            }
-        } AS album ORDER BY views DESC SKIP ${offset} LIMIT ${limit};`)
+        WITH al, ar,s,sum(s.views) AS views
+        RETURN DISTINCT al AS album, ar as artist, views ORDER BY views DESC SKIP ${offset} LIMIT ${limit};`)
         let albums = [];
         albums_results.forEach((result) => {
             const albumObj = result.get('album');
+            const artistObj = result.get('artist')
+            console.log(albumObj)
+            const { year } = albumObj.properties
+         
             albums.push({
-                ...albumObj,
-                id: albumObj.id.low,
-                year: albumObj.year.low,
+                ...albumObj.properties,
+                id: albumObj.low,
+                year: year.low,
                 artist: {
-                    ...albumObj.artist,
-                    id: albumObj.artist.id.low
+                    ...artistObj.properties,
+                    id: artistObj.identity.low
                 }
             } as Album)
         })

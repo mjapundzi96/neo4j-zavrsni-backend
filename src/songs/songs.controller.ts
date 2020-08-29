@@ -30,6 +30,13 @@ export class SongsController {
         return this.SongsService.getUsersAlsoViewed(id, request.user.id)
     }
 
+    @Get('/:id/related')
+    async getRelatedSongs(
+        @Param('id') id: number,
+    ): Promise<Song[]> {
+        return this.SongsService.getRelatedSongs(id)
+    }
+
     @Post('/:id/view')
     async viewSong(
         @Param('id') id: number,
