@@ -81,6 +81,39 @@ let SongsService = class SongsService {
         else
             throw new common_1.NotFoundException('User or song does not exist');
     }
+    async likeSong(id, user_id) {
+        const result = await this.neo4j.query(`MATCH (u:User),(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        CREATE (u)-[r:LIKED]->(s)
+        RETURN true AS result`);
+        if (result[0].get('result')) {
+            return true;
+        }
+        else
+            throw new common_1.NotFoundException('User or song does not exist');
+    }
+    async unLikeSong(id, user_id) {
+        const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        DELETE r
+        return true as result;`);
+        if (result[0].get('result')) {
+            return true;
+        }
+        else
+            throw new common_1.NotFoundException('User or song does not exist');
+    }
+    async getHasLiked(id, user_id) {
+        const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        DELETE r
+        return true as result;`);
+        if (result[0].get('result')) {
+            return true;
+        }
+        else
+            throw new common_1.NotFoundException('User or song does not exist');
+    }
 };
 SongsService = __decorate([
     common_1.Injectable(),

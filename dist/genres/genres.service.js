@@ -51,7 +51,7 @@ let GenresService = class GenresService {
             const artistObj = result.get('artist');
             console.log(albumObj);
             const { year } = albumObj.properties;
-            albums.push(Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.low, year: year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }));
+            albums.push(Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }));
         });
         return albums;
     }

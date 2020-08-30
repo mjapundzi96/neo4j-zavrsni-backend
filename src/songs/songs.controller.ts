@@ -7,19 +7,19 @@ import { Song } from 'src/models';
 @Controller('songs')
 @UseGuards(AuthGuard())
 export class SongsController {
-    constructor(private SongsService: SongsService) { }
+    constructor(private songsService: SongsService) { }
 
     @Get()
     async getSongs(
         @Query(ValidationPipe) filterDto: GetSongsFilterDto,
     ): Promise<Song[]> {
-        return this.SongsService.getSongs(filterDto);
+        return this.songsService.getSongs(filterDto);
     }
 
     @Get('/:id')
     async getSong(
         @Param('id') id: number): Promise<Song> {
-        return await this.SongsService.getSong(id)
+        return await this.songsService.getSong(id)
     }
 
     @Get('/:id/users_also_viewed')
@@ -27,14 +27,14 @@ export class SongsController {
         @Param('id') id: number,
         @Req() request: any
     ): Promise<Song[]> {
-        return this.SongsService.getUsersAlsoViewed(id, request.user.id)
+        return this.songsService.getUsersAlsoViewed(id, request.user.id)
     }
 
     @Get('/:id/related')
     async getRelatedSongs(
         @Param('id') id: number,
     ): Promise<Song[]> {
-        return this.SongsService.getRelatedSongs(id)
+        return this.songsService.getRelatedSongs(id)
     }
 
     @Post('/:id/view')
@@ -42,6 +42,22 @@ export class SongsController {
         @Param('id') id: number,
         @Req() request: any
     ): Promise<boolean> {
-        return await this.SongsService.viewSong(id, request.user.id);
+        return await this.songsService.viewSong(id, request.user.id);
+    }
+
+    @Post('/:id/like')
+    async likeSong(
+        @Param('id') id: number,
+        @Req() request: any
+    ): Promise<boolean> {
+        return await this.songsService.likeSong(id, request.user.id);
+    }
+
+    @Post('/:id/unlike')
+    async unLikeSong(
+        @Param('id') id: number,
+        @Req() request: any
+    ): Promise<boolean> {
+        return await this.songsService.unLikeSong(id, request.user.id);
     }
 }

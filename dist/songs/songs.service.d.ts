@@ -9,4 +9,7 @@ export declare class SongsService {
     getUsersAlsoViewed(id: number, user_id: number): Promise<Song[]>;
     getRelatedSongs(id: number): Promise<Song[]>;
     viewSong(id: number, user_id: number): Promise<boolean>;
+    likeSong(id: number, user_id: number): Promise<boolean>;
+    unLikeSong(id: number, user_id: number): Promise<boolean>;
+    getHasLiked(id: number, user_id: number): Promise<boolean>;
 }

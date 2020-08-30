@@ -120,4 +120,37 @@ export class SongsService {
         }
         else throw new NotFoundException('User or song does not exist');
     }
+
+    async likeSong(id:number,user_id:number): Promise<boolean>{
+        const result = await this.neo4j.query(`MATCH (u:User),(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        CREATE (u)-[r:LIKED]->(s)
+        RETURN true AS result`)
+        if (result[0].get('result')) {
+            return true;
+        }
+        else throw new NotFoundException('User or song does not exist');
+    }
+
+    async unLikeSong(id:number,user_id:number): Promise<boolean>{
+        const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        DELETE r
+        return true as result;`)
+        if (result[0].get('result')) {
+            return true;
+        }
+        else throw new NotFoundException('User or song does not exist');
+    }
+
+    async getHasLiked(id:number, user_id:number): Promise<boolean>{
+        const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
+        WHERE ID(u)=${user_id} and ID(s)=${id}
+        DELETE r
+        return true as result;`)
+        if (result[0].get('result')) {
+            return true;
+        }
+        else throw new NotFoundException('User or song does not exist');
+    }
 }

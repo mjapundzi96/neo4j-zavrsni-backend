@@ -18,23 +18,29 @@ const get_songs_filter_dto_1 = require("./dto/get-songs-filter.dto");
 const passport_1 = require("@nestjs/passport");
 const models_1 = require("../models");
 let SongsController = class SongsController {
-    constructor(SongsService) {
-        this.SongsService = SongsService;
+    constructor(songsService) {
+        this.songsService = songsService;
     }
     async getSongs(filterDto) {
-        return this.SongsService.getSongs(filterDto);
+        return this.songsService.getSongs(filterDto);
     }
     async getSong(id) {
-        return await this.SongsService.getSong(id);
+        return await this.songsService.getSong(id);
     }
     async getUsersAlsoViewed(id, request) {
-        return this.SongsService.getUsersAlsoViewed(id, request.user.id);
+        return this.songsService.getUsersAlsoViewed(id, request.user.id);
     }
     async getRelatedSongs(id) {
-        return this.SongsService.getRelatedSongs(id);
+        return this.songsService.getRelatedSongs(id);
     }
     async viewSong(id, request) {
-        return await this.SongsService.viewSong(id, request.user.id);
+        return await this.songsService.viewSong(id, request.user.id);
+    }
+    async likeSong(id, request) {
+        return await this.songsService.likeSong(id, request.user.id);
+    }
+    async unLikeSong(id, request) {
+        return await this.songsService.unLikeSong(id, request.user.id);
     }
 };
 __decorate([
@@ -74,6 +80,22 @@ __decorate([
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], SongsController.prototype, "viewSong", null);
+__decorate([
+    common_1.Post('/:id/like'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], SongsController.prototype, "likeSong", null);
+__decorate([
+    common_1.Post('/:id/unlike'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], SongsController.prototype, "unLikeSong", null);
 SongsController = __decorate([
     common_1.Controller('songs'),
     common_1.UseGuards(passport_1.AuthGuard()),

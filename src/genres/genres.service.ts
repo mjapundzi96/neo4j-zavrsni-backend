@@ -55,7 +55,7 @@ export class GenresService {
          
             albums.push({
                 ...albumObj.properties,
-                id: albumObj.low,
+                id: albumObj.identity.low,
                 year: year.low,
                 artist: {
                     ...artistObj.properties,
