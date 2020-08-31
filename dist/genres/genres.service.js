@@ -47,7 +47,6 @@ let GenresService = class GenresService {
         albums_results.forEach((result) => {
             const albumObj = result.get('album');
             const artistObj = result.get('artist');
-            console.log(albumObj);
             const { year } = albumObj.properties;
             albums.push(Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }));
         });

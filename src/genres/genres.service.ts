@@ -48,7 +48,6 @@ export class GenresService {
         albums_results.forEach((result) => {
             const albumObj = result.get('album');
             const artistObj = result.get('artist')
-            console.log(albumObj)
             const { year } = albumObj.properties
          
             albums.push({

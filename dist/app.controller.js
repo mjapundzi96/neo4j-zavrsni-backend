@@ -23,8 +23,14 @@ let AppController = class AppController {
     getHello() {
         return this.appService.getHello();
     }
-    async getUsersAlsoViewed(request) {
-        return this.appService.getMyFavoriteGenres(request.user.id);
+    async getBestOfPreferredGenre(request) {
+        return this.appService.getBestOfPreferredGenre(request.user.id);
+    }
+    async getBestOfPreferredArtist(request) {
+        return this.appService.getBestOfPreferredArtist(request.user.id);
+    }
+    async getBestOfPreferredDecade(request) {
+        return this.appService.getBestOfPreferredDecade(request.user.id);
     }
     searchAll(searchAllFilterDto) {
         return this.appService.searchAll(searchAllFilterDto);
@@ -37,12 +43,26 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "getHello", null);
 __decorate([
-    common_1.Get('/my_favorite_genres'),
+    common_1.Get('/bestof_preferred_genre'),
     __param(0, common_1.Req()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "getUsersAlsoViewed", null);
+], AppController.prototype, "getBestOfPreferredGenre", null);
+__decorate([
+    common_1.Get('/bestof_preferred_artist'),
+    __param(0, common_1.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getBestOfPreferredArtist", null);
+__decorate([
+    common_1.Get('/bestof_preferred_decade'),
+    __param(0, common_1.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getBestOfPreferredDecade", null);
 __decorate([
     common_1.Get('/search_all'),
     __param(0, common_1.Query(common_1.ValidationPipe)),

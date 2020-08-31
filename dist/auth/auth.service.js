@@ -27,11 +27,6 @@ let AuthService = class AuthService {
         user.password = await this.hashPassword(password, user.salt);
         try {
             const user_result = await this.neo4j.query(`CREATE (n: User {username: '${user.username}', password: '${user.password}', salt: '${user.salt}' }) RETURN { id: ID(n) } as user`);
-            const user_id = user_result[0].get('user').id.low;
-            authCredentialsDto.favorite_genres.forEach(async (genre_id) => {
-                await this.neo4j.query(`MATCH (u:User),(g:Genre) WHERE ID(u) = ${user_id} AND ID(g) = ${genre_id}
-                    CREATE (u)-[r:HAS_FAVORITE_GENRE]->(g)`);
-            });
             return true;
         }
         catch (err) {

@@ -26,10 +26,8 @@ __decorate([
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "password", void 0);
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsArray(),
-    class_validator_1.IsNumber({}, { each: true }),
-    __metadata("design:type", Array)
-], AuthCredentialsDto.prototype, "favorite_genres", void 0);
+    class_validator_1.IsNumber(),
+    __metadata("design:type", Number)
+], AuthCredentialsDto.prototype, "id", void 0);
 exports.AuthCredentialsDto = AuthCredentialsDto;
 //# sourceMappingURL=auth-credentials.dto.js.map

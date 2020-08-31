@@ -18,16 +18,128 @@ let AppService = class AppService {
     async getHello() {
         return 'hello';
     }
-    async getMyFavoriteGenres(user_id) {
-        const genres_results = await this.neo4j.query(`MATCH (u:User)-[:HAS_FAVORITE_GENRE]->(g:Genre) WHERE ID(u)=${user_id} return {
-      id: ID(g),
-      name: g.name
-    } as genres;`);
-        const genres = genres_results.map(result => {
-            const genreObj = result.get('genres');
-            return Object.assign(Object.assign({}, genreObj), { id: genreObj.id.low });
-        });
-        return genres;
+    async getBestOfPreferredArtist(user_id) {
+        const result = await this.neo4j.query(`
+    CALL {
+      MATCH (u:User)-[:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id}
+      MATCH (s)-[:FROM_ALBUM]-(al:Album)-[r:BY_ARTIST]-(ar:Artist)
+      WITH DISTINCT ar,COUNT(r) as artist_cnt limit 1
+      return ar as result,artist_cnt ORDER BY artist_cnt DESC
+    }
+    with collect(result)[0] as artist
+    match (artist)-[:BY_ARTIST]-(al:Album)-[:FROM_ALBUM]-(s:Song)
+    with artist,(3*s.likes)+(2*s.views) as score,al,s ORDER BY score DESC LIMIT 12
+    return {
+      artist:{
+        id:ID(artist),
+        name: artist.name
+      },
+        songs: collect({
+            id:ID(s),
+            title:s.title,
+            album:{
+              id: ID(al),
+              coverUrl:al.coverUrl,
+              name: al.name,
+              year: al.year
+            }
+          })
+    } as res;`);
+        if (result[0]) {
+            const resultObj = result[0].get("res");
+            const { artist } = resultObj;
+            const { songs } = resultObj;
+            return {
+                artist: Object.assign(Object.assign({}, artist), { id: artist.id.low }),
+                songs: songs.map(song => {
+                    return Object.assign(Object.assign({}, song), { id: song.id.low });
+                })
+            };
+        }
+        return null;
+    }
+    async getBestOfPreferredGenre(user_id) {
+        const result = await this.neo4j.query(`
+    CALL{
+      MATCH (u:User)-[:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id}
+      MATCH (s)-[:FROM_ALBUM]-(:Album)-[:BY_ARTIST]-(:Artist)-[r:IS_GENRE]-(g:Genre)
+      WITH DISTINCT g,COUNT(r) as genre_cnt limit 1
+      return g as result,genre_cnt ORDER BY genre_cnt DESC
+    }
+    with collect(result)[0] as genre
+    match (genre)-[:IS_GENRE]-(ar:Artist)-[:BY_ARTIST]-(al:Album)-[:FROM_ALBUM]-(s:Song)
+    with genre,(3*s.likes)+(2*s.views) as score,ar,al,s ORDER BY score DESC LIMIT 12
+    return {
+      genre: {
+        id:ID(genre),
+          name:genre.name
+      },
+      songs: collect({
+        id:ID(s),
+          title:s.title,
+          album:{
+            id: ID(al),
+            coverUrl:al.coverUrl,
+            name: al.name,
+            year: al.year,
+            artist:{
+              id:ID(ar),
+              name:ar.name
+            }
+          }
+      })
+    } as res;`);
+        if (result[0]) {
+            const resultObj = result[0].get("res");
+            const { genre } = resultObj;
+            const { songs } = resultObj;
+            return {
+                genre: Object.assign(Object.assign({}, genre), { id: genre.id.low }),
+                songs: songs.map(song => {
+                    return Object.assign(Object.assign({}, song), { id: song.id.low });
+                })
+            };
+        }
+        return null;
+    }
+    async getBestOfPreferredDecade(user_id) {
+        const result = await this.neo4j.query(`
+    call {
+      MATCH (u:User)-[:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id}
+      MATCH (s)-[r:FROM_ALBUM]-(al:Album)
+      return DISTINCT toInteger(round(al.year / 10) * 10) as decades,count(r) ORDER BY count(r) DESC LIMIT 1
+    } with collect(decades)[0] as decade
+    MATCH (s:Song)-[:FROM_ALBUM]-(al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE toInteger(round(al.year / 10) * 10)=decade
+    WITH decade,(3*s.likes)+(2*s.views) as score,al,ar,s ORDER BY score DESC LIMIT 12
+    return {
+        decade:decade,
+        songs: collect({
+          id:ID(s),
+          title:s.title,
+          album:{
+            id: ID(al),
+            coverUrl:al.coverUrl,
+            name: al.name,
+            year: al.year,
+            artist:{
+              id:ID(ar),
+              name:ar.name
+            }
+          }
+      })
+    } as res;`);
+        if (result[0]) {
+            const resultObj = result[0].get("res");
+            const { decade } = resultObj;
+            const { songs } = resultObj;
+            return {
+                decade: decade.low,
+                songs: songs.map(song => {
+                    return Object.assign(Object.assign({}, song), { id: song.id.low });
+                })
+            };
+        }
+        return null;
     }
     async searchAll(searchAllFilterDto) {
         const { search } = searchAllFilterDto;

@@ -6,6 +6,17 @@ export declare class AppService {
     private readonly neo4j;
     constructor(neo4j: Neo4jService);
     getHello(): Promise<string>;
-    getMyFavoriteGenres(user_id: number): Promise<Genre[]>;
+    getBestOfPreferredArtist(user_id: number): Promise<{
+        artist: Artist;
+        songs: Song[];
+    }>;
+    getBestOfPreferredGenre(user_id: number): Promise<{
+        genre: Genre;
+        songs: Song[];
+    }>;
+    getBestOfPreferredDecade(user_id: number): Promise<{
+        decade: number;
+        songs: Song[];
+    }>;
     searchAll(searchAllFilterDto: SearchAllFilterDto): Promise<Array<Partial<Artist | Song | Album>>>;
 }

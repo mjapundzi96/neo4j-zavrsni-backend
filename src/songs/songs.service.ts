@@ -85,7 +85,7 @@ export class SongsService {
         const song_results = await this.neo4j.query(`MATCH p=(s:Song)-[r*..6]-(s2:Song) WHERE id(s)=${id} AND NONE(rel in r WHERE type(rel)='HAS_VIEWED' OR type(rel)='LIKED' OR type(rel)='HAS_FAVORITE_GENRE' OR (type(rel)='FEATURING' AND length(p) > 1))
         WITH COUNT(r) as relationships,length(p) as length,s2 ORDER by relationships DESC,length ASC,s2.views DESC
         MATCH (s2)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist)
-        RETURN DISTINCT s2 as song, al as album, ar as artist ORDER BY s2.views DESC;`)
+        RETURN DISTINCT s2 as song, al as album, ar as artist ORDER BY s2.views DESC LIMIT 12;`)
         const songs = song_results.map(result => {
             const songObj = result.get('song');
             const albumObj = result.get('album');

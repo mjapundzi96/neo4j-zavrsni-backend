@@ -13,11 +13,7 @@ export class AuthCredentialsDto {
         { message: 'password too weak' })
     password: string; 
  
-    @IsOptional()
-    @IsArray()
-    @IsNumber({}, { each: true })
-    favorite_genres?: number[]
-
+    @IsNumber()
     id:number
 
 }
