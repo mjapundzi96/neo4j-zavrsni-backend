@@ -45,6 +45,15 @@ export class SongsController {
         return await this.songsService.viewSong(id, request.user.id);
     }
 
+
+    @Get('/:id/has_liked')
+    async getHasLiked(
+        @Param('id') id: number,
+        @Req() request: any
+    ): Promise<boolean> {
+        return await this.songsService.getHasLiked(id, request.user.id);
+    }
+
     @Post('/:id/like')
     async likeSong(
         @Param('id') id: number,

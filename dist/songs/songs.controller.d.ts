@@ -9,6 +9,7 @@ export declare class SongsController {
     getUsersAlsoViewed(id: number, request: any): Promise<Song[]>;
     getRelatedSongs(id: number): Promise<Song[]>;
     viewSong(id: number, request: any): Promise<boolean>;
+    getHasLiked(id: number, request: any): Promise<boolean>;
     likeSong(id: number, request: any): Promise<boolean>;
     unLikeSong(id: number, request: any): Promise<boolean>;
 }

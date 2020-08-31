@@ -29,6 +29,54 @@ let AppService = class AppService {
         });
         return genres;
     }
+    async searchAll(searchAllFilterDto) {
+        const { search } = searchAllFilterDto;
+        const result_results = await this.neo4j.query(`
+    CALL{ 
+      MATCH (ar:Artist) WHERE toUpper(ar.name) CONTAINS toUpper('${search}')
+      RETURN {
+        type:'Artist',
+        id:id(ar),
+          name:ar.name,
+          imageUrl:ar.imageUrl
+      } as result
+      UNION
+      MATCH (al:Album)-[:BY_ARTIST]->(ar:Artist) WHERE toUpper(al.name) CONTAINS toUpper('${search}')
+      WITH distinct al,ar
+      RETURN {
+        id:ID(al),
+        type:'Album',
+        name:al.name,
+        year:al.year,
+        coverUrl:al.coverUrl,
+        artist:{
+          id:ID(ar),
+          name:ar.name
+        }
+      } as result
+      UNION 
+      MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE toUpper(s.title) CONTAINS toUpper('${search}')
+      WITH distinct s,al,ar
+      RETURN {
+        type:'Song',
+        id:ID(s),
+        name:s.title,
+        album:{
+          name:al.name,
+          year: al.year,
+          coverUrl:al.coverUrl,
+          artist:{
+            name:ar.name
+          }
+        }
+      } as result
+    } return DISTINCT result ORDER BY result.name ASC limit 10;`);
+        const results = result_results.map(result => {
+            const resultObj = result.get('result');
+            return Object.assign(Object.assign({}, resultObj), { id: resultObj.id.low });
+        });
+        return results;
+    }
 };
 AppService = __decorate([
     common_1.Injectable(),

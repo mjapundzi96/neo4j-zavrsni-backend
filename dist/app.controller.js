@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const passport_1 = require("@nestjs/passport");
+const search_all_filter_dto_1 = require("./search-all-filter.dto");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
@@ -24,6 +25,9 @@ let AppController = class AppController {
     }
     async getUsersAlsoViewed(request) {
         return this.appService.getMyFavoriteGenres(request.user.id);
+    }
+    searchAll(searchAllFilterDto) {
+        return this.appService.searchAll(searchAllFilterDto);
     }
 };
 __decorate([
@@ -39,6 +43,13 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getUsersAlsoViewed", null);
+__decorate([
+    common_1.Get('/search_all'),
+    __param(0, common_1.Query(common_1.ValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [search_all_filter_dto_1.SearchAllFilterDto]),
+    __metadata("design:returntype", void 0)
+], AppController.prototype, "searchAll", null);
 AppController = __decorate([
     common_1.Controller(),
     common_1.UseGuards(passport_1.AuthGuard()),

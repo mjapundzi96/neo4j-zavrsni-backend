@@ -36,6 +36,9 @@ let SongsController = class SongsController {
     async viewSong(id, request) {
         return await this.songsService.viewSong(id, request.user.id);
     }
+    async getHasLiked(id, request) {
+        return await this.songsService.getHasLiked(id, request.user.id);
+    }
     async likeSong(id, request) {
         return await this.songsService.likeSong(id, request.user.id);
     }
@@ -80,6 +83,14 @@ __decorate([
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], SongsController.prototype, "viewSong", null);
+__decorate([
+    common_1.Get('/:id/has_liked'),
+    __param(0, common_1.Param('id')),
+    __param(1, common_1.Req()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Object]),
+    __metadata("design:returntype", Promise)
+], SongsController.prototype, "getHasLiked", null);
 __decorate([
     common_1.Post('/:id/like'),
     __param(0, common_1.Param('id')),

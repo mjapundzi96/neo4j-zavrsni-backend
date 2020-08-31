@@ -37,7 +37,7 @@ let SongsService = class SongsService {
         const artistObj = song_result[0].get('artist');
         const albumObj = song_result[0].get('album');
         if (songObj) {
-            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
+            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, likes: songObj.properties.likes.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
         }
         else
             throw new common_1.NotFoundException('Song not found');
@@ -72,7 +72,7 @@ let SongsService = class SongsService {
         const result = await this.neo4j.query(`MATCH (u:User),(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         MERGE (u)-[r:HAS_VIEWED]->(s)
-        ON CREATE SET s.views = s.views + 1
+        SET s.views = s.views + 1
         SET r.date_time = datetime({timezone:'Europe/Zagreb'})
         RETURN true AS result`);
         if (result[0].get('result')) {
@@ -85,6 +85,8 @@ let SongsService = class SongsService {
         const result = await this.neo4j.query(`MATCH (u:User),(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         CREATE (u)-[r:LIKED]->(s)
+        set s.likes = s.likes + 1
+        set r.date_time = datetime({timezone:'Europe/Zagreb'})
         RETURN true AS result`);
         if (result[0].get('result')) {
             return true;
@@ -95,10 +97,11 @@ let SongsService = class SongsService {
     async unLikeSong(id, user_id) {
         const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
+        set s.likes = s.likes - 1
         DELETE r
         return true as result;`);
-        if (result[0].get('result')) {
-            return true;
+        if (result[0]) {
+            return result[0].get('result');
         }
         else
             throw new common_1.NotFoundException('User or song does not exist');
@@ -108,11 +111,10 @@ let SongsService = class SongsService {
         WHERE ID(u)=${user_id} and ID(s)=${id}
         DELETE r
         return true as result;`);
-        if (result[0].get('result')) {
-            return true;
+        if (result[0]) {
+            return result[0].get('result');
         }
-        else
-            throw new common_1.NotFoundException('User or song does not exist');
+        return false;
     }
 };
 SongsService = __decorate([

@@ -41,10 +41,8 @@ let GenresService = class GenresService {
         const { offset, limit } = getPopularFilterDto;
         const albums_results = await this.neo4j.query(`
         MATCH (g:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song)
-
         WHERE ID(g)=${id}
-        WITH al, ar,s,sum(s.views) AS views
-        RETURN DISTINCT al AS album, ar as artist, views ORDER BY views DESC SKIP ${offset} LIMIT ${limit};`);
+        RETURN DISTINCT al AS album, ar as artist, sum(s.views) ORDER BY sum(s.views) DESC SKIP ${offset} LIMIT ${limit};`);
         let albums = [];
         albums_results.forEach((result) => {
             const albumObj = result.get('album');

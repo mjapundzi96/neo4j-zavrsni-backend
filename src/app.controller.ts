@@ -1,7 +1,8 @@
-import { Controller, Get, Param, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, Req, UseGuards, Query, ValidationPipe } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Genre } from './models';
 import { AuthGuard } from '@nestjs/passport';
+import { SearchAllFilterDto } from './search-all-filter.dto';
 
 @Controller()
 @UseGuards(AuthGuard())
@@ -20,5 +21,12 @@ export class AppController {
     @Req() request: any
   ): Promise<Genre[]> {
     return this.appService.getMyFavoriteGenres(request.user.id)
+  }
+
+  @Get('/search_all')
+  searchAll(
+    @Query(ValidationPipe) searchAllFilterDto: SearchAllFilterDto
+  ) {
+    return this.appService.searchAll(searchAllFilterDto);
   }
 }
