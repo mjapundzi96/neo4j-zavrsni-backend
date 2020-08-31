@@ -1,9 +1,5 @@
-:begin
 CREATE CONSTRAINT ON (node:Genre) ASSERT (node.name) IS UNIQUE;
 CREATE CONSTRAINT ON (node:`UNIQUE IMPORT LABEL`) ASSERT (node.`UNIQUE IMPORT ID`) IS UNIQUE;
-:commit
-CALL db.awaitIndexes(300);
-:begin
 UNWIND [{_id:9, properties:{password:"$2b$10$Ff7sQ9yIHij.gK4ZWHDlTOjlWvhNXXziTaBoWNb1YZS6moN8DnZdu", salt:"$2b$10$Ff7sQ9yIHij.gK4ZWHDlTO", username:"Maksimilijan96"}}, {_id:209, properties:{password:"$2b$10$hw8I3a/uloNEaYAInkZtguiG3gmbnl5Y.Dz7r4QGG6XwlKej9t8fa", salt:"$2b$10$hw8I3a/uloNEaYAInkZtgu", username:"Maks1234"}}, {_id:210, properties:{password:"$2b$10$QnhZ8U9IpoK/Fk3RJtl3Tu2/eGOLQltE.ENswbJanPmxQpFMa9cZG", salt:"$2b$10$QnhZ8U9IpoK/Fk3RJtl3Tu", username:"Maks1234"}}, {_id:211, properties:{password:"$2b$10$0rn8jRwSdYA4OxmFuxNOkOuuCkUn/xYpqDErx7Iec/Knd.SKvPzbW", salt:"$2b$10$0rn8jRwSdYA4OxmFuxNOkO", username:"Maks1234"}}, {_id:212, properties:{password:"$2b$10$XlPwsszYzGUY24QM5nXBQOp4BoyOvcOb8KvEe0vmQtJ31KvrA8a2C", salt:"$2b$10$XlPwsszYzGUY24QM5nXBQO", username:"pkmaxking96"}}, {_id:213, properties:{password:"$2b$10$gGGrhaI2q5uCDCbSV6kbrexeP1yIdom9v6bqmL6NUXVNQzr34B3mi", salt:"$2b$10$gGGrhaI2q5uCDCbSV6kbre", username:"MiroKucina"}}] AS row
 CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:User;
 UNWIND [{_id:82, properties:{title:"Nuthin' but a 'G' Thang", views:0, songUrl:"https://www.youtube.com/embed/6xjRdBjmePQ", likes:0}}, {_id:86, properties:{title:"The Way I Am", views:0, songUrl:"https://www.youtube.com/embed/LsETLMmvd2M", likes:0}}, {_id:87, properties:{title:"Bitch Please II", views:0, songUrl:"https://www.youtube.com/embed/tEMA8GL-ArI", likes:0}}, {_id:88, properties:{title:"Stan", views:0, songUrl:"https://www.youtube.com/embed/DkO1wwIXQ1g", likes:0}}, {_id:89, properties:{title:"The Real Slim Shady", views:0, songUrl:"https://www.youtube.com/embed/Y8ZI1uc6iBM", likes:0}}, {_id:90, properties:{title:"Criminal", views:0, songUrl:"https://www.youtube.com/embed/mR8_ldc9lag", likes:0}}, {_id:91, properties:{title:"Kim", views:0, songUrl:"https://www.youtube.com/embed/-SeVN2u5Axc", likes:0}}, {_id:92, properties:{title:"Without Me", songUrl:"https://www.youtube.com/embed/tqxRidAWER8", views:1, likes:0}}, {_id:93, properties:{title:"Say What You Say", songUrl:"https://www.youtube.com/embed/8xNHdegQmIQ", views:1, likes:0}}, {_id:94, properties:{title:"White America", songUrl:"https://www.youtube.com/embed/vxpeKhbeLm0", views:1, likes:0}}, {_id:95, properties:{title:"Sing For The Moment", songUrl:"https://www.youtube.com/embed/D4hAVemuQXY", views:3, likes:0}}, {_id:96, properties:{title:"Till I Collapse", songUrl:"https://www.youtube.com/embed/Obim8BYGnOE", views:5, likes:0}}, {_id:97, properties:{title:"Not Afraid", songUrl:"https://www.youtube.com/embed/j5-yKhDd64s", views:0, likes:0}}, {_id:98, properties:{title:"Love The Way You Lie", views:0, songUrl:"https://www.youtube.com/embed/uelHwf8o7_U", likes:0}}, {_id:99, properties:{title:"Cinderella Man", songUrl:"https://www.youtube.com/embed/kKPZqkcWeTM", views:0, likes:0}}, {_id:100, properties:{title:"Space Bound", songUrl:"https://www.youtube.com/embed/n87huvGRErw", views:0, likes:0}}, {_id:101, properties:{title:"Won't Back Down", songUrl:"https://www.youtube.com/embed/hOFkhNijQeY", views:0, likes:0}}, {_id:102, properties:{title:"Let Me Ride", views:0, songUrl:"https://www.youtube.com/embed/yaRSO7uXciY", likes:0}}, {_id:103, properties:{title:"High Powered", views:0, songUrl:"https://www.youtube.com/embed/3KY9bO6K2so", likes:0}}, {_id:104, properties:{title:"'Lil' Ghetto Boy", views:0, songUrl:"https://www.youtube.com/embed/qO5ITgzJO2A", likes:0}}] AS row
@@ -50,8 +46,6 @@ UNWIND [{_id:304, properties:{coverUrl:"https://upload.wikimedia.org/wikipedia/e
 CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:Album;
 UNWIND [{_id:208, properties:{name:"name"}}] AS row
 CREATE (n:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row._id}) SET n += row.properties SET n:Name;
-:commit
-:begin
 UNWIND [{start: {_id:27}, end: {name:"Pop"}, properties:{}}, {start: {_id:28}, end: {name:"Rock n roll"}, properties:{}}, {start: {_id:32}, end: {name:"Hip-hop"}, properties:{}}, {start: {_id:44}, end: {name:"Hip-hop"}, properties:{}}, {start: {_id:33}, end: {name:"Pop"}, properties:{}}, {start: {_id:5}, end: {name:"Metal"}, properties:{}}, {start: {_id:53}, end: {name:"Hip-hop"}, properties:{}}, {start: {_id:56}, end: {name:"Rock n roll"}, properties:{}}, {start: {_id:29}, end: {name:"Rock n roll"}, properties:{}}, {start: {_id:31}, end: {name:"Rock n roll"}, properties:{}}, {start: {_id:23}, end: {name:"Rock n roll"}, properties:{}}, {start: {_id:50}, end: {name:"Metal"}, properties:{}}, {start: {_id:25}, end: {name:"Metal"}, properties:{}}, {start: {_id:51}, end: {name:"Hip-hop"}, properties:{}}, {start: {_id:55}, end: {name:"Pop"}, properties:{}}, {start: {_id:5}, end: {name:"Rock n roll"}, properties:{}}, {start: {_id:56}, end: {name:"Pop"}, properties:{}}, {start: {_id:63}, end: {name:"Electronic"}, properties:{}}, {start: {_id:60}, end: {name:"Electronic"}, properties:{}}, {start: {_id:45}, end: {name:"Hip-hop"}, properties:{}}] AS row
 MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
 MATCH (end:Genre{name: row.end.name})
@@ -148,10 +142,5 @@ UNWIND [{start: {_id:9}, end: {_id:96}, properties:{date_time:datetime('2020-07-
 MATCH (start:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.start._id})
 MATCH (end:`UNIQUE IMPORT LABEL`{`UNIQUE IMPORT ID`: row.end._id})
 CREATE (start)-[r:LIKED]->(end) SET r += row.properties;
-:commit
-:begin
 MATCH (n:`UNIQUE IMPORT LABEL`)  WITH n LIMIT 20000 REMOVE n:`UNIQUE IMPORT LABEL` REMOVE n.`UNIQUE IMPORT ID`;
-:commit
-:begin
 DROP CONSTRAINT ON (node:`UNIQUE IMPORT LABEL`) ASSERT (node.`UNIQUE IMPORT ID`) IS UNIQUE;
-:commit
