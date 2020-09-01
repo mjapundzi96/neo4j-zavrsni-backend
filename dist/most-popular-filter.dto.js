@@ -10,11 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const class_validator_1 = require("class-validator");
-class SearchAllFilterDto {
+class MostPopularFilterDto {
 }
 __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], SearchAllFilterDto.prototype, "search", void 0);
-exports.SearchAllFilterDto = SearchAllFilterDto;
-//# sourceMappingURL=search-all-filter.dto.js.map
+], MostPopularFilterDto.prototype, "period", void 0);
+exports.MostPopularFilterDto = MostPopularFilterDto;
+//# sourceMappingURL=most-popular-filter.dto.js.map

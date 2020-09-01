@@ -12,8 +12,5 @@ export class AuthCredentialsDto {
     @Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
         { message: 'password too weak' })
     password: string; 
- 
-    @IsNumber()
-    id:number
 
 }

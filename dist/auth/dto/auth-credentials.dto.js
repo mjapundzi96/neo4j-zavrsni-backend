@@ -25,9 +25,5 @@ __decorate([
     class_validator_1.Matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/, { message: 'password too weak' }),
     __metadata("design:type", String)
 ], AuthCredentialsDto.prototype, "password", void 0);
-__decorate([
-    class_validator_1.IsNumber(),
-    __metadata("design:type", Number)
-], AuthCredentialsDto.prototype, "id", void 0);
 exports.AuthCredentialsDto = AuthCredentialsDto;
 //# sourceMappingURL=auth-credentials.dto.js.map

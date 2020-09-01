@@ -17,4 +17,4 @@ __decorate([
     __metadata("design:type", String)
 ], SearchAllFilterDto.prototype, "search", void 0);
 exports.SearchAllFilterDto = SearchAllFilterDto;
-//# sourceMappingURL=search-all-filter.dto.js.map
+//# sourceMappingURL=most-popular-dto.js.map

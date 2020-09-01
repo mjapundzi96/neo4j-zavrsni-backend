@@ -2,6 +2,7 @@ import { AppService } from './app.service';
 import { Genre, Song } from './models';
 import { SearchAllFilterDto } from './search-all-filter.dto';
 import { Artist } from './models/artist.model';
+import { MostPopularFilterDto } from './most-popular-filter.dto';
 export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
@@ -18,5 +19,6 @@ export declare class AppController {
         decade: number;
         songs: Song[];
     }>;
+    getMostPopularSongs(mostPopularFilterDto: MostPopularFilterDto): Promise<any[]>;
     searchAll(searchAllFilterDto: SearchAllFilterDto): Promise<(Partial<Song> | Partial<Artist> | Partial<import("./models").Album>)[]>;
 }

@@ -112,7 +112,7 @@ export class SongsService {
     async viewSong(id: number, user_id: number): Promise<boolean> {
         const result = await this.neo4j.query(`MATCH (u:User),(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
-        MERGE (u)-[r:HAS_VIEWED]->(s)
+        CREATE (u)-[r:HAS_VIEWED]->(s)
         SET s.views = s.views + 1
         SET r.date_time = datetime({timezone:'Europe/Zagreb'})
         RETURN true AS result`)
@@ -136,6 +136,7 @@ export class SongsService {
     }
 
     async unLikeSong(id: number, user_id: number): Promise<boolean> {
+        console.log(id,user_id)
         const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         set s.likes = s.likes - 1
@@ -150,7 +151,6 @@ export class SongsService {
     async getHasLiked(id: number, user_id: number): Promise<boolean> {
         const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
-        DELETE r
         return true as result;`)
         if (result[0]) {
             return result[0].get('result');

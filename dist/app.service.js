@@ -141,21 +141,60 @@ let AppService = class AppService {
         }
         return null;
     }
+    async getMostPopularSongs(mostPopularFilterDto) {
+        let query = 'MATCH p=(s:Song)-[rel]-()';
+        const { period } = mostPopularFilterDto;
+        switch (period) {
+            case 'week':
+                query += ' WHERE rel.date_time.week = datetime().week AND rel.date_time.year = datetime().year';
+                break;
+            case 'month':
+                query += ' WHERE rel.date_time.month = datetime().month AND rel.date_time.year = datetime().year';
+                break;
+        }
+        query += `
+     WITH s,
+    SUM(CASE WHEN any(r in relationships(p) WHERE type(r)='HAS_VIEWED') THEN 1 ELSE 0 END) as views,
+    SUM(CASE WHEN any(r in relationships(p) WHERE type(r)='LIKED') THEN 1 ELSE 0 END) as likes
+    WITH views,likes,s
+    MATCH (s:Song)-[:FROM_ALBUM]-(al:Album)-[:BY_ARTIST]-(ar:Artist)
+    RETURN (3*likes)+(2*views) as score,{
+      id:ID(s),
+        title:s.title,
+        album:{
+          coverUrl:al.coverUrl,
+            artist:{
+              name:ar.name
+            }
+        }
+    } as result ORDER BY score DESC LIMIT 24;
+    `;
+        const song_results = await this.neo4j.query(query);
+        const results = song_results.map(result => {
+            const resultObj = result.get('result');
+            return Object.assign(Object.assign({}, resultObj), { id: resultObj.id.low });
+        });
+        return results;
+    }
     async searchAll(searchAllFilterDto) {
         const { search } = searchAllFilterDto;
         const result_results = await this.neo4j.query(`
     CALL{ 
-      MATCH (ar:Artist) WHERE toUpper(ar.name) CONTAINS toUpper('${search}')
+      MATCH (ar:Artist)
+      WHERE toUpper(ar.name) CONTAINS toUpper('Paul')
       RETURN {
+      	priority:3,
         type:'Artist',
         id:id(ar),
           name:ar.name,
           imageUrl:ar.imageUrl
       } as result
       UNION
-      MATCH (al:Album)-[:BY_ARTIST]->(ar:Artist) WHERE toUpper(al.name) CONTAINS toUpper('${search}')
+      MATCH (al:Album)-[:BY_ARTIST]->(ar:Artist) 
+      WHERE toUpper(al.name) CONTAINS toUpper('Paul') OR toUpper(ar.name) CONTAINS toUpper('Paul')
       WITH distinct al,ar
       RETURN {
+      	priority:2,
         id:ID(al),
         type:'Album',
         name:al.name,
@@ -167,12 +206,14 @@ let AppService = class AppService {
         }
       } as result
       UNION 
-      MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE toUpper(s.title) CONTAINS toUpper('${search}')
+      MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]-(ar:Artist) 
+      WHERE toUpper(s.title) CONTAINS toUpper('Paul') OR toUpper(al.name) CONTAINS toUpper('Paul') OR toUpper(ar.name) CONTAINS toUpper('Paul')
       WITH distinct s,al,ar
       RETURN {
+      	priority:1,
         type:'Song',
         id:ID(s),
-        name:s.title,
+        title:s.title,
         album:{
           name:al.name,
           year: al.year,
@@ -182,7 +223,8 @@ let AppService = class AppService {
           }
         }
       } as result
-    } return DISTINCT result ORDER BY result.name ASC limit 10;`);
+    } 
+    return DISTINCT result ORDER BY result.priority DESC limit 10`);
         const results = result_results.map(result => {
             const resultObj = result.get('result');
             return Object.assign(Object.assign({}, resultObj), { id: resultObj.id.low });

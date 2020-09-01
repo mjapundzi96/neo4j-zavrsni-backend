@@ -16,6 +16,7 @@ const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const passport_1 = require("@nestjs/passport");
 const search_all_filter_dto_1 = require("./search-all-filter.dto");
+const most_popular_filter_dto_1 = require("./most-popular-filter.dto");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
@@ -32,7 +33,10 @@ let AppController = class AppController {
     async getBestOfPreferredDecade(request) {
         return this.appService.getBestOfPreferredDecade(request.user.id);
     }
-    searchAll(searchAllFilterDto) {
+    async getMostPopularSongs(mostPopularFilterDto) {
+        return this.appService.getMostPopularSongs(mostPopularFilterDto);
+    }
+    async searchAll(searchAllFilterDto) {
         return this.appService.searchAll(searchAllFilterDto);
     }
 };
@@ -64,11 +68,18 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getBestOfPreferredDecade", null);
 __decorate([
+    common_1.Get('/most_popular_songs'),
+    __param(0, common_1.Query(common_1.ValidationPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [most_popular_filter_dto_1.MostPopularFilterDto]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getMostPopularSongs", null);
+__decorate([
     common_1.Get('/search_all'),
     __param(0, common_1.Query(common_1.ValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [search_all_filter_dto_1.SearchAllFilterDto]),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", Promise)
 ], AppController.prototype, "searchAll", null);
 AppController = __decorate([
     common_1.Controller(),

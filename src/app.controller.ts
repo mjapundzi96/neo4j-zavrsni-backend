@@ -4,6 +4,7 @@ import { Genre, Song } from './models';
 import { AuthGuard } from '@nestjs/passport';
 import { SearchAllFilterDto } from './search-all-filter.dto';
 import { Artist } from './models/artist.model';
+import { MostPopularFilterDto } from './most-popular-filter.dto';
 
 @Controller()
 @UseGuards(AuthGuard())
@@ -38,8 +39,15 @@ export class AppController {
     return this.appService.getBestOfPreferredDecade(request.user.id)
   }
 
+  @Get('/most_popular_songs')
+  async getMostPopularSongs(
+    @Query(ValidationPipe) mostPopularFilterDto: MostPopularFilterDto
+  ) {
+    return this.appService.getMostPopularSongs(mostPopularFilterDto);
+  }
+
   @Get('/search_all')
-  searchAll(
+  async searchAll(
     @Query(ValidationPipe) searchAllFilterDto: SearchAllFilterDto
   ) {
     return this.appService.searchAll(searchAllFilterDto);
