@@ -17,27 +17,44 @@ let SongsService = class SongsService {
         this.neo4j = neo4j;
     }
     async getSongs(filterDto) {
-        const { title } = filterDto;
-        const songs_results = await this.neo4j.query(`MATCH (n:Song) WHERE toUpper(n.title) CONTAINS toUpper('${title}') RETURN {
-            id: ID(n),
-            title:n.title,
-            songUrl:n.songUrl,
-            views:n.views
-        } AS song;`);
-        const songs = songs_results.map(result => {
+        const { tag } = filterDto;
+        const song_results = await this.neo4j.query(`MATCH (t:Tag)-[:TAG]-(s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist)
+        WHERE t.name = "${tag}"
+        RETURN s as song,al as album,ar as artist ORDER BY s.views DESC LIMIT 24`);
+        const songs = song_results.map(result => {
             const songObj = result.get('song');
-            return Object.assign(Object.assign({}, songObj), { id: songObj.id.low, views: songObj.views.low });
+            const albumObj = result.get('album');
+            const artistObj = result.get('artist');
+            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
         });
         return songs;
     }
     async getSong(id) {
-        const song_result = await this.neo4j.query(`MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist) WHERE ID(s)=${id} 
-        RETURN s AS song, al AS album, ar AS artist;`);
+        const song_result = await this.neo4j.query(`MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist) WHERE ID(s)=${id}
+        MATCH (s)-[:TAG]-(t:Tag)
+        WITH s,al,ar,collect(t.name) as tags
+        RETURN {
+            id:ID(s),
+            title:s.title,
+            likes:s.likes,
+            views:s.views,
+            tags:tags,
+            songUrl:s.songUrl,
+            album:{
+                id: ID(al),
+                name:al.name,
+                year:al.year,
+                artist:{
+                    id:ID(ar),
+                    name:ar.name
+                }
+            }
+        } as song;`);
         const songObj = song_result[0].get('song');
-        const artistObj = song_result[0].get('artist');
-        const albumObj = song_result[0].get('album');
+        const { album } = songObj;
+        const { artist } = album;
         if (songObj) {
-            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, likes: songObj.properties.likes.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
+            return Object.assign(Object.assign({}, songObj), { id: songObj.id.low, views: songObj.views.low, likes: songObj.likes.low, album: Object.assign(Object.assign({}, album), { id: album.id.low, year: album.year.low, artist: Object.assign(Object.assign({}, artist), { id: artist.id.low }) }) });
         }
         else
             throw new common_1.NotFoundException('Song not found');
@@ -60,6 +77,19 @@ let SongsService = class SongsService {
         WITH COUNT(r) as relationships,length(p) as length,s2 ORDER by relationships DESC,length ASC,s2.views DESC
         MATCH (s2)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist)
         RETURN DISTINCT s2 as song, al as album, ar as artist ORDER BY s2.views DESC LIMIT 12;`);
+        const songs = song_results.map(result => {
+            const songObj = result.get('song');
+            const albumObj = result.get('album');
+            const artistObj = result.get('artist');
+            return Object.assign(Object.assign({}, songObj.properties), { id: songObj.identity.low, views: songObj.properties.views.low, album: Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }) });
+        });
+        return songs;
+    }
+    async getSongsWithSimilarTags(id) {
+        const song_results = await this.neo4j.query(`MATCH (s1:Song)-[:TAG]-(t) WHERE ID(s1)=${id}
+        WITH ID(s1) as id_s1, t ORDER BY SIZE(t.name) DESC
+        MATCH (t)-[r:TAG]-(s2:Song)-[:FROM_ALBUM]-(al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE id_s1 <> ID(s2)
+        RETURN s2 as song,al as album,ar as artist, count(r) as mutualTags ORDER BY mutualTags DESC, s2.views DESC limit 24`);
         const songs = song_results.map(result => {
             const songObj = result.get('song');
             const albumObj = result.get('album');

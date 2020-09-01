@@ -33,6 +33,9 @@ let SongsController = class SongsController {
     async getRelatedSongs(id) {
         return this.songsService.getRelatedSongs(id);
     }
+    async getSongsWithSimilarTags(id) {
+        return this.songsService.getSongsWithSimilarTags(id);
+    }
     async viewSong(id, request) {
         return await this.songsService.viewSong(id, request.user.id);
     }
@@ -75,6 +78,13 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], SongsController.prototype, "getRelatedSongs", null);
+__decorate([
+    common_1.Get('/:id/similar_tags'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], SongsController.prototype, "getSongsWithSimilarTags", null);
 __decorate([
     common_1.Post('/:id/view'),
     __param(0, common_1.Param('id')),

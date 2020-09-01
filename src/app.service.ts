@@ -202,7 +202,7 @@ export class AppService {
     const result_results = await this.neo4j.query(`
     CALL{ 
       MATCH (ar:Artist)
-      WHERE toUpper(ar.name) CONTAINS toUpper('Paul')
+       WHERE toUpper(ar.name) CONTAINS toUpper('${search}')
       RETURN {
       	priority:3,
         type:'Artist',
@@ -212,7 +212,7 @@ export class AppService {
       } as result
       UNION
       MATCH (al:Album)-[:BY_ARTIST]->(ar:Artist) 
-      WHERE toUpper(al.name) CONTAINS toUpper('Paul') OR toUpper(ar.name) CONTAINS toUpper('Paul')
+      WHERE toUpper(al.name) CONTAINS toUpper('${search}') OR toUpper(ar.name) CONTAINS toUpper('${search}')
       WITH distinct al,ar
       RETURN {
       	priority:2,
@@ -228,7 +228,7 @@ export class AppService {
       } as result
       UNION 
       MATCH (s:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]-(ar:Artist) 
-      WHERE toUpper(s.title) CONTAINS toUpper('Paul') OR toUpper(al.name) CONTAINS toUpper('Paul') OR toUpper(ar.name) CONTAINS toUpper('Paul')
+      WHERE toUpper(s.title) CONTAINS toUpper('${search}') OR toUpper(al.name) CONTAINS toUpper('${search}') OR toUpper(ar.name) CONTAINS toUpper('${search}')
       WITH distinct s,al,ar
       RETURN {
       	priority:1,

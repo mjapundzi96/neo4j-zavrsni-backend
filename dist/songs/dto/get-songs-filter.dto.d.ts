@@ -1,3 +1,3 @@
 export declare class GetSongsFilterDto {
-    title: string;
+    tag: string;
 }

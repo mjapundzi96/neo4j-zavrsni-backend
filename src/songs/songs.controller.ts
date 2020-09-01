@@ -37,6 +37,13 @@ export class SongsController {
         return this.songsService.getRelatedSongs(id)
     }
 
+    @Get('/:id/similar_tags')
+    async getSongsWithSimilarTags(
+        @Param('id') id: number,
+    ): Promise<Song[]> {
+        return this.songsService.getSongsWithSimilarTags(id)
+    }
+
     @Post('/:id/view')
     async viewSong(
         @Param('id') id: number,
