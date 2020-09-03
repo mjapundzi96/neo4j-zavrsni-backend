@@ -14,26 +14,15 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const albums_service_1 = require("./albums.service");
-const get_albums_filter_dto_1 = require("./dto/get-albums-filter.dto");
 const models_1 = require("../models");
 let AlbumsController = class AlbumsController {
     constructor(AlbumsService) {
         this.AlbumsService = AlbumsService;
     }
-    async getAlbums(filterDto) {
-        return this.AlbumsService.getAlbums(filterDto);
-    }
     async getAlbum(id) {
         return await this.AlbumsService.getAlbum(id);
     }
 };
-__decorate([
-    common_1.Get(),
-    __param(0, common_1.Query(common_1.ValidationPipe)),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [get_albums_filter_dto_1.GetAlbumsFilterDto]),
-    __metadata("design:returntype", Promise)
-], AlbumsController.prototype, "getAlbums", null);
 __decorate([
     common_1.Get('/:id'),
     __param(0, common_1.Param('id')),

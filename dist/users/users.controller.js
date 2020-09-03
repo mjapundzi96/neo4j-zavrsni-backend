@@ -15,7 +15,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const common_1 = require("@nestjs/common");
 const users_service_1 = require("./users.service");
 const passport_1 = require("@nestjs/passport");
-const get_recommended_filter_dto_1 = require("./dto/get-recommended-filter.dto");
 const models_1 = require("../models");
 let UsersController = class UsersController {
     constructor(usersService) {
@@ -23,15 +22,6 @@ let UsersController = class UsersController {
     }
     async getUser(id, request) {
         return this.usersService.getUser(id);
-    }
-    async getListenHistory(user_id) {
-        return this.usersService.getListenHistory(user_id);
-    }
-    async getRecommendedAlbums(user_id, getRecommendedFilterDto) {
-        return this.usersService.getRecommendendedAlbums(user_id, getRecommendedFilterDto);
-    }
-    async getRecommendedArtists(user_id, getRecommendedFilterDto) {
-        return this.usersService.getRecommendedArtists(user_id, getRecommendedFilterDto);
     }
 };
 __decorate([
@@ -42,29 +32,6 @@ __decorate([
     __metadata("design:paramtypes", [Number, Object]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "getUser", null);
-__decorate([
-    common_1.Get('/:id/listen_history'),
-    __param(0, common_1.Param('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], UsersController.prototype, "getListenHistory", null);
-__decorate([
-    common_1.Get('/:id/recommended_albums'),
-    __param(0, common_1.Param('id')),
-    __param(1, common_1.Query(common_1.ValidationPipe)),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, get_recommended_filter_dto_1.GetRecommendedFilterDto]),
-    __metadata("design:returntype", Promise)
-], UsersController.prototype, "getRecommendedAlbums", null);
-__decorate([
-    common_1.Get('/:id/recommended_artists'),
-    __param(0, common_1.Param('id')),
-    __param(1, common_1.Query(common_1.ValidationPipe)),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, get_recommended_filter_dto_1.GetRecommendedFilterDto]),
-    __metadata("design:returntype", Promise)
-], UsersController.prototype, "getRecommendedArtists", null);
 UsersController = __decorate([
     common_1.Controller('users'),
     common_1.UseGuards(passport_1.AuthGuard()),

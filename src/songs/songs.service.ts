@@ -82,23 +82,59 @@ export class SongsService {
 
     async getUsersAlsoViewed(id: number, user_id: number): Promise<Song[]> {
         const song_results = await this.neo4j.query(`MATCH (s:Song)<-[:HAS_VIEWED]-(u:User)-[:HAS_VIEWED]->(rec:Song)-[:FROM_ALBUM]->(al:Album)-[:BY_ARTIST]->(ar:Artist)
-        WHERE ID(u)<>${user_id} AND ID(s)=${id}
+        WHERE ID(u)<>${user_id} AND ID(s)=${id} AND ID(rec)<>${id}
         RETURN rec AS song,ar AS artist,al AS album,COUNT(*) AS usersWhoAlsoViewed
-        ORDER BY usersWhoAlsoViewed DESC LIMIT 25`)
+        ORDER BY usersWhoAlsoViewed DESC LIMIT 24`)
         const songs = song_results.map(result => {
             const songObj = result.get('song');
             const albumObj = result.get('album');
             const artistObj = result.get('artist');
+            const { properties:songProps } = songObj
+            const { properties:albumProps } = albumObj
+            const { properties:artistProps } = artistObj
             return {
-                ...songObj.properties,
+                ...songProps,
                 id: songObj.identity.low,
-                views: songObj.properties.views.low,
+                views: songProps.views.low,
                 album: {
-                    ...albumObj.properties,
+                    ...albumProps,
                     id: albumObj.identity.low,
-                    year: albumObj.properties.low,
+                    year: albumProps.year.low,
                     artist: {
-                        ...artistObj.properties,
+                        ...artistProps,
+                        id: artistObj.identity.low,
+                    }
+                }
+            }
+        })
+
+        return songs;
+
+        return songs;
+    }
+
+    async getSongsWithSimilarTags(id: number): Promise<Song[]> {
+        const song_results = await this.neo4j.query(`MATCH (s1:Song)-[:TAG]-(t) WHERE ID(s1)=${id}
+        WITH ID(s1) as id_s1, t ORDER BY SIZE(t.name) DESC
+        MATCH (t)-[r:TAG]-(s2:Song)-[:FROM_ALBUM]-(al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE id_s1 <> ID(s2)
+        RETURN s2 as song,al as album,ar as artist, count(r) as mutualTags ORDER BY mutualTags DESC, s2.views DESC limit 24`)
+        const songs = song_results.map(result => {
+            const songObj = result.get('song');
+            const albumObj = result.get('album');
+            const artistObj = result.get('artist');
+            const { properties:songProps } = songObj
+            const { properties:albumProps } = albumObj
+            const { properties:artistProps } = artistObj
+            return {
+                ...songProps,
+                id: songObj.identity.low,
+                views: songProps.views.low,
+                album: {
+                    ...albumProps,
+                    id: albumObj.identity.low,
+                    year: albumProps.year.low,
+                    artist: {
+                        ...artistProps,
                         id: artistObj.identity.low,
                     }
                 }
@@ -136,33 +172,7 @@ export class SongsService {
         return songs;
     }
 
-    async getSongsWithSimilarTags(id: number): Promise<Song[]> {
-        const song_results = await this.neo4j.query(`MATCH (s1:Song)-[:TAG]-(t) WHERE ID(s1)=${id}
-        WITH ID(s1) as id_s1, t ORDER BY SIZE(t.name) DESC
-        MATCH (t)-[r:TAG]-(s2:Song)-[:FROM_ALBUM]-(al:Album)-[:BY_ARTIST]-(ar:Artist) WHERE id_s1 <> ID(s2)
-        RETURN s2 as song,al as album,ar as artist, count(r) as mutualTags ORDER BY mutualTags DESC, s2.views DESC limit 24`)
-        const songs = song_results.map(result => {
-            const songObj = result.get('song');
-            const albumObj = result.get('album');
-            const artistObj = result.get('artist');
-            return {
-                ...songObj.properties,
-                id: songObj.identity.low,
-                views: songObj.properties.views.low,
-                album: {
-                    ...albumObj.properties,
-                    id: albumObj.identity.low,
-                    year: albumObj.properties.low,
-                    artist: {
-                        ...artistObj.properties,
-                        id: artistObj.identity.low,
-                    }
-                }
-            }
-        })
-
-        return songs;
-    }
+    
 
 
 

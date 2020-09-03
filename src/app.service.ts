@@ -163,19 +163,34 @@ export class AppService {
     const { period } = mostPopularFilterDto
     switch (period){
       case 'week':
-        query += ' WHERE rel.date_time.week = datetime().week AND rel.date_time.year = datetime().year';
+        query += `
+        WHERE rel.date_time.week = datetime().week 
+        AND rel.date_time.year = datetime().year
+        `;
         break;
       case 'month':
-        query += ' WHERE rel.date_time.month = datetime().month AND rel.date_time.year = datetime().year'
+        query += ` 
+        WHERE rel.date_time.month = datetime().month 
+        AND rel.date_time.year = datetime().year
+        `
         break;
     }
     query += `
      WITH s,
-    SUM(CASE WHEN any(r in relationships(p) WHERE type(r)='HAS_VIEWED') THEN 1 ELSE 0 END) as views,
-    SUM(CASE WHEN any(r in relationships(p) WHERE type(r)='LIKED') THEN 1 ELSE 0 END) as likes
+    SUM(
+      CASE 
+        WHEN any(r in relationships(p) WHERE type(r)='HAS_VIEWED') 
+        THEN 1 
+        ELSE 0 
+      END) as views,
+    SUM(
+      CASE 
+      WHEN any(r in relationships(p) WHERE type(r)='LIKED') 
+      THEN 1 
+      ELSE 0 END) as likes
     WITH views,likes,s
     MATCH (s:Song)-[:FROM_ALBUM]-(al:Album)-[:BY_ARTIST]-(ar:Artist)
-    RETURN (3*likes)+(2*views) as score,{
+    RETURN (3*likes)+(2*views) AS score,{
       id:ID(s),
         title:s.title,
         album:{
@@ -184,7 +199,7 @@ export class AppService {
               name:ar.name
             }
         }
-    } as result ORDER BY score DESC LIMIT 24;
+    } AS result ORDER BY score DESC LIMIT 24;
     `
     const song_results = await this.neo4j.query(query)
     const results = song_results.map(result => {

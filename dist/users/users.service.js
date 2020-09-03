@@ -24,62 +24,7 @@ let UsersService = class UsersService {
         if (!user_result) {
             throw new common_1.NotFoundException('User not found');
         }
-        return Object.assign(Object.assign({}, user_result[0].get('user')), { id: user_result[0].get('user').id.low });
-    }
-    async getListenHistory(user_id) {
-        const history_results = await this.neo4j.query(`MATCH (u:User)-[r:HAS_VIEWED]-(s:Song) WHERE ID(u)=${user_id} RETURN {
-            id:ID(s),
-            title:s.title,
-            views:s.views,
-            songUrl:s.songUrl,
-            date_listened:r.date_time
-        } AS song ORDER BY r.date_time DESC;`);
-        let songs = [];
-        history_results.forEach((result) => {
-            const songObj = result.get('song');
-            const date = songObj.date_listened;
-            songs.push({
-                id: songObj.id.low,
-                title: songObj.title,
-                views: songObj.views.low,
-                songUrl: songObj.songUrl,
-                date_listened: new Date(date.year.low, date.month.low, date.day.low, date.hour.low, date.minute.low, date.second.low)
-            });
-        });
-        return songs;
-    }
-    async getRecommendendedAlbums(user_id, getRecommendedFilterDto) {
-        const { offset, limit } = getRecommendedFilterDto;
-        const albumsResults = await this.neo4j.query(`MATCH (u:User)-[:HAS_FAVORITE_GENRE]->(g:Genre)<-[:IS_GENRE]-(ar:Artist)<-[:BY_ARTIST]-(al:Album)<-[:FROM_ALBUM]-(s:Song) where ID(u)=${user_id}
-        return al as album,ar as artist,SUM(s.views) ORDER BY SUM(s.views) DESC SKIP ${offset} LIMIT ${limit};`);
-        let albums = [];
-        albumsResults.forEach((result) => {
-            const albumObj = result.get('album');
-            const artistObj = result.get('artist');
-            albums.push(Object.assign(Object.assign({}, albumObj.properties), { id: albumObj.identity.low, year: albumObj.properties.year.low, artist: Object.assign(Object.assign({}, artistObj.properties), { id: artistObj.identity.low }) }));
-        });
-        return albums;
-    }
-    async getRecommendedArtists(user_id, getRecommendedFilterDto) {
-        const { offset, limit } = getRecommendedFilterDto;
-        const artistsResults = await this.neo4j.query(`MATCH (u:User)-[r:HAS_FAVORITE_GENRE]->(g:Genre)<-[r2:IS_GENRE]-(a:Artist)<-[r3:BY_ARTIST]-(al:Album)<-[r4:FROM_ALBUM]-(s:Song)
-        where ID(u)=${user_id} RETURN a,sum(s.views),g ORDER BY sum(s.views) DESC SKIP ${offset} LIMIT ${limit};`);
-        let artists = [];
-        artistsResults.forEach((result) => {
-            const fields = result["_fields"][0];
-            const views = result["_fields"][1].low;
-            const genre = result["_fields"][2];
-            artists.push({
-                id: fields.identity.low,
-                name: fields.properties.name,
-                imageUrl: fields.properties.imageUrl,
-                country: fields.properties.country,
-                type: fields.properties.type,
-                views: views,
-                genre: Object.assign(genre.properties, { id: genre.identity.low })
-            });
-        });
-        return artists;
+        return Object.assign(Object.assign({}, user_result[0].get('user')), { user_id: user_result[0].get('user').id.low });
     }
 };
 UsersService = __decorate([

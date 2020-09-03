@@ -26,7 +26,12 @@ let AuthService = class AuthService {
         user.salt = await bcrypt.genSalt();
         user.password = await this.hashPassword(password, user.salt);
         try {
-            const user_result = await this.neo4j.query(`CREATE (n: User {username: '${user.username}', password: '${user.password}', salt: '${user.salt}' }) RETURN { id: ID(n) } as user`);
+            await this.neo4j.query(`
+            CREATE (n: User {
+                username: '${user.username}', 
+                password: '${user.password}', 
+                salt: '${user.salt}' })
+            `);
             return true;
         }
         catch (err) {
