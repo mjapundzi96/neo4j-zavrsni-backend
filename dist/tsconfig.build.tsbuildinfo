@@ -1450,8 +1450,8 @@
         "signature": "87b3b61f7bd04b833a4e00bad5c4fd8bf8e8731057f59a0e628f8d943f6858eb"
       },
       "../src/users/users.controller.ts": {
-        "version": "53bb3661506c5ad4b044987be6ac3d27346132354d0ea799917c58286eb9b87b",
-        "signature": "cd848c08f39d66bee32be6cb0c1f90295c41ee56b614c0c71e3fe9393475ff25"
+        "version": "498ee76b4e960926ecddfe0f607535fc15030e6a3795ec7609ef603b4d1ce5b6",
+        "signature": "e489c008aa948391daecf961815f39c7b958b63b79984919d41184987bc65f68"
       },
       "../src/users/users.module.ts": {
         "version": "fa60378750352d36292c742d31c8beed8f6a405255842f82450a7973db100a97",
@@ -1494,7 +1494,7 @@
         "signature": "4723ae7ffa9b0aaed7a4200e7cc4e76fcb12b7399a609f64863a24c4afde6565"
       },
       "../src/songs/songs.service.ts": {
-        "version": "96230022a903b617f00d338e8f8436de19297f1a604d7a5be1bc2f68168c9b3c",
+        "version": "8217abac742243f9691b3c207c985e07cb708f7853624071cb266209a9de0e11",
         "signature": "b35f96f119009d0fb045ac0e3e0d7b206c0c10ff9df7dd6b564b4b1b8a9365a8"
       },
       "../src/songs/songs.controller.ts": {
@@ -9352,6 +9352,8 @@
       "../src/users/dto/get-users-filter.dto.ts",
       "../src/users/dto/get-recommended-filter.dto.ts",
       "../src/users/users.service.ts",
+      "../src/users/users.controller.ts",
+      "../src/users/users.module.ts",
       "../src/genres/dto/get-popular-filter.dto.ts",
       "../src/genres/genres.service.ts",
       "../src/genres/genres.controller.ts",
@@ -9361,7 +9363,6 @@
       "../src/artists/artists.controller.ts",
       "../src/artists/artists.module.ts",
       "../src/songs/dto/get-songs-filter.dto.ts",
-      "../src/songs/songs.service.ts",
       "../src/songs/songs.controller.ts",
       "../src/songs/songs.module.ts",
       "../src/albums/albums.service.ts",
@@ -9450,8 +9451,7 @@
       "../node_modules/@types/webpack/index.d.ts",
       "../node_modules/@types/yargs-parser/index.d.ts",
       "../node_modules/@types/yargs/index.d.ts",
-      "../src/users/users.controller.ts",
-      "../src/users/users.module.ts"
+      "../src/songs/songs.service.ts"
     ]
   },
   "version": "3.8.3"

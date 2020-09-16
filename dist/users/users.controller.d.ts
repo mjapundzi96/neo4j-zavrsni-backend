@@ -3,5 +3,5 @@ import { User } from 'src/models';
 export declare class UsersController {
     private usersService;
     constructor(usersService: UsersService);
-    getUser(id: number, request: any): Promise<User>;
+    getUser(id: number): Promise<User>;
 }

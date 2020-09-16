@@ -203,14 +203,13 @@ export class SongsService {
     }
 
     async unLikeSong(id: number, user_id: number): Promise<boolean> {
-        console.log(id,user_id)
         const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         set s.likes = s.likes - 1
         DELETE r
         return true as result;`)
         if (result[0]) {
-            return result[0].get('result');
+            return true;
         }
         else throw new NotFoundException('User or song does not exist');
     }

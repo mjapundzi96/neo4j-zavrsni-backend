@@ -132,14 +132,13 @@ let SongsService = class SongsService {
             throw new common_1.NotFoundException('User or song does not exist');
     }
     async unLikeSong(id, user_id) {
-        console.log(id, user_id);
         const result = await this.neo4j.query(`MATCH (u:User)-[r:LIKED]-(s:Song)
         WHERE ID(u)=${user_id} and ID(s)=${id}
         set s.likes = s.likes - 1
         DELETE r
         return true as result;`);
         if (result[0]) {
-            return result[0].get('result');
+            return true;
         }
         else
             throw new common_1.NotFoundException('User or song does not exist');
